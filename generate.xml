@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<items>
+	<item>
+		<dataPoint target="1">Papukaija</dataPoint>
+		<dataPoint target="3">Karhu</dataPoint>
+		<dataPoint target="1">Kotka</dataPoint>
+		<dataPoint target="1">Varpunen</dataPoint>
+		<dataPoint target="3">Kirahvi</dataPoint>
+		<dataPoint target="2">Hauki</dataPoint>
+		<dataPoint target="2">Särki</dataPoint>
+		<dataPoint target="3">Ilves</dataPoint>
+		<dataPoint target="3">Lehmä</dataPoint>
+		<dataPoint target="1">Riikinkukko</dataPoint>
+	</item>
+	<dropper>
+		<target id="1">Linnut</target>
+		<target id="2">Kalat</target>
+		<target id="3">Nisäkkäät</target>
+	</dropper>
+</items>

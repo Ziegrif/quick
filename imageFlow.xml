@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<items>
+	<gamename></gamename>
+	<imagepath></imagepath>
+	<time></time>
+	<item>
+		<dataPoint target="1" src="images/catTest.jpg">Cat</dataPoint>
+		<dataPoint target="1" src="images/cowTest.jpg">Cow</dataPoint>
+		<dataPoint target="1" src="images/giraffeTest.jpg">Giraffe</dataPoint>
+		<dataPoint target="1" src="images/leeTest.jpg">Leopard</dataPoint>
+		<dataPoint target="2" src="images/parrotTest.jpg">Parrot</dataPoint>
+		<dataPoint target="1" src="images/sharkTest.jpg">Shark</dataPoint>
+		<dataPoint target="1" src="images/catTest.jpg">Cat</dataPoint>
+		<dataPoint target="1" src="images/cowTest.jpg">Cow</dataPoint>
+		<dataPoint target="1" src="images/giraffeTest.jpg">Giraffe</dataPoint>
+		<dataPoint target="1" src="images/leeTest.jpg">Leopard</dataPoint>
+		<dataPoint target="2" src="images/parrotTest.jpg">Parrot</dataPoint>
+		<dataPoint target="1" src="images/sharkTest.jpg">Shark</dataPoint>
+		<dataPoint target="1" src="images/catTest.jpg">Cat</dataPoint>
+		<dataPoint target="1" src="images/cowTest.jpg">Cow</dataPoint>
+		<dataPoint target="1" src="images/giraffeTest.jpg">Giraffe</dataPoint>
+		<dataPoint target="1" src="images/leeTest.jpg">Leopard</dataPoint>
+		<dataPoint target="2" src="images/parrotTest.jpg">Parrot</dataPoint>
+		<dataPoint target="1" src="images/sharkTest.jpg">Shark</dataPoint>
+		<dataPoint target="1" src="images/catTest.jpg">Cat</dataPoint>
+		<dataPoint target="1" src="images/cowTest.jpg">Cow</dataPoint>
+		<dataPoint target="1" src="images/giraffeTest.jpg">Giraffe</dataPoint>
+		<dataPoint target="1" src="images/leeTest.jpg">Leopard</dataPoint>
+		<dataPoint target="2" src="images/parrotTest.jpg">Parrot</dataPoint>
+		
+		
+	</item>
+	<dropper>
+		<target id="1">Nisäkäs</target>
+		<target id="2">Lintu</target>
+		<target id="3">Testi</target>
+		<target id="3">Testi</target>
+		<target id="3">Testi</target>
+		<target id="3">Testi</target>
+		<target id="3">Testi</target>
+		<target id="3">Testi</target>
+		<target id="3">Testi</target>
+		<target id="3">Testi</target>
+		<target id="3">Testi</target>
+		<target id="3">Testi</target>
+		<target id="3">Testi</target>
+		<target id="3">Testi</target>
+		<target id="3">Testi</target>
+		<target id="3">Testi</target>
+		<target id="3">Testi</target>
+		<target id="3">Testi</target>
+		<target id="3">Testi</target>
+		<target id="3">Testi</target>
+		<target id="3">Testi</target>
+		<target id="3">Testi</target>
+		<target id="3">Testi</target>
+		
+	</dropper>
+</items>

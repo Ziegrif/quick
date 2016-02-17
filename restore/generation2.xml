@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<items>
+	<item>
+		<dataPoint target="1">thing</dataPoint>
+		<dataPoint target="3">Another thing</dataPoint>
+		<dataPoint target="1">Wooooo</dataPoint>
+		<dataPoint target="1">Rick</dataPoint>
+		<dataPoint target="3">Morty</dataPoint>
+		<dataPoint target="2">Burp</dataPoint>
+		<dataPoint target="2">Scwhifty</dataPoint>
+		<dataPoint target="3">gotta get</dataPoint>
+		<dataPoint target="3">mmMMmmmmmor-BURP-Morty</dataPoint>
+		<dataPoint target="1">SPACE</dataPoint>
+	</item>
+	<dropper>
+		<target id="1">Rick</target>
+		<target id="2">Morty</target>
+		<target id="3">Yes</target>
+	</dropper>
+</items>

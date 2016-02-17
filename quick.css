@@ -1,0 +1,145 @@
+/*Quick.css*/
+@font-face {
+	font-family: silk;
+	src: url(silkscreen/slkscr.ttf);
+	
+}
+body {
+	font-family: silk;
+	
+}
+
+img {
+	display: block;
+	margin: 0 auto;
+}
+
+.borderPatrol {
+	width: 800px;
+	height: 800px;
+	
+}
+
+.block {
+	/*display: inline-table;*/
+	white-space: nowrap;
+	height: 400px;
+	width: 800px;
+	float: left;
+	padding: 10px;
+	
+	
+}
+
+.numbero {
+	position: relative;
+	float: left;
+	height: 50px;
+	width: 240px;
+	border: 2px solid #ff751a;
+	background-color: #ffe0cc;
+	padding: 10px;
+}
+
+.imageDragger {
+	position: relative;
+	float: left;
+	height: 90px;
+	min-width: 100px;
+	border: 2px solid #ff751a;
+	background-color: #ffe0cc;
+	padding: 5px;
+}
+
+.dropTarget {
+	position: relative;
+	float: left;
+	height: 50px;
+	width: 240px;
+	border: 2px solid #0099e6;
+	background-color: #99ddff;
+	padding: 10px;
+}
+
+.dropTargetImage {
+	position: relative;
+	float: left;
+	height: 100px;
+	width: 110px;
+	border: 2px solid #0099e6;
+	background-color: #99ddff;
+	padding: 10px;
+	display: block;
+	margin: 0 auto;
+	
+	
+}
+
+.drop {
+	margin-left: auto;
+    margin-right: auto;
+	position: relative;
+	float: left;
+	white-space: nowrap;
+	width: 800px;
+	min-height: 400px;
+	background-color: white;
+	padding: 10px;
+	
+}
+
+.finish {
+	height: 80px;
+	width: 80px;
+	border: 2px solid #248f24;
+	background-color: #80ff80;
+	padding: 20px;
+	
+}
+
+.finalScore {
+	position: relative;
+	margin: 0 auto;
+	
+	
+}
+
+#content{
+	height: 700px;
+	width: 700px;
+	
+}
+
+#saving{
+	z-index: +1;
+	left: 0px;
+    top: 0px;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(214, 214, 194, 0.6);
+}
+#actualForm{
+	width: 100%;
+	top: 40%;
+    left: 30%;
+    margin-right: 40%;
+	position: absolute;
+	
+}
+
+#footing {
+	position: absolute;
+    left: 20px;
+    bottom: 40px;
+    height: 20px;
+    width: 100%;
+}
+
+#nameA{
+	font-family: Arial;
+}
+
+#eMail{
+	font-family: Arial;
+}

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<score>
+  <player>
+    <nimi>name</nimi>
+    <playerScore/>
+    <yhteystiedot>name@email.com</yhteystiedot>
+  </player>
+  <player>
+    <nimi>name</nimi>
+    <playerScore/>
+    <yhteystiedot>name@email.com</yhteystiedot>
+  </player>
+  <player>
+    <nimi/>
+    <playerScore/>
+    <yhteystiedot/>
+  </player>
+  <player>
+    <nimi>Tuomas</nimi>
+    <playerScore>2</playerScore>
+    <yhteystiedot>Moi</yhteystiedot>
+  </player>
+  <player>
+    <nimi>Tuomas</nimi>
+    <playerScore>2</playerScore>
+    <yhteystiedot>Moi</yhteystiedot>
+  </player>
+  <player>
+    <nimi/>
+    <playerScore/>
+    <yhteystiedot/>
+  </player>
+  <player>
+    <nimi>Petteri</nimi>
+    <playerScore>5</playerScore>
+    <yhteystiedot>A@mail.com</yhteystiedot>
+  </player>
+</score>

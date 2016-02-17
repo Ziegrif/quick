@@ -1,0 +1,80 @@
+/*Quick.css*/
+@font-face {
+	font-family: silk;
+	src: url(silkscreen/slkscr.ttf);
+	
+}
+body {
+	font-family: silk;
+	
+}
+
+.block {
+	height: 200 px;
+	width: 500 px;
+	float: left;
+	padding: 20px;
+	
+}
+
+.numbero {
+	height: 100 px;
+	width: 100 px;
+	border: 2px solid #ff751a;
+	background-color: #ffe0cc;
+	padding: 20px;
+}
+
+.imageDragger {
+	height: 100 px;
+	width: 90 px;
+	border: 2px solid #ff751a;
+	background-color: #ffe0cc;
+}
+
+.dropTarget {
+	height: 100 px;
+	width: 100 px;
+	border: 2px solid #0099e6;
+	background-color: #99ddff;
+	padding: 20px;
+}
+
+.dropTargetImage {
+	height: 125 px;
+	width: 125 px;
+	border: 2px solid #0099e6;
+	background-color: #99ddff;
+	padding: 40px;
+	
+}
+
+.drop {
+	width: 200px;
+	height: 625px;
+	background-color: white;
+	float: right;
+	padding: 50px;
+	
+}
+
+.finish {
+	height: 100 px;
+	width: 100 px;
+	border: 2px solid #248f24;
+	background-color: #80ff80;
+	padding: 20px;
+	
+}
+
+.finalScore {
+	position: absolute; 
+	left: 50%;
+	
+}
+
+#content{
+	height: 700px;
+	width: 700px;
+	
+}
