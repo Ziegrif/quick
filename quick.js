@@ -53,7 +53,7 @@ function init() {
 	
 			for (var j=0; j<tmpArc.length; j++) {
 	
-				$("<div class='numbero'>" + tmpArc[j][0] + '</div>').data('number', tmpArc[j][1]).appendTo('.block').draggable( {
+				$("<div class='numbero Play'>" + tmpArc[j][0] + '</div>').data('number', tmpArc[j][1]).appendTo('.block').draggable( {
 					containment: '.borderPatrol',
 					stack: '.block div',
 					cursor: 'move',
@@ -89,7 +89,7 @@ function change() {
 						if ($src == null) {
 							$content = $(this).text();
 							$DropClass = 'dropTarget';
-							$draggEr = 'numbero';
+							$draggEr = 'numbero Play';
 						} else {
 							$content = '<img src="' +  $(this).attr('src') + '" height=\'75\' width=\'90\' />';
 							$DropClass = 'dropTargetImage';
@@ -189,3 +189,24 @@ function validation(){
 			'z-index':'-1'
 		});
 }
+
+	$(document).ready(function() {
+		var audioElement = document.createElement('audio');
+		audioElement.setAttribute('src', 'http://www.soundjay.com/misc/sounds/bell-ringing-01.mp3');
+		
+		$.get();
+		
+		audioElement.addEventListener("ended", function(){
+			this.currentTime = 0;
+			this.Play();
+		});
+		
+		$('.Play').css('cursor', 'pointer').click(function() {
+			audioElement.Play();
+		});
+		
+		$('.Stop').click(function() {
+			audioElement.Stop();
+		});
+	});
+

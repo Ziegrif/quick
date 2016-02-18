@@ -36,6 +36,7 @@ echo	"<div id=\"content\">
 					<option value=math>Max merkki testi</option>
 					
 				</select>
+				<button class=\"Play\">Click me test</button>
 		</footer>
 		
 		";
