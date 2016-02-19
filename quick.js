@@ -53,7 +53,7 @@ function init() {
 	
 			for (var j=0; j<tmpArc.length; j++) {
 	
-				$("<div class='numbero Play'>" + tmpArc[j][0] + '</div>').data('number', tmpArc[j][1]).appendTo('.block').draggable( {
+				$("<div class='numbero playSound'>" + tmpArc[j][0] + '</div>').data('number', tmpArc[j][1]).appendTo('.block').draggable( {
 					containment: '.borderPatrol',
 					stack: '.block div',
 					cursor: 'move',
@@ -89,7 +89,7 @@ function change() {
 						if ($src == null) {
 							$content = $(this).text();
 							$DropClass = 'dropTarget';
-							$draggEr = 'numbero Play';
+							$draggEr = 'numbero audioClass';
 						} else {
 							$content = '<img src="' +  $(this).attr('src') + '" height=\'75\' width=\'90\' />';
 							$DropClass = 'dropTargetImage';
@@ -129,6 +129,7 @@ function change() {
 					containment: '.borderPatrol',
 					stack: '.block div',
 					cursor: 'move',
+					
 					//revert: true
 				});
 			}
@@ -190,23 +191,24 @@ function validation(){
 		});
 }
 
-	$(document).ready(function() {
-		var audioElement = document.createElement('audio');
-		audioElement.setAttribute('src', 'http://www.soundjay.com/misc/sounds/bell-ringing-01.mp3');
-		
-		$.get();
-		
-		audioElement.addEventListener("ended", function(){
-			this.currentTime = 0;
-			this.Play();
-		});
-		
-		$('.Play').css('cursor', 'pointer').click(function() {
-			audioElement.Play();
-		});
-		
-		$('.Stop').click(function() {
-			audioElement.Stop();
-		});
-	});
+$(document).ready(function() {
+        var obj = document.createElement("audio");
+        obj.src="audio/gaster_blaster.mp3";
+        obj.volume=0.10;
+        obj.autoPlay=false;
+        obj.preLoad=true;       
+			$("body").on('mousedown', '.playSound', function(){
+			obj.play();
+			});
+		var sound2 = document.createElement("audio");
+        sound2.src="audio/Warframe.mp3";
+        sound2.volume=0.10;
+        sound2.autoPlay=false;
+        sound2.preLoad=true;  
+			$("body").on('mousedown', '.testing2', function(){
+			sound2.play();
+			});
+        });
+ 
+    
 
