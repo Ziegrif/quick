@@ -34,6 +34,9 @@ echo	"<div id=\"content\">
 					<option value=imageExample>Kuva testi2</option>
 					<option value=flowtest2>Max testi</option>
 					<option value=math>Max merkki testi</option>
+					<option value=mathProto>Math Prototype</option>
+					<option value=mathProto2>Math Prototype 2</option>
+					<option value=clocks2>Kellotaulutehtävä 1</option>
 					
 				</select>
 				<button class=\"testing2\">Click me test</button>

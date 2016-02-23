@@ -15,39 +15,18 @@
 		<dataPoint target="12">-121 - 18 =</dataPoint>
 		<dataPoint target="13">9 + 4 x 3 =</dataPoint>
 		<dataPoint target="14">5 x (6 + 7) =</dataPoint>
-		<dataPoint target="15">200€ -> 5% =</dataPoint>
-		<dataPoint target="16">82€ -> 1% =</dataPoint>
+		<dataPoint target="15">3 h 15 min = X min</dataPoint>
+		<dataPoint target="16">130 min = X h Y min</dataPoint>
 		<dataPoint target="17">6^6 =</dataPoint>
 		<dataPoint target="18">4^3 + 5^2 =</dataPoint>
 		<dataPoint target="19">11a + 5b - 9a</dataPoint>
-		<dataPoint target="20">3x -5 =13 || Selvitä x</dataPoint>
-		<dataPoint target="21">7 + 14 =</dataPoint>
-		<dataPoint target="22">22 - 5 =</dataPoint>
-		<dataPoint target="23">7 x 3 =</dataPoint>
-		<dataPoint target="24">15 : 3 =</dataPoint>
-		<dataPoint target="25">1,2 + 1,3 =</dataPoint>
-		<dataPoint target="26">4,2 - 0,02 =</dataPoint>
-		<dataPoint target="27">1,5 x 3 =</dataPoint>
-		<dataPoint target="28">3 / 2 =</dataPoint>
-		<dataPoint target="29">3 h 15 min = X min</dataPoint>
-		<dataPoint target="30">130 min = X h Y min</dataPoint>
-		<dataPoint target="31">110 - 250 =</dataPoint>
-		<dataPoint target="32">-38 - 49 =</dataPoint>
-		<dataPoint target="33">5 + 2 x 6 =</dataPoint>
-		<dataPoint target="34">6 x (13 - 5) =</dataPoint>
-		<dataPoint target="35">500€ -> 4% =</dataPoint>
-		<dataPoint target="36">12€ -> 1% =</dataPoint>
-		<dataPoint target="37">5^2 =</dataPoint>
-		<dataPoint target="38">2^3 + 3^2 =</dataPoint>
-		<dataPoint target="39">8a + 4b - 2a =</dataPoint>
-		<dataPoint target="40">4x - 5 = 7 || selvitä X</dataPoint>
 		
 		
 	</item>
 	<dropper>
 		<target id="1">18</target>
 		<target id="2">9</target>
-		<target id="3">24</target>
+		<target id="3">27</target>
 		<target id="4">2</target>
 		<target id="5">1,9</target>
 		<target id="6">2,67</target>
@@ -59,14 +38,11 @@
 		<target id="12">-139</target>
 		<target id="13">21</target>
 		<target id="14">65</target>
-		<target id="15"></target>
-		<target id="10">MC2</target>
-		<target id="11">-2</target>
-		<target id="12">-2x + 14y - 4</target>
-		<target id="13">y = 7x - 6</target>
-		<target id="14">2</target>
-		<target id="15">MC2</target>
-		
+		<target id="15">195 min</target>
+		<target id="16">2 h 10 min</target>
+		<target id="17">46656</target>
+		<target id="18">89</target>
+		<target id="19">2a + 5b</target>
 		
 	</dropper>
 </items>

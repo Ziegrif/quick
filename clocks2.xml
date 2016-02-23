@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<items>
+	<item>
+		<dataPoint clocks="true" target="1" src="images/clockFace/5vaille7.png">Cat</dataPoint>
+		<dataPoint clocks="true" target="2" src="images/clockFace/10Oclock.png">Cow</dataPoint>
+		<dataPoint clocks="true" target="3" src="images/clockFace/15Vaille5.png">Giraffe</dataPoint>
+		<dataPoint clocks="true" target="4" src="images/clockFace/15yli3.png">Leopard</dataPoint>
+		<dataPoint clocks="true" target="5" src="images/clockFace/20vaille8.png">Parrot</dataPoint>
+		<dataPoint clocks="true" target="6" src="images/clockFace/25Yli12.png">Shark</dataPoint>
+		<dataPoint clocks="true" target="7" src="images/clockFace/kaksikymmentYlikahdeksan.png">Cat</dataPoint>
+		<dataPoint clocks="true" target="8" src="images/clockFace/klo2.png">Cow</dataPoint>
+		<dataPoint clocks="true" target="9" src="images/clockFace/klo9.png">Giraffe</dataPoint>
+		<dataPoint clocks="true" target="10" src="images/clockFace/puoli4.png">Leopard</dataPoint>
+		<dataPoint clocks="true" target="11" src="images/clockFace/puoliKolme.png">Parrot</dataPoint>
+		<dataPoint clocks="true" target="12" src="images/clockFace/tasan12.png">Shark</dataPoint>
+		
+		
+		
+	</item>
+	<dropper>
+		<target id="1">Viittä vaille seitsemän</target>
+		<target id="2">Tasan kello kymmenen</target>
+		<target id="3">Viittätoista vaille viisi</target>
+		<target id="4">Viisitoista yli kolme</target>
+		<target id="5">Kahtakymmentä vaille kahdeksan</target>
+		<target id="6">Kaksikymmentäviisi yli kaksitoista</target>
+		<target id="7">Kaksikymmentä yli kahdeksan</target>
+		<target id="8">Tasan kello kaksi</target>
+		<target id="9">Tasan kello yhdeksän</target>
+		<target id="10">Puoli neljä</target>
+		<target id="11">Puoli kolme</target>
+		<target id="12">Tasan kello kaksitoista</target>
+		
+		
+	</dropper>
+</items>

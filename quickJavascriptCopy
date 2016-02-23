@@ -85,19 +85,13 @@ function change() {
 				$('dataPoint',returnedXMLResponse).each(function(){
 					var $content;
 					var $src = $(this).attr('src');
-					var $clocks = $(this).attr('clocks')
 					
 						if ($src == null) {
 							$content = $(this).text();
 							$DropClass = 'dropTarget';
 							$draggEr = 'numbero audioClass';
-						} else if ($clocks == "true") {
-							$content = '<img src="' +  $(this).attr('src') + '" height=\'95\' width=\'100\' />';
-							$DropClass = 'clockDrop';
-							$draggEr = 'clockDrag';
-						
 						} else {
-							$content = '<img src="' +  $(this).attr('src') + '" height=\'90\' width=\'90\' />';
+							$content = '<img src="' +  $(this).attr('src') + '" height=\'75\' width=\'90\' />';
 							$DropClass = 'dropTargetImage';
 							$draggEr = 'imageDragger';
 						}
@@ -138,7 +132,6 @@ function change() {
 					
 					//revert: true
 				});
-				
 			}
 			}
 		
@@ -150,18 +143,11 @@ function change() {
 function handleCardDrop(event, ui) {
 	var slotNumber = $(this).data('number');
 	var cardNumber = ui.draggable.data('number');
-	var isImage = $(this).hasClass('dropTargetImage');
-	var isAclock = $(this).hasClass('clockDrag');
 	
 	//console.log("card " + cardNumber);
 	//console.log("slot " + slotNumber);
-	if (slotNumber == cardNumber && isImage == true || isAclock == true) {
-		ui.draggable.addClass('imageOikein');
-		ui.draggable.data("valid", true);
-		ui.draggable.position( { of: $(this), my:'left top', at: 'left top'});
-	}
 	
-	else if (slotNumber == cardNumber && isImage !== true) {
+	if (slotNumber == cardNumber) {
 		ui.draggable.addClass('oikein');
 		ui.draggable.data("valid", true);
 		//ui.draggable.draggable('disable');
@@ -190,12 +176,19 @@ function handleDragEvent(event, ui){
 //This function checks for right answers
 function validation(){
 	if($("div").hasClass("oikein")){
-		$(".oikein").toggleClass("finish")
-		
-	}else if($("div").hasClass("imageOikein")){
-	$(".imageOikein").toggleClass("imageFinish")}; 
-	
-	
+		$(".oikein").toggleClass("finish");
+		//$(".oikein .imageDragger .numbero").draggable('disable');
+		//e.preventDefault();
+		//$("<div class='finalScore'>" + "Your score was! "+ $('div#score').html(correct) + "</div>");
+	}
+	//$(document).attr('dragabble','false');
+	$("#saving").show();
+	$("#finale").show();
+	$("#finale").text("Your score was " + correct + " !");
+	$('#hidScore').val(correct);
+	$('.numbero, .dropTargetimage, .dropTarget, .imageDragger').css({
+			'z-index':'-1'
+		});
 }
 
 //$(document).ready(function() {

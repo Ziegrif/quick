@@ -1,11 +1,35 @@
 /*Quick.css*/
-@font-face {
+/*@font-face {
 	font-family: silk;
 	src: url(silkscreen/slkscr.ttf);
 	
 }
 body {
 	font-family: silk;
+	
+}*/
+
+.clockDrag {
+	position: relative;
+	float: left;
+	height: 100px;
+	min-width: 100px;
+	border: 2px solid #ff751a;
+	background-color: #ffe0cc;
+	
+	
+}
+
+.clockDrop {
+	position: relative;
+	float: left;
+	height: 100px;
+	width: 240px;
+	border: 2px solid #0099e6;
+	background-color: #99ddff;
+	padding: 10px;
+	display: block;
+	margin: 0 auto;
 	
 }
 
@@ -16,7 +40,7 @@ img {
 
 .borderPatrol {
 	width: 800px;
-	height: 800px;
+	height: 850px;
 	
 }
 
@@ -44,7 +68,7 @@ img {
 .imageDragger {
 	position: relative;
 	float: left;
-	height: 90px;
+	height: 100px;
 	min-width: 100px;
 	border: 2px solid #ff751a;
 	background-color: #ffe0cc;
@@ -65,13 +89,21 @@ img {
 	position: relative;
 	float: left;
 	height: 100px;
-	width: 110px;
+	width: 250px;
 	border: 2px solid #0099e6;
 	background-color: #99ddff;
 	padding: 10px;
 	display: block;
 	margin: 0 auto;
 	
+	
+}
+
+.imageFinish {
+	height: 100px;
+	width: 250px;
+	border: 2px solid #248f24;
+	background-color: #80ff80;
 	
 }
 
@@ -89,8 +121,8 @@ img {
 }
 
 .finish {
-	height: 80px;
-	width: 80px;
+	height: 50px;
+	width: 240px;
 	border: 2px solid #248f24;
 	background-color: #80ff80;
 	padding: 20px;
