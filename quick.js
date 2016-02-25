@@ -10,6 +10,9 @@ $(document).ready(
 			'height': '100%'
 		});
 	});
+$(document).ready(function() {
+  $.ajaxSetup({ cache: false });
+});
 //The initialization function
 function init() {
 	correct = 0;
@@ -21,9 +24,10 @@ function init() {
 	var tmpDrop=[];
 
 	$.ajax({
-			url: 'mathProto.xml',
+			url: 'quick.xml',
 			type: 'GET',
 			datatype: 'xml',
+			cache: false,
 			success: function(returnedXMLResponse){
 				console.log (returnedXMLResponse)
 				$('dataPoint',returnedXMLResponse).each(function(){
@@ -61,6 +65,7 @@ function init() {
 				});
 			}
 			}
+			
 		
 	});
 	
@@ -80,6 +85,7 @@ function change() {
 			url: xmlFileName,
 			type: 'GET',
 			datatype: 'xml',
+			cache: false,
 			success: function(returnedXMLResponse){
 				console.log (returnedXMLResponse)
 				$('dataPoint',returnedXMLResponse).each(function(){
@@ -101,6 +107,7 @@ function change() {
 							$DropClass = 'dropTargetImage';
 							$draggEr = 'imageDragger';
 						}
+					
 					
 					
 					var row = [$content , $(this).attr('target')];
@@ -151,17 +158,18 @@ function handleCardDrop(event, ui) {
 	var slotNumber = $(this).data('number');
 	var cardNumber = ui.draggable.data('number');
 	var isImage = $(this).hasClass('dropTargetImage');
-	var isAclock = $(this).hasClass('clockDrag');
+	//var isAclock = $(draggEr).hasClass('clockDrag');
 	
 	//console.log("card " + cardNumber);
 	//console.log("slot " + slotNumber);
-	if (slotNumber == cardNumber && isImage == true || isAclock == true) {
+	if (slotNumber == cardNumber &&  $draggEr == 'clockDrag') {
 		ui.draggable.addClass('imageOikein');
 		ui.draggable.data("valid", true);
 		ui.draggable.position( { of: $(this), my:'left top', at: 'left top'});
+		correct++
 	}
 	
-	else if (slotNumber == cardNumber && isImage !== true) {
+	else if (slotNumber == cardNumber && $draggEr == 'numbero audioClass') {
 		ui.draggable.addClass('oikein');
 		ui.draggable.data("valid", true);
 		//ui.draggable.draggable('disable');
@@ -171,7 +179,7 @@ function handleCardDrop(event, ui) {
 		correct++;
 		
 		
-	} else if (slotNumber != cardNumber) {
+	} else if (slotNumber !== cardNumber) {
 		ui.draggable.data("valid",false);
 		ui.draggable.position( { of: $(this), my:'left top', at: 'left top'});
 	}
@@ -181,6 +189,7 @@ function handleCardDrop(event, ui) {
 function handleDragEvent(event, ui){
 		if(ui.draggable.data("valid")) {
 			ui.draggable.removeClass('oikein');
+			ui.draggable.removeClass('imageOikein');
 			correct--;
 			ui.draggable.data("valid",false);
 		}
@@ -194,7 +203,7 @@ function validation(){
 		
 	}else if($("div").hasClass("imageOikein")){
 	$(".imageOikein").toggleClass("imageFinish")}; 
-	
+		
 	
 }
 

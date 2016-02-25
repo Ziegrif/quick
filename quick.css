@@ -10,8 +10,8 @@ body {
 }*/
 
 .clockDrag {
-	position: relative;
-	float: left;
+	position: absolute;
+	display: block;
 	height: 100px;
 	min-width: 100px;
 	border: 2px solid #ff751a;
@@ -28,7 +28,6 @@ body {
 	border: 2px solid #0099e6;
 	background-color: #99ddff;
 	padding: 10px;
-	display: block;
 	margin: 0 auto;
 	
 }
@@ -39,6 +38,7 @@ img {
 }
 
 .borderPatrol {
+	
 	width: 800px;
 	height: 850px;
 	
@@ -93,15 +93,14 @@ img {
 	border: 2px solid #0099e6;
 	background-color: #99ddff;
 	padding: 10px;
-	display: block;
 	margin: 0 auto;
 	
 	
 }
 
 .imageFinish {
-	height: 100px;
-	width: 250px;
+	position: absolute;
+	width: 240px;
 	border: 2px solid #248f24;
 	background-color: #80ff80;
 	
