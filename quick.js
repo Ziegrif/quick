@@ -103,8 +103,8 @@ function change() {
 							$draggEr = 'clockDrag';
 						
 						} else {
-							$content = '<img src="' +  $(this).attr('src') + '" height=\'90\' width=\'90\' />';
-							$DropClass = 'dropTargetImage';
+							$content = '<img src="' +  $(this).attr('src') + ' height=\'90\' width=\'90\' />';
+							$DropClass = 'dropTargetImage' + $(this).text();
 							$draggEr = 'imageDragger';
 						}
 					
@@ -113,6 +113,8 @@ function change() {
 					var row = [$content , $(this).attr('target')];
 					
 					tmpArc.push(row);
+					
+					
 	
 			})
 			
@@ -144,6 +146,9 @@ function change() {
 					cursor: 'move',
 					
 					//revert: true
+				});
+				$("div .clockDrag").each(function(i){
+					$(this).addClass("S"+(i+1))
 				});
 				
 			}
@@ -207,15 +212,16 @@ function validation(){
 	
 }
 
-//$(document).ready(function() {
- //       var obj = document.createElement("audio");
- //       obj.src="audio/gaster_blaster.mp3";
-  //      obj.volume=0.10;
-  //      obj.autoPlay=false;
-    //    obj.preLoad=true;       
-	//		$("body").on('mousedown', '.playSound', function(){
-	//		obj.play();
-	//		});
+$(document).ready(function() {
+      var obj = document.createElement("audio");
+      obj.src="audio/gaster_blaster.mp3";
+        obj.volume=0.10;
+        obj.autoPlay=false;
+        obj.preLoad=true;       
+			$("body").on('mousedown', '.S1', function(){
+			obj.play();
+			});
+});
 	//	var sound2 = document.createElement("audio");
      //   sound2.src="audio/Warframe.mp3";
       //  sound2.volume=0.10;
