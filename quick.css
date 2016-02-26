@@ -1,13 +1,9 @@
 /*Quick.css*/
-/*@font-face {
-	font-family: silk;
-	src: url(silkscreen/slkscr.ttf);
+
+div .clockDrag {
+	cursor: pointer;
 	
 }
-body {
-	font-family: silk;
-	
-}*/
 
 .clockDrag {
 	position: absolute;
