@@ -8,7 +8,7 @@ if (!empty($_GET["address"]) && !empty($_GET["dataPointer"]) && !empty($_GET["ta
 	}
 	$theXMLtoEdit = simplexml_load_file($whatWereEditing);
 	
-	$newData = $theXMLtoEdit->item->addChild('datapoint', $dataPointer);
+	$newData = $theXMLtoEdit->item->addChild('dataPoint', $dataPointer);
 	$newDropper = $theXMLtoEdit->Dropper->addChild('target', $targetPointer);
 
 $dom = new DOMDocument("1.0");
@@ -16,8 +16,9 @@ $dom = new DOMDocument("1.0");
 	$dom->formatOutput = true;
 	$dom->loadXML($theXMLtoEdit->asXML());
 	$dom->save($whatWereEditing);
-	echo "jes!";
-
+	//Below code is an example check it before running.
+	$myJson = json_encode(array('dataPointer' => $dataPointer,'message'=> 'The group has not been removed'));
+	return $myJson;
 
 
 

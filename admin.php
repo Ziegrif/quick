@@ -29,8 +29,8 @@
 	
 	<button id="XMLchanges">Upload</button>
 	
-	<div>
-	<p id="output"></p>
+	<div id="output">
+	
 	</div>
 	
 

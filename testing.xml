@@ -1,23 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <items>
   <item>
-    <datapoint>dat1</datapoint>
-    <datapoint>dat1</datapoint>
-    <datapoint>dat1</datapoint>
-    <datapoint>dat1</datapoint>
-    <datapoint>dat1</datapoint>
-    <datapoint>dat1</datapoint>
-    <datapoint>dat1</datapoint>
-    <datapoint>dat1</datapoint>
+    <dataPoint>data2</dataPoint>
+    <dataPoint>data2</dataPoint>
+    <dataPoint>data2</dataPoint>
+    <dataPoint>yep</dataPoint>
+    <dataPoint>yue</dataPoint>
+    <dataPoint>yep</dataPoint>
+    <dataPoint>add</dataPoint>
+    <dataPoint>add</dataPoint>
+    <dataPoint>da</dataPoint>
   </item>
   <Dropper>
-    <target>tar1</target>
-    <target>tar1</target>
-    <target>tar1</target>
-    <target>tar1</target>
-    <target>tar1</target>
-    <target>tar1</target>
-    <target>tar1</target>
-    <target>tar1</target>
+    <target>tar2</target>
+    <target>tar2</target>
+    <target>tar2</target>
+    <target>da</target>
+    <target>yuuu</target>
+    <target>aye</target>
+    <target>yes</target>
+    <target>yes</target>
+    <target>ya</target>
   </Dropper>
 </items>

@@ -323,6 +323,8 @@ $(document).ready(function() {
 		var dataPointToAdd = $('#dataPointer').val();
 		var targetToAdd = $('#targetPointer').val();
 		var output = $('#output').val();
+		var arrayOfXMLdataPoints = [];
+		var arrayOfXMLtargets = [];
 		
 		$.ajax({
 			url: 'changeTheXMLfile.php',
@@ -335,6 +337,39 @@ $(document).ready(function() {
 			},
 			success: function( data ){
 				console.log('success' + data);
+				//Below code: Remove the ajax and make it a Json return dealio.
+			$.ajax({
+				url: generatedFile ,
+				type: 'GET',
+				datatype: 'xml' ,
+				cache: false,
+				success: function(returnedXMLResponse) {
+					$('dataPoint',returnedXMLResponse).each(function(){
+						var $allTheNewData = $(this).text();
+						var dataPointarray = [$allTheNewData];
+						arrayOfXMLdataPoints.push(dataPointarray);
+					});
+					console.log(arrayOfXMLdataPoints);
+					$('target',returnedXMLResponse).each(function(){
+						var $nearlyDoneTar = $(this).text();
+						var targetArray1 = [$nearlyDoneTar];
+						arrayOfXMLtargets.push(targetArray1);
+					});
+					for (var o=0; 0<arrayOfXMLdataPoints.length; o++){
+						$("<input></input><select id=\'allTargets\'></select>")
+							.appendTo("#output");
+					};
+					console.log(targetArray1);
+					for (var p=0; 0<targetArray1.length; p++){
+						$('#allTargets')
+							.append($("<option></option>")
+							.attr("value", targetArray1[i])
+							.text(value));
+					}
+					
+					
+				}
+			})
 				
 			}
 			
