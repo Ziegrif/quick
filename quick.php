@@ -37,6 +37,8 @@ echo	"<div id=\"content\">
 					<option value=mathProto>Math Prototype</option>
 					<option value=mathProto2>Math Prototype 2</option>
 					<option value=clocks3>Kellotaulutehtävä 1</option>
+					<option value=elementConversion>Mittayksikkö muutoksia</option>
+					<option value=whatTime>Aikayksikkö muutoksia</option>
 					
 				</select>
 				<button class=\"testing2\">Click me test</button>

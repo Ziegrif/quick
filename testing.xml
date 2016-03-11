@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<items>
+  <item>
+    <datapoint>dat1</datapoint>
+    <datapoint>dat1</datapoint>
+    <datapoint>dat1</datapoint>
+    <datapoint>dat1</datapoint>
+    <datapoint>dat1</datapoint>
+    <datapoint>dat1</datapoint>
+    <datapoint>dat1</datapoint>
+    <datapoint>dat1</datapoint>
+  </item>
+  <Dropper>
+    <target>tar1</target>
+    <target>tar1</target>
+    <target>tar1</target>
+    <target>tar1</target>
+    <target>tar1</target>
+    <target>tar1</target>
+    <target>tar1</target>
+    <target>tar1</target>
+  </Dropper>
+</items>

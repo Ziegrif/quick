@@ -27,12 +27,12 @@ function init() {
 	var tmpDrop=[];
 
 	$.ajax({
-			url: 'quick.xml',
+			url: 'generate.xml',
 			type: 'GET',
 			datatype: 'xml',
 			cache: false,
 			success: function(returnedXMLResponse){
-				console.log (returnedXMLResponse)
+				
 				$('dataPoint',returnedXMLResponse).each(function(){
 					var row = [ $(this).text() , $(this).attr('target'), $(this).attr('src')];
 					tmpArc.push(row);
@@ -314,6 +314,37 @@ $(document).ready(function() {
 			});
 		
         });
+		
+//this one is for generating and editing a newly created XML file.
  
-    
+ $(document).ready(function(){
+		$('#XMLchanges').click(function(){
+		var generatedFile = $('#address').val() + '.xml';
+		var dataPointToAdd = $('#dataPointer').val();
+		var targetToAdd = $('#targetPointer').val();
+		var output = $('#output').val();
+		
+		$.ajax({
+			url: 'changeTheXMLfile.php',
+			type: 'GET',
+			dataType: 'text',
+			cache: false,
+			data: { address: generatedFile, dataPointer: dataPointToAdd, targetPointer: targetToAdd },
+			error: function(){
+				console.log("It didn't work you dolt")
+			},
+			success: function( data ){
+				console.log('success' + data);
+				
+			}
+			
+		});
+		
+	});	 
+});
+  
+
+ 
+
+ 
 

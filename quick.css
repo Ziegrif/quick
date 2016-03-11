@@ -5,9 +5,14 @@ div .clockDrag {
 	
 }
 
-.clockDrag {
-	position: absolute;
+img {
 	display: block;
+	margin: 0 auto;
+}
+.clockDrag {
+	position: relative;
+	display: block;
+	float: left;
 	height: 100px;
 	min-width: 100px;
 	border: 2px solid #ff751a;
@@ -26,11 +31,6 @@ div .clockDrag {
 	padding: 10px;
 	margin: 0 auto;
 	
-}
-
-img {
-	display: block;
-	margin: 0 auto;
 }
 
 .borderPatrol {
