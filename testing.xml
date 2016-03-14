@@ -10,6 +10,13 @@
     <dataPoint>add</dataPoint>
     <dataPoint>add</dataPoint>
     <dataPoint>da</dataPoint>
+    <dataPoint>data</dataPoint>
+    <dataPoint>data</dataPoint>
+    <dataPoint>data</dataPoint>
+    <dataPoint>data</dataPoint>
+    <dataPoint>Kissa</dataPoint>
+    <dataPoint>Eläin</dataPoint>
+    <dataPoint>Ruoka</dataPoint>
   </item>
   <Dropper>
     <target>tar2</target>
@@ -21,5 +28,12 @@
     <target>yes</target>
     <target>yes</target>
     <target>ya</target>
+    <target>targe</target>
+    <target>targe</target>
+    <target>tar</target>
+    <target>tar</target>
+    <target>Koira</target>
+    <target>Kissa</target>
+    <target>Ketsuppi</target>
   </Dropper>
 </items>

@@ -17,8 +17,8 @@ $dom = new DOMDocument("1.0");
 	$dom->loadXML($theXMLtoEdit->asXML());
 	$dom->save($whatWereEditing);
 	//Below code is an example check it before running.
-	$myJson = json_encode(array('dataPointer' => $dataPointer,'message'=> 'The group has not been removed'));
-	return $myJson;
+	$myJson = array('dataPointer' => $dataPointer,'message'=> 'The group has not been removed');
+	echo json_encode($myJson);
 
 
 

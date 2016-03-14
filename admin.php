@@ -26,11 +26,15 @@
 	<input id="address" name="address" placeholder="Pelin nimi"></input>
 	<input id="dataPointer" name="dataPointer" placeholder="datapoint"></input>
 	<input id="targetPointer" name="targetPointer" placeholder="target"></input>
+	<button id="addToList">Add to list</button>
 	
 	<button id="XMLchanges">Upload</button>
 	
 	<div id="output">
+	<ul id="outputUL">
 	
+	
+	</ul>
 	</div>
 	
 

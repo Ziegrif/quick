@@ -314,7 +314,27 @@ $(document).ready(function() {
 			});
 		
         });
+//lists the datapoints and targets for review
+var targetDatapointArray = [];
+
+$(document).ready(function(){
+	$("#addToList").click(function(){
 		
+	var listing = $("#outputUL");
+		
+			var rawdata = [];
+			rawdata.push($("#dataPointer").val(), $("#targetPointer").val());
+			targetDatapointArray.push(rawdata);
+			
+		$("#outputUL").html("");	
+			$.each(targetDatapointArray, function(i){
+				var li = $('<li>')
+				.appendTo(listing)
+				.text(targetDatapointArray[i]);
+			});
+			
+	});
+});	
 //this one is for generating and editing a newly created XML file.
  
  $(document).ready(function(){
@@ -329,20 +349,18 @@ $(document).ready(function() {
 		$.ajax({
 			url: 'changeTheXMLfile.php',
 			type: 'GET',
-			dataType: 'text',
+			dataType: 'json',
 			cache: false,
 			data: { address: generatedFile, dataPointer: dataPointToAdd, targetPointer: targetToAdd },
-			error: function(){
-				console.log("It didn't work you dolt")
+			error: function( data ){
+				console.log("It didn't work you dolt" + data)
 			},
 			success: function( data ){
+				console.log(data.dataPointer );
+			}
+			/* success: function( data ){
 				console.log('success' + data);
 				//Below code: Remove the ajax and make it a Json return dealio.
-			$.ajax({
-				url: generatedFile ,
-				type: 'GET',
-				datatype: 'xml' ,
-				cache: false,
 				success: function(returnedXMLResponse) {
 					$('dataPoint',returnedXMLResponse).each(function(){
 						var $allTheNewData = $(this).text();
@@ -369,9 +387,9 @@ $(document).ready(function() {
 					
 					
 				}
-			})
+			}) */
 				
-			}
+			//}
 			
 		});
 		
