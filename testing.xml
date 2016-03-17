@@ -1,39 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <items>
   <item>
-    <dataPoint>data2</dataPoint>
-    <dataPoint>data2</dataPoint>
-    <dataPoint>data2</dataPoint>
-    <dataPoint>yep</dataPoint>
-    <dataPoint>yue</dataPoint>
-    <dataPoint>yep</dataPoint>
-    <dataPoint>add</dataPoint>
-    <dataPoint>add</dataPoint>
-    <dataPoint>da</dataPoint>
-    <dataPoint>data</dataPoint>
-    <dataPoint>data</dataPoint>
-    <dataPoint>data</dataPoint>
-    <dataPoint>data</dataPoint>
-    <dataPoint>Kissa</dataPoint>
-    <dataPoint>Eläin</dataPoint>
-    <dataPoint>Ruoka</dataPoint>
+    <dataPoint id="0">1</dataPoint>
+    <dataPoint id="1">das</dataPoint>
   </item>
   <Dropper>
-    <target>tar2</target>
-    <target>tar2</target>
-    <target>tar2</target>
-    <target>da</target>
-    <target>yuuu</target>
-    <target>aye</target>
-    <target>yes</target>
-    <target>yes</target>
-    <target>ya</target>
-    <target>targe</target>
-    <target>targe</target>
-    <target>tar</target>
-    <target>tar</target>
-    <target>Koira</target>
-    <target>Kissa</target>
-    <target>Ketsuppi</target>
+    <target id="0">1</target>
+    <target id="1">1</target>
+    <target id="0">1</target>
+    <target id="1">fds</target>
   </Dropper>
 </items>

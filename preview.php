@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>admin</title>
+		<title>preview</title>
 		<link href="BStrapCss/bootstrap.min.css" rel="stylesheet">
 		<link rel="stylesheet" type="text/css" href="quick.css">
 		<meta name="apple-mobile-web-app-capable" content="yes">
@@ -17,35 +17,29 @@
 		<script type="text/javascript" src="quick.js"></script>
 	</head>
 	
+	
 	<body>
-	<form action="genFile.php" method="get">
-	<input name="fileName"></input>
-	<input type="submit" value="Generate file"></input>
-	</form>
-	
-	<input id="address" name="address" placeholder="Pelin nimi"></input>
-	<input id="dataPointer" name="dataPointer" placeholder="datapoint"></input>
-	<input id="targetPointer" name="targetPointer" placeholder="target"></input>
-	<button id="buttTarget">Add targets</button>
-	<select class='dexTarget'></select>
-	<button id="addDataInput">Add datapoint</button>
-	<button id="addToList">Add to list</button>
-	
-	<button id="XMLchanges">Upload</button>
-	
-	<div id="listArrayBase">
-	
-	</div>
-	<div id="output">
-	<ul id="outputUL">
-	
-	
-	</ul>
-	</div>
-	
+	<div class="container">
+			<div class="borderPatrol">
+				<?php
+				echo "
+					<button id=\"initPreview\">Open your preview</button>
+					<input id=\"previewedFileName\"></input>
+					
+					<div id=\"content\">
 
+					<div id=\"makeMeDraggable\" class=\"block dragging\">
+					</div>
+					
+					<div class=\"drop droppable\" id=\"makeMeDroppable\">
+					</div>
+			
+					</div>
+					";
+				?>
+			</div>
+		</div>
 	
-		
 	</body>
 	
 </html>

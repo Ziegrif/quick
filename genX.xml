@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<items>
+  <item>
+    <dataPoint id="0">data1</dataPoint>
+    <dataPoint id="1">data1</dataPoint>
+    <dataPoint id="2">data1</dataPoint>
+    <dataPoint id="3">data1</dataPoint>
+    <dataPoint id="4">data1</dataPoint>
+    <dataPoint id="5">data1</dataPoint>
+    <dataPoint id="6">data1</dataPoint>
+    <dataPoint id="7">data1</dataPoint>
+    <dataPoint id="8">data1</dataPoint>
+    <dataPoint id="9">data1</dataPoint>
+    <dataPoint id="0">work</dataPoint>
+    <dataPoint id="0">dataMore</dataPoint>
+  </item>
+  <Dropper>
+    <target id="0">target1</target>
+    <target id="1">target1</target>
+    <target id="2">target1</target>
+    <target id="3">target1</target>
+    <target id="4">target1</target>
+    <target id="5">target1</target>
+    <target id="6">target1</target>
+    <target id="7">target1</target>
+    <target id="8">target1</target>
+    <target id="9">target1</target>
+    <target id="0">damnit</target>
+    <target id="0">targetMore</target>
+  </Dropper>
+</items>
