@@ -348,8 +348,19 @@ $("#addToList").click(function(){
 	var listing = $("#outputUL");
 		
 			var rawdata = [];
-			var preppingPush = ($(".dataGlue, .dexTarget")).map(function(){return $(this).val();}).get();
-			targetDatapointArray.push(preppingPush, selectTargets);
+			var preppingPush = ($('#listArrayBase').find(".dataGlue, .dexTarget")).map(function(){return $(this).val();}).get();
+			console.log(preppingPush);
+			/* var m,n,tempSlicedtoTwoArray,chunk = preppingPush.length;
+			for (m=0,n=preppingPush.length; m<n; m+=chunk){
+				tempSlicedtoTwoArray = preppingPush.slice(m,m+chunk);
+			} */
+			var chunk = [];
+			while(preppingPush.length > 0){
+				chunk.push(preppingPush.splice(0 , 2));
+			}
+			console.log(chunk);
+			//console.log(tempSlicedtoTwoArray);
+			targetDatapointArray.push(chunk, selectTargets);
 			console.log(targetDatapointArray);
 			//$(".dataGlue .dexTarget").each(function(i, e){
 				//rawdata.push(testingDT);
@@ -393,6 +404,7 @@ $("#addToList").click(function(){
 				console.log("It didn't work you dolt" + data)
 			},
 			success: function( data ){
+				console.log(JSON.stringify(targetDatapointArray));
 				console.log("success");
 				//console.log(data.dataPointer );
 				//redirectWindow;

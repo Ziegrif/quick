@@ -8,11 +8,11 @@ if (!empty($_POST["address"])) {
 		$s = 0;
 		$theXMLtoEdit = simplexml_load_file($whatWereEditing);
 		foreach($array as $key => $subArray) {
-		$even = ($num % 2==0);
-		$odd = ($num % 2 !=0);
-		$dataPointer = $subArray[0];
+		
+		$dataPointer = array_column($subArray,[0][0]);
+		$dataIndex = array_column($subArray,[0][1]);
 		$targetPointer = $subArray[1];
-		$newData = $theXMLtoEdit->item->addChild('dataPoint', $dataPointer)->addAttribute("id","". $i++ . "");
+		$newData = $theXMLtoEdit->item->addChild('dataPoint', $dataPointer)->addAttribute("target","". $dataIndex . "");
 		$newDropper = $theXMLtoEdit->Dropper->addChild('target', $targetPointer)->addAttribute("id","". $s++ . "");
 		}
 		

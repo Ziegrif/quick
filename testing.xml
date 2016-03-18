@@ -1,13 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <items>
   <item>
-    <dataPoint id="0">1</dataPoint>
-    <dataPoint id="1">das</dataPoint>
+   
   </item>
   <Dropper>
-    <target id="0">1</target>
-    <target id="1">1</target>
-    <target id="0">1</target>
-    <target id="1">fds</target>
+   
   </Dropper>
 </items>

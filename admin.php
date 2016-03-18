@@ -24,7 +24,6 @@
 	</form>
 	
 	<input id="address" name="address" placeholder="Pelin nimi"></input>
-	<input id="dataPointer" name="dataPointer" placeholder="datapoint"></input>
 	<input id="targetPointer" name="targetPointer" placeholder="target"></input>
 	<button id="buttTarget">Add targets</button>
 	<select class='dexTarget'></select>
