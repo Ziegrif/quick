@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<items>
+  <item>
+    <dataPoint target="3">by</dataPoint>
+    <dataPoint target="0">ny</dataPoint>
+    <dataPoint target="0">my</dataPoint>
+    <dataPoint target="4">ky</dataPoint>
+    <dataPoint target="0">jy</dataPoint>
+    <dataPoint target="1">vy</dataPoint>
+    <dataPoint target="3">yh</dataPoint>
+    <dataPoint target="0">yo</dataPoint>
+    <dataPoint target="5">oy</dataPoint>
+    <dataPoint target="5">as</dataPoint>
+    <dataPoint target="0">ds</dataPoint>
+  </item>
+  <Dropper>
+    <target id="1">qq</target>
+    <target id="2">ww</target>
+    <target id="3">ee</target>
+    <target id="4">rr</target>
+    <target id="5">yy</target>
+  </Dropper>
+</items>

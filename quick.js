@@ -319,6 +319,7 @@ $(document).ready(function() {
 //lists the datapoints and targets for review
 var targetDatapointArray = [];
 var selectTargets = [];
+var chunk = [];
 
 $(document).ready(function(){
 	$("#buttTarget").click(function(){
@@ -327,8 +328,12 @@ $(document).ready(function(){
 		selectTargets.push($("#targetPointer").val());
 		console.log(selectTargets);
 		var t = 1;
+		var opt = $('<option class=\'targetOption\'></option>')
+				.attr("value", 0)
+				.text("ei paria")
+				.appendTo(".dexTarget");
 			$.each(selectTargets, function(i){
-				var opt = $('<option class=\'targetOption\'></option>')
+				opt = $('<option class=\'targetOption\'></option>')
 				.attr("value", t++)
 				.text(selectTargets[i])
 				.appendTo(".dexTarget");
@@ -340,7 +345,6 @@ $(document).ready(function(){
 	$("#addDataInput").click(function(){
 		$('<input class=\'dataGlue\'></input>').appendTo("#listArrayBase");
 		$('.dexTarget:first').clone().appendTo("#listArrayBase");
-		
 		
 	});
 $("#addToList").click(function(){
@@ -354,38 +358,39 @@ $("#addToList").click(function(){
 			for (m=0,n=preppingPush.length; m<n; m+=chunk){
 				tempSlicedtoTwoArray = preppingPush.slice(m,m+chunk);
 			} */
-			var chunk = [];
+			
 			while(preppingPush.length > 0){
 				chunk.push(preppingPush.splice(0 , 2));
 			}
 			console.log(chunk);
 			//console.log(tempSlicedtoTwoArray);
-			targetDatapointArray.push(chunk, selectTargets);
-			console.log(targetDatapointArray);
+			//targetDatapointArray.push(chunk, selectTargets);
+			//console.log(targetDatapointArray);
 			//$(".dataGlue .dexTarget").each(function(i, e){
 				//rawdata.push(testingDT);
 				//targetDatapointArray.push(rawdata);
 				$("#outputUL").html("");	
-			$.each(targetDatapointArray, function(i){
+			$.each(chunk, function(i){
 				var li = $('<li>')
 				.appendTo(listing)
-				.text(targetDatapointArray[i]);
-			});
-			console.log(targetDatapointArray);
+				.text(chunk[i]);
+			
+			//console.log(targetDatapointArray);
 				
 	});
 });
 	
-		
+});		
 			
 	
 //this one is for generating and editing a newly created XML file.
- 
+ //var generatedFile = $('#address').val() + '.xml';	
  $(document).ready(function(){
 		
 		$('#XMLchanges').click(function(){
 		var generatedFile = $('#address').val() + '.xml';	
-		//var redirectWindow = window.open('preview.php', '_blank');
+		console.log(generatedFile);
+		var redirectWindow = window.open('preview.php?thing='+generatedFile, '_blank');
 		var generatedFile = $('#address').val() + '.xml';
 		var dataPointToAdd = $('#dataPointer').val();
 		var targetToAdd = $('#targetPointer').val();
@@ -398,17 +403,18 @@ $("#addToList").click(function(){
 			type: 'POST',
 			dataType: 'text',
 			cache: false,
-			data: {address: generatedFile, targetDatapointArray: JSON.stringify(targetDatapointArray)},
+			data: {address: generatedFile, chunk: chunk, selectTargets: selectTargets},
 			//data: { address: generatedFile, dataPointer: dataPointToAdd, targetPointer: targetToAdd },
 			error: function( data ){
 				console.log("It didn't work you dolt" + data)
 			},
 			success: function( data ){
-				console.log(JSON.stringify(targetDatapointArray));
-				console.log("success");
+				console.log(data);
+				//console.log(JSON.stringify(targetDatapointArray));
+				//console.log("success");
 				//console.log(data.dataPointer );
-				//redirectWindow;
-				//$( "#previewedFileName" ).val(generatedFile);
+				redirectWindow;
+				
 			}
 			/* success: function( data ){
 				console.log('success' + data);
@@ -457,7 +463,7 @@ $('#initPreview').click(function(){
 	//this generates the draggables from the generate.xml file form the datapoint element
 	var tmpArc=[];
 	var tmpDrop=[];
-	var xmlFileName = $("#previewedFileName").val() + '.xml';
+	var xmlFileName = $("#previewedFileName").val();
 
 	$.ajax({
 			url: xmlFileName,
@@ -500,7 +506,7 @@ $('#initPreview').click(function(){
 	
 					var targetting = [$(this).text() , $(this).attr('id')]
 					tmpDrop.push(targetting);
-			})
+			});
 			
 			for (var i=0; i<tmpDrop.length; i++) {
 				$("<div class=" + $DropClass + ">" + tmpDrop[i][0] + '</div>').data('number', tmpDrop[i][1]).appendTo('.drop').droppable( {
@@ -511,7 +517,7 @@ $('#initPreview').click(function(){
 					activate: handleDragEvent
 				});
 				//console.log(i +  ': data-number ' + $('#item_'+tmpDrop[i]).data('number'));
-			}
+			};
 			//console.log(tmpArc);
 			//This here randomizes the draggables and then makes them into different divs with the numbero class.
 			
@@ -536,6 +542,7 @@ $('#initPreview').click(function(){
 	
 	});
 });
+
  
 
  

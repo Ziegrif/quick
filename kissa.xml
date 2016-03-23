@@ -1,31 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <items>
   <item>
-    <dataPoint id="0">data</dataPoint>
-    <dataPoint id="1">data</dataPoint>
-    <dataPoint id="2">data</dataPoint>
-    <dataPoint id="3">data</dataPoint>
-    <dataPoint id="4">data</dataPoint>
-    <dataPoint id="5">data</dataPoint>
-    <dataPoint id="0">data</dataPoint>
-    <dataPoint id="1">data</dataPoint>
-    <dataPoint id="2">data</dataPoint>
-    <dataPoint id="3">data</dataPoint>
-    <dataPoint id="4">data</dataPoint>
-    <dataPoint id="5">data</dataPoint>
+    <dataPoint target="1">aaa</dataPoint>
+    <dataPoint target="2">bbb</dataPoint>
+    <dataPoint target="1">yy</dataPoint>
+    <dataPoint target="1">kaa</dataPoint>
+    <dataPoint target="2">koo</dataPoint>
+    <dataPoint target="1">dd</dataPoint>
+    <dataPoint target="0">gg</dataPoint>
+    <dataPoint target="1">a</dataPoint>
+    <dataPoint target="0">2</dataPoint>
   </item>
   <Dropper>
-    <target id="0">tar</target>
-    <target id="1">tar</target>
-    <target id="2">tar</target>
-    <target id="3">tar</target>
-    <target id="4">tar</target>
-    <target id="5">tar</target>
-    <target id="0">tar</target>
-    <target id="1">tar</target>
-    <target id="2">tar</target>
-    <target id="3">tar</target>
-    <target id="4">tar</target>
-    <target id="5">tar</target>
+    <target id="1">koira</target>
+    <target id="2">koira</target>
+    <target id="3">koira</target>
+    <target id="1">1</target>
+    <target id="2">2</target>
+    <target id="1">aaa</target>
+    <target id="1">juttu</target>
   </Dropper>
 </items>

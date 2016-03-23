@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<items>
+  <item>
+    <dataPoint target="0">dsf</dataPoint>
+    <dataPoint target="0">gdf</dataPoint>
+    <dataPoint target="0">hgf</dataPoint>
+    <dataPoint target="0">kjkj</dataPoint>
+    <dataPoint target="0">hgf</dataPoint>
+  </item>
+  <Dropper>
+    <target id="1">asddsa</target>
+    <target id="2">asddsa</target>
+    <target id="3">asddsa</target>
+    <target id="4">asddsa</target>
+    <target id="5">asddsa</target>
+  </Dropper>
+</items>

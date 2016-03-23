@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<items>
+  <item>
+    <dataPoint target="0">wqad</dataPoint>
+    <dataPoint target="1">fds</dataPoint>
+  </item>
+  <Dropper>
+    <target id="1">adw</target>
+    <target id="2">adw</target>
+    <target id="3">adw</target>
+    <target id="4">adw</target>
+  </Dropper>
+</items>

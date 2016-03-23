@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+<?php
+$addressing = $_GET['thing'];
+?>
 <html>
 	<head>
 		<title>preview</title>
@@ -24,7 +27,7 @@
 				<?php
 				echo "
 					<button id=\"initPreview\">Open your preview</button>
-					<input id=\"previewedFileName\"></input>
+					<input id=\"previewedFileName\" value=". $addressing ."></input>
 					
 					<div id=\"content\">
 
@@ -33,8 +36,9 @@
 					
 					<div class=\"drop droppable\" id=\"makeMeDroppable\">
 					</div>
-			
+					
 					</div>
+					<button onclick='validation()'>Validate</button>
 					";
 				?>
 			</div>
