@@ -1,48 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <items>
 	<item>
-		<dataPoint target="1">5 + 13 =</dataPoint>
-		<dataPoint target="2">17 - 8 =</dataPoint>
-		<dataPoint target="3">3 x 9 =</dataPoint>
-		<dataPoint target="4">18 : 9 =</dataPoint>
-		<dataPoint target="5">1,4 + 0,5 =</dataPoint>
-		<dataPoint target="6">2,7 - 0,03 =</dataPoint>
-		<dataPoint target="7">1,2 x 5 =</dataPoint>
-		<dataPoint target="8">5 / 2 =</dataPoint>
-		<dataPoint target="9">2 h 25 min = X min</dataPoint>
-		<dataPoint target="10">185 min = X h Y min</dataPoint>
-		<dataPoint target="11">120 - 170 =</dataPoint>
-		<dataPoint target="12">-121 - 18 =</dataPoint>
-		<dataPoint target="13">9 + 4 x 3 =</dataPoint>
-		<dataPoint target="14">5 x (6 + 7) =</dataPoint>
-		<dataPoint target="15">3 h 15 min = X min</dataPoint>
-		<dataPoint target="16">130 min = X h Y min</dataPoint>
-		<dataPoint target="17">6^6 =</dataPoint>
-		<dataPoint target="18">4^3 + 5^2 =</dataPoint>
-		<dataPoint target="19">11a + 5b - 9a</dataPoint>
-		
+		<dataPoint target="1">18</dataPoint>
+		<dataPoint target="2">9</dataPoint>
+		<dataPoint target="3">27</dataPoint>
+		<dataPoint target="4">2</dataPoint>
+		<dataPoint target="5">1,9</dataPoint>
+		<dataPoint target="6">2,67</dataPoint>
+		<dataPoint target="7">6</dataPoint>
+		<dataPoint target="8">2,5</dataPoint>
+		<dataPoint target="9">145 min</dataPoint>
+		<dataPoint target="10">3h 5 min</dataPoint>
+		<dataPoint target="11">-50</dataPoint>
+		<dataPoint target="12">-139</dataPoint>
+		<dataPoint target="13">21</dataPoint>
+		<dataPoint target="14">65</dataPoint>
+		<dataPoint target="15">195 min</dataPoint>
+		<dataPoint target="16">2 h 10 min</dataPoint>
+		<dataPoint target="17">46656</dataPoint>
+		<dataPoint target="18">89</dataPoint>
+		<dataPoint target="19">2a + 5b</dataPoint>
 		
 	</item>
 	<dropper>
-		<target id="1">18</target>
-		<target id="2">9</target>
-		<target id="3">27</target>
-		<target id="4">2</target>
-		<target id="5">1,9</target>
-		<target id="6">2,67</target>
-		<target id="7">6</target>
-		<target id="8">2,5</target>
-		<target id="9">145 min</target>
-		<target id="10">3h 5 min</target>
-		<target id="11">-50</target>
-		<target id="12">-139</target>
-		<target id="13">21</target>
-		<target id="14">65</target>
-		<target id="15">195 min</target>
-		<target id="16">2 h 10 min</target>
-		<target id="17">46656</target>
-		<target id="18">89</target>
-		<target id="19">2a + 5b</target>
-		
+		<target id="1">5 + 13 =</target>
+		<target id="2">17 - 8 =</target>
+		<target id="3">3 x 9 =</target>
+		<target id="4">18 : 9 =</target>
+		<target id="5">1,4 + 0,5 =</target>
+		<target id="6">2,7 - 0,03 =</target>
+		<target id="7">1,2 x 5 =</target>
+		<target id="8">5 / 2 =</target>
+		<target id="9">2 h 25 min = X min</target>
+		<target id="10">185 min = X h Y min</target>
+		<target id="11">120 - 170 =</target>
+		<target id="12">-121 - 18 =</target>
+		<target id="13">9 + 4 x 3 =</target>
+		<target id="14">5 x (6 + 7) =</target>
+		<target id="15">3 h 15 min = X min</target>
+		<target id="16">130 min = X h Y min</target>
+		<target id="17">6^6 =</target>
+		<target id="18">4^3 + 5^2 =</target>
+		<target id="19">11a + 5b - 9a</target>
 	</dropper>
 </items>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<items>
+  <item>
+    <dataPoint target="1">1</dataPoint>
+    <dataPoint target="6">36</dataPoint>
+    <dataPoint target="11">15</dataPoint>
+    <dataPoint target="16">50</dataPoint>
+    <dataPoint target="2">6</dataPoint>
+    <dataPoint target="7">135</dataPoint>
+    <dataPoint target="12">20</dataPoint>
+    <dataPoint target="17">8</dataPoint>
+    <dataPoint target="3">13</dataPoint>
+    <dataPoint target="8">45</dataPoint>
+    <dataPoint target="13">51</dataPoint>
+    <dataPoint target="18">56</dataPoint>
+    <dataPoint target="4">17</dataPoint>
+    <dataPoint target="9">4</dataPoint>
+    <dataPoint target="14">35</dataPoint>
+    <dataPoint target="19">54</dataPoint>
+    <dataPoint target="5">20</dataPoint>
+    <dataPoint target="10">12</dataPoint>
+    <dataPoint target="15">30</dataPoint>
+    <dataPoint target="20">3</dataPoint>
+  </item>
+  <Dropper>
+    <target id="1">30 - 29 =</target>
+    <target id="2">56 - 50 = </target>
+    <target id="3">17 - 4 = </target>
+    <target id="4">38 -21 = </target>
+    <target id="5">39 - 19 = </target>
+    <target id="6">48 -12 = </target>
+    <target id="7">- 46 + 59 = </target>
+    <target id="8">-40 + 85 = </target>
+    <target id="9">-29 + 33 = </target>
+    <target id="10">24 -12 = </target>
+    <target id="11">60 - 45 = </target>
+    <target id="12">38 -18 =</target>
+    <target id="13">70 -19 = </target>
+    <target id="14">56 - 21 = </target>
+    <target id="15">-4 + 34 = </target>
+    <target id="16">52 - 2 = </target>
+    <target id="17">46 - 38 = </target>
+    <target id="18">82 - 26 = </target>
+    <target id="19">-26 + 80 = </target>
+    <target id="20">-1 + 4 = </target>
+  </Dropper>
+</items>

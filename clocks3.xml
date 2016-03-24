@@ -11,8 +11,8 @@
 		<dataPoint clocks="true" target="8" src="images/clockFace/klo2.png">S8</dataPoint>
 		<dataPoint clocks="true" target="9" src="images/clockFace/klo9.png">S9</dataPoint>
 		<dataPoint clocks="true" target="10" src="images/clockFace/puoli4.png">S10</dataPoint>
-		<dataPoint clocks="true" target="11" src="images/clockFace/puoliKolme.png">S11</dataPoint>
-		<dataPoint clocks="true" target="12" src="images/clockFace/tasan12.png">S12</dataPoint>
+		<!-- <dataPoint clocks="true" target="11" src="images/clockFace/puoliKolme.png">S11</dataPoint>
+		<dataPoint clocks="true" target="12" src="images/clockFace/tasan12.png">S12</dataPoint> -->
 		
 		
 		
@@ -28,8 +28,8 @@
 		<target id="8">Tasan kello kaksi</target>
 		<target id="9">Tasan kello yhdeksän</target>
 		<target id="10">Puoli neljä</target>
-		<target id="11">Puoli kolme</target>
-		<target id="12">Tasan kello kaksitoista</target>
+		<!-- <target id="11">Puoli kolme</target>
+		<target id="12">Tasan kello kaksitoista</target> -->
 		
 		
 	</dropper>

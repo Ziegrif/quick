@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<items>
+  <item>
+    <dataPoint target="1">14</dataPoint>
+    <dataPoint target="2">10</dataPoint>
+    <dataPoint target="3">54</dataPoint>
+    <dataPoint target="4">81</dataPoint>
+    <dataPoint target="5">6</dataPoint>
+    <dataPoint target="6">8</dataPoint>
+    <dataPoint target="7">12</dataPoint>
+    <dataPoint target="8">25</dataPoint>
+    <dataPoint target="9">30</dataPoint>
+    <dataPoint target="10">9</dataPoint>
+    <dataPoint target="11">18</dataPoint>
+    <dataPoint target="12">0</dataPoint>
+    <dataPoint target="13">48</dataPoint>
+    <dataPoint target="14">120</dataPoint>
+    <dataPoint target="15">360</dataPoint>
+    <dataPoint target="16">160</dataPoint>
+    <dataPoint target="17">2700</dataPoint>
+    <dataPoint target="18">10000</dataPoint>
+    <dataPoint target="19">9000000</dataPoint>
+  </item>
+  <Dropper>
+    <target id="1">2 x 7 =</target>
+    <target id="2">5 x 2 =</target>
+    <target id="3">6 x 9 =</target>
+    <target id="4">8 x 9 =</target>
+    <target id="5">6 x 1 =</target>
+    <target id="6">2 x 4 =</target>
+    <target id="7">3 x 4 =</target>
+    <target id="8">5 x 5 =</target>
+    <target id="9">10 x 3 =</target>
+    <target id="10">3 x 3 =</target>
+    <target id="11">9 x 2 =</target>
+    <target id="12">1 x 0 =</target>
+    <target id="13">8 x 6 =</target>
+    <target id="14">2 x 60 =</target>
+    <target id="15">6 x 60 =</target>
+    <target id="16">80 x 2 =</target>
+    <target id="17">900 x 3 =</target>
+    <target id="18">100 x 100 =</target>
+    <target id="19">3000 x 3000 =</target>
+  </Dropper>
+</items>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<items>
+  <item>
+    <dataPoint target="13">89</dataPoint>
+    <dataPoint target="12">71</dataPoint>
+    <dataPoint target="11">141</dataPoint>
+    <dataPoint target="10">89</dataPoint>
+    <dataPoint target="9">108</dataPoint>
+    <dataPoint target="8">105</dataPoint>
+    <dataPoint target="7">180</dataPoint>
+    <dataPoint target="6">150</dataPoint>
+    <dataPoint target="5">122</dataPoint>
+    <dataPoint target="4">29</dataPoint>
+    <dataPoint target="3">76</dataPoint>
+    <dataPoint target="2">67</dataPoint>
+    <dataPoint target="1">79</dataPoint>
+  </item>
+  <Dropper>
+    <target id="1">8 + 71 =</target>
+    <target id="2">23 + 44 =</target>
+    <target id="3">4 + 72 =</target>
+    <target id="4">18 + 11 =</target>
+    <target id="5">58 + 64 = </target>
+    <target id="6">68 + 82 =</target>
+    <target id="7">85 + 95</target>
+    <target id="8">60 + 45 =</target>
+    <target id="9">49 + 59 =</target>
+    <target id="10">49 + 40 =</target>
+    <target id="11">48 + 93 =</target>
+    <target id="12">11 + 60 =</target>
+    <target id="13">65 + 24 =</target>
+  </Dropper>
+</items>

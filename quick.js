@@ -101,12 +101,12 @@ function change() {
 							$DropClass = 'dropTarget';
 							$draggEr = 'numbero audioClass';
 						} else if ($clocks == "true") {
-							$content = '<img src="' +  $(this).attr('src') + '" height=\'95\' width=\'100\' />';
+							$content = '<img src="' +  $(this).attr('src') + '" class="imgReg"/>';
 							$DropClass = 'clockDrop';
 							$draggEr = 'clockDrag';
 						
 						} else {
-							$content = '<img src="' +  $(this).attr('src') + ' height=\'90\' width=\'90\' />';
+							$content = '<img src="' +  $(this).attr('src') + ' height=\'150\' width=\'150\' />';
 							$DropClass = 'dropTargetImage' + $(this).text();
 							$draggEr = 'imageDragger';
 						}
@@ -209,10 +209,12 @@ function handleDragEvent(event, ui){
 //This function checks for right answers
 function validation(){
 	if($("div").hasClass("oikein")){
-		$(".oikein").toggleClass("finish")
+		$(".oikein").toggleClass("finish");
 		
 	}else if($("div").hasClass("imageOikein")){
-	$(".imageOikein").toggleClass("imageFinish")}; 
+	$(".imageOikein").toggleClass("imageFinish");
+	$('.imageOikein img').toggleClass('imageResize');
+	}; 
 		
 	
 }
@@ -344,8 +346,18 @@ $(document).ready(function(){
 	
 	$("#addDataInput").click(function(){
 		$('<input class=\'dataGlue\'></input>').appendTo("#listArrayBase");
+		
 		$('.dexTarget:first').clone().appendTo("#listArrayBase");
 		
+	});
+	$("#removeLastDP").click(function(){
+		$(".dataGlue").last().remove();
+		$(".dexTarget").last().remove();
+	});
+	
+	$("#removeLastTAR").click(function(){
+		selectTargets.pop();
+		$(".targetOption").last().remove();
 	});
 $("#addToList").click(function(){
 		

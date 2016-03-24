@@ -18,33 +18,40 @@
 	</head>
 	
 	<body>
-	<form action="genFile.php" method="get">
-	<input name="fileName"></input>
-	<input type="submit" value="Generate file"></input>
-	</form>
-	
-	<input id="address" name="address" placeholder="Pelin nimi"></input>
-	<input id="targetPointer" name="targetPointer" placeholder="target"></input>
-	<button id="buttTarget">Add targets</button>
-	<select class='dexTarget'></select>
-	<button id="addDataInput">Add datapoint</button>
-	<button id="addToList">Add to list</button>
-	
-	<button id="XMLchanges">Upload</button>
-	
-	<div id="listArrayBase">
-	
-	</div>
-	<div id="output">
-	<ul id="outputUL">
-	
-	
-	</ul>
-	</div>
+	<div class="container">
+		<form id="adminForm" action="genFile.php" method="get">
+		<input name="fileName"></input>
+		<input type="submit" value="Generate file"></input>
+		</form>
+		<div id="menuAddress">
+			<input id="address" name="address" placeholder="Pelin nimi"></input>
+		</div>
+		<div id="menuTargets">
+			<input id="targetPointer" name="targetPointer" placeholder="target"></input>
+			<button id="buttTarget">Add targets</button>
+			<button id="removeLastTAR">Remove last Target</button>
+			<select class='dexTarget'></select>
+		</div>
+		<div id="menuDataPoints">
+			<button id="addDataInput">Add datapoint</button>
+			<button id="removeLastDP">Remove last datapoint</button>
+			<button id="addToList">Add to list</button>
+			<button id="XMLchanges">Upload</button>
+		</div>
+		
+		<div id="listArrayBase">
+		
+		</div>
+		<div id="output">
+		<ul id="outputUL">
+		
+		
+		</ul>
+		</div>
 	
 
 	
-		
+	</div>
 	</body>
 	
 </html>

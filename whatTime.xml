@@ -1,53 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <items>
 	<item>
-		<dataPoint target="20">2 h 45 min = </dataPoint>
-		<dataPoint target="21">15 h =</dataPoint>
-		<dataPoint target="22">6 h 10 min =</dataPoint>
-		<dataPoint target="23">4 min =</dataPoint>
-		<dataPoint target="24">36 min =</dataPoint>
-		<dataPoint target="25">3h 50 min =</dataPoint>
-		<dataPoint target="26">1 h 10 min =</dataPoint>
-		<dataPoint target="27">4h 24 min =</dataPoint>
-		<dataPoint target="28">98 min =</dataPoint>
-		<dataPoint target="29">100 min  =</dataPoint>
-		<dataPoint target="30">200 min =</dataPoint>
-		<dataPoint target="31">750 min =</dataPoint>
-		<dataPoint target="32">1020 min =</dataPoint>
-		<dataPoint target="33">17 min =</dataPoint>
-		<dataPoint target="34">1.5 min =</dataPoint>
-		<dataPoint target="35">70 s =</dataPoint>
-		<dataPoint target="36">0.25 min =</dataPoint>
-		<dataPoint target="37">7200 s =</dataPoint>
-		<dataPoint target="38">24 h =</dataPoint>
-		<dataPoint target="39">1 a =</dataPoint>
-		<dataPoint target="40">730 d =</dataPoint>
+		<dataPoint target="20">165 min</dataPoint>
+		<dataPoint target="21">900 min</dataPoint>
+		<dataPoint target="22">370 min</dataPoint>
+		<dataPoint target="23">240 s</dataPoint>
+		<dataPoint target="24">2160 s</dataPoint>
+		<dataPoint target="25">230 min</dataPoint>
+		<dataPoint target="26">70 min</dataPoint>
+		<dataPoint target="27">264 min</dataPoint>
+		<dataPoint target="28">1 h 38 min</dataPoint>
+		<dataPoint target="29">1 h 40 min</dataPoint>
+		<dataPoint target="30">3 h 20 min</dataPoint>
+		<dataPoint target="31">12 h 30 min</dataPoint>
+		<dataPoint target="32">17 h</dataPoint>
+		<dataPoint target="33">1020 s</dataPoint>
+		<dataPoint target="34">90 s</dataPoint>
+		<dataPoint target="35">1 min 10 s</dataPoint>
+		<dataPoint target="36">15 s</dataPoint>
+		<dataPoint target="37">2 h</dataPoint>
+		<dataPoint target="38">1 d</dataPoint>
+		<dataPoint target="39">365 d</dataPoint>
+		<dataPoint target="40">2 a</dataPoint>
 		
 		
 	</item>
 	<dropper>
-		<target id="20">165 min</target>
-		<target id="21">900 min</target>
-		<target id="22">370 min</target>
-		<target id="23">240 s</target>
-		<target id="24">2160 s</target>
-		<target id="25">230 min</target>
-		<target id="26">70 min</target>
-		<target id="27">264 min</target>
-		<target id="28">1 h 38 min</target>
-		<target id="29">1 h 40 min</target>
-		<target id="30">3 h 20 min</target>
-		<target id="31">12 h 30 min</target>
-		<target id="32">17 h</target>
-		<target id="33">1020 s</target>
-		<target id="34">90 s</target>
-		<target id="35">1 min 10 s</target>
-		<target id="36">15 s</target>
-		<target id="37">2 h</target>
-		<target id="38">1 d</target>
-		<target id="39">365 d</target>
-		<target id="40">2 a</target>
-		
+		<target id="20">2 h 45 min = </target>
+		<target id="21">15 h =</target>
+		<target id="22">6 h 10 min =</target>
+		<target id="23">4 min =</target>
+		<target id="24">36 min =</target>
+		<target id="25">3h 50 min =</target>
+		<target id="26">1 h 10 min =</target>
+		<target id="27">4h 24 min =</target>
+		<target id="28">98 min =</target>
+		<target id="29">100 min  =</target>
+		<target id="30">200 min =</target>
+		<target id="31">750 min =</target>
+		<target id="32">1020 min =</target>
+		<target id="33">17 min =</target>
+		<target id="34">1.5 min =</target>
+		<target id="35">70 s =</target>
+		<target id="36">0.25 min =</target>
+		<target id="37">7200 s =</target>
+		<target id="38">24 h =</target>
+		<target id="39">1 a =</target>
+		<target id="40">730 d =</target>
 		
 	</dropper>
 </items>

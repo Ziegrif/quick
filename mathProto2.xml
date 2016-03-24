@@ -1,52 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <items>
 	<item>
-		<dataPoint target="20">3x -5 =13 || Selvitä x</dataPoint>
-		<dataPoint target="21">7 + 14 =</dataPoint>
-		<dataPoint target="21">7 x 3 =</dataPoint>
-		<dataPoint target="22">22 - 5 =</dataPoint>
-		<dataPoint target="22">5 + 2 x 6 =</dataPoint>
-		<dataPoint target="22">2^3 + 3^2 =</dataPoint>
-		<dataPoint target="24">15 : 3 =</dataPoint>
-		<dataPoint target="25">1,2 + 1,3 =</dataPoint>
-		<dataPoint target="26">4,2 - 0,02 =</dataPoint>
-		<dataPoint target="27">1,5 x 3 =</dataPoint>
-		<dataPoint target="28">3 / 2 =</dataPoint>
-		<dataPoint target="29">200€ -> 5% =</dataPoint>
-		<dataPoint target="30">82€ -> 1% =</dataPoint>
-		<dataPoint target="31">110 - 250 =</dataPoint>
-		<dataPoint target="32">-38 - 49 =</dataPoint>
-		<dataPoint target="34">6 x (13 - 5) =</dataPoint>
-		<dataPoint target="35">500€ -> 4% =</dataPoint>
-		<dataPoint target="36">12€ -> 1% =</dataPoint>
-		<dataPoint target="37">5^2 =</dataPoint>
-		<dataPoint target="39">8a + 4b - 2a =</dataPoint>
-		<dataPoint target="40">4x - 5 = 7 || selvitä X</dataPoint>
+		<dataPoint target="20">6</dataPoint>
+		<dataPoint target="21">21</dataPoint>
+		<dataPoint target="21">21</dataPoint>
+		<dataPoint target="22">17</dataPoint>
+		<dataPoint target="22">17</dataPoint>
+		<dataPoint target="22">17</dataPoint>
+		<dataPoint target="24">5</dataPoint>
+		<dataPoint target="25">2,5</dataPoint>
+		<dataPoint target="26">4,18</dataPoint>
+		<dataPoint target="27">4,5</dataPoint>
+		<dataPoint target="28">1,5</dataPoint>
+		<dataPoint target="29">10€</dataPoint>
+		<dataPoint target="30">0,82€</dataPoint>
+		<dataPoint target="31">-140</dataPoint>
+		<dataPoint target="32">-87</dataPoint>
+		<dataPoint target="34">48</dataPoint>
+		<dataPoint target="35">20€</dataPoint>
+		<dataPoint target="36">0,12€</dataPoint>
+		<dataPoint target="37">25</dataPoint>
+		<dataPoint target="39">3a + 2b</dataPoint>
+		<dataPoint target="40">3</dataPoint>
 		
 		
 	</item>
 	<dropper>
-		<target id="20">6</target>
-		<target id="21">21</target>
-		<target id="21">21</target>
-		<target id="22">17</target>
-		<target id="22">17</target>
-		<target id="22">17</target>
-		<target id="24">5</target>
-		<target id="25">2,5</target>
-		<target id="26">4,18</target>
-		<target id="27">4,5</target>
-		<target id="28">1,5</target>
-		<target id="29">10€</target>
-		<target id="30">0,82€</target>
-		<target id="31">-140</target>
-		<target id="32">-87</target>
-		<target id="34">48</target>
-		<target id="35">20€</target>
-		<target id="36">0,12€</target>
-		<target id="37">25</target>
-		<target id="39">3a + 2b</target>
-		<target id="40">3</target>
+		
+		<target id="20">3x -5 =13 || Selvitä x</target>
+		<target id="21">7 + 14 =</target>
+		<target id="21">7 x 3 =</target>
+		<target id="22">22 - 5 =</target>
+		<target id="22">5 + 2 x 6 =</target>
+		<target id="22">2^3 + 3^2 =</target>
+		<target id="24">15 : 3 =</target>
+		<target id="25">1,2 + 1,3 =</target>
+		<target id="26">4,2 - 0,02 =</target>
+		<target id="27">1,5 x 3 =</target>
+		<target id="28">3 / 2 =</target>
+		<target id="29">200€ -> 5% =</target>
+		<target id="30">82€ -> 1% =</target>
+		<target id="31">110 - 250 =</target>
+		<target id="32">-38 - 49 =</target>
+		<target id="34">6 x (13 - 5) =</target>
+		<target id="35">500€ -> 4% =</target>
+		<target id="36">12€ -> 1% =</target>
+		<target id="37">5^2 =</target>
+		<target id="39">8a + 4b - 2a =</target>
+		<target id="40">4x - 5 = 7 || selvitä X</target>
 		
 		
 	</dropper>

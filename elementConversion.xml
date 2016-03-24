@@ -1,53 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <items>
 	<item>
-		<dataPoint target="20">1 kg = </dataPoint>
-		<dataPoint target="21">3 l =</dataPoint>
-		<dataPoint target="22">43 mm =</dataPoint>
-		<dataPoint target="23">4 m =</dataPoint>
-		<dataPoint target="24">5 km =</dataPoint>
-		<dataPoint target="25">89 mg =</dataPoint>
-		<dataPoint target="26">9.56 kg =</dataPoint>
-		<dataPoint target="27">15 mg =</dataPoint>
-		<dataPoint target="28">98 cm =</dataPoint>
-		<dataPoint target="29">9500 ml  =</dataPoint>
-		<dataPoint target="30">30 dam =</dataPoint>
-		<dataPoint target="31">500 m =</dataPoint>
-		<dataPoint target="32">6 ml =</dataPoint>
-		<dataPoint target="33">20 hg =</dataPoint>
-		<dataPoint target="34">1.5 dam =</dataPoint>
-		<dataPoint target="35">30 s =</dataPoint>
-		<dataPoint target="36">1.5 min =</dataPoint>
-		<dataPoint target="37">7200 s =</dataPoint>
-		<dataPoint target="38">24 h =</dataPoint>
-		<dataPoint target="39">1 a =</dataPoint>
-		<dataPoint target="40">1 ha</dataPoint>
+		<dataPoint target="20">1000 g</dataPoint>
+		<dataPoint target="21">30 dl</dataPoint>
+		<dataPoint target="22">4.3 cm</dataPoint>
+		<dataPoint target="23">400 cm</dataPoint>
+		<dataPoint target="24">50 000 00 mm</dataPoint>
+		<dataPoint target="25">0.089 kg</dataPoint>
+		<dataPoint target="26">9.56 l</dataPoint>
+		<dataPoint target="27">0.015 kg</dataPoint>
+		<dataPoint target="28">9.8 m</dataPoint>
+		<dataPoint target="29">9.5 l</dataPoint>
+		<dataPoint target="30">300 m</dataPoint>
+		<dataPoint target="31">0.5 km</dataPoint>
+		<dataPoint target="32">0.001 l</dataPoint>
+		<dataPoint target="33">2000 g</dataPoint>
+		<dataPoint target="34">0.015 km</dataPoint>
+		<dataPoint target="35">0.5 min</dataPoint>
+		<dataPoint target="36">90 s</dataPoint>
+		<dataPoint target="37">2 h</dataPoint>
+		<dataPoint target="38">1 d</dataPoint>
+		<dataPoint target="39">365 d</dataPoint>
+		<dataPoint target="40">10000 m<sup>2</sup></dataPoint>
+		
 		
 		
 	</item>
 	<dropper>
-		<target id="20">1000 g</target>
-		<target id="21">30 dl</target>
-		<target id="22">4.3 cm</target>
-		<target id="23">400 cm</target>
-		<target id="24">50 000 00 mm</target>
-		<target id="25">0.089 kg</target>
-		<target id="26">9.56 l</target>
-		<target id="27">0.015 kg</target>
-		<target id="28">9.8 m</target>
-		<target id="29">9.5 l</target>
-		<target id="30">300 m</target>
-		<target id="31">0.5 km</target>
-		<target id="32">0.001 l</target>
-		<target id="33">2000 g</target>
-		<target id="34">0.015 km</target>
-		<target id="35">0.5 min</target>
-		<target id="36">90 s</target>
-		<target id="37">2 h</target>
-		<target id="38">1 d</target>
-		<target id="39">365 d</target>
-		<target id="40">10000 m<sup>2</sup></target>
-		
+		<target id="20">1 kg = </target>
+		<target id="21">3 l =</target>
+		<target id="22">43 mm =</target>
+		<target id="23">4 m =</target>
+		<target id="24">5 km =</target>
+		<target id="25">89 mg =</target>
+		<target id="26">9.56 kg =</target>
+		<target id="27">15 mg =</target>
+		<target id="28">98 cm =</target>
+		<target id="29">9500 ml  =</target>
+		<target id="30">30 dam =</target>
+		<target id="31">500 m =</target>
+		<target id="32">6 ml =</target>
+		<target id="33">20 hg =</target>
+		<target id="34">1.5 dam =</target>
+		<target id="35">30 s =</target>
+		<target id="36">1.5 min =</target>
+		<target id="37">7200 s =</target>
+		<target id="38">24 h =</target>
+		<target id="39">1 a =</target>
+		<target id="40">1 ha</target>
 		
 	</dropper>
 </items>
