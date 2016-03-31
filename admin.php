@@ -19,30 +19,45 @@
 	
 	<body>
 	<div class="container">
-		<form id="adminForm" action="genFile.php" method="get">
-		<input name="fileName"></input>
-		<input type="submit" value="Generate file"></input>
+	<button class="ToFrontPage" onclick="location.href='index.php'">Etusivulle</button>
+		<form class="form-horizontal" id="adminForm" action="genFile.php" method="get">
+		<div class="row">
+		<div class="input-group">
+			<input class="col-xs-4 form-control" name="fileName" placeholder="Uuden pelin nimi"></input>
+			<span class="input-group-btn">
+			<button class="btn btn-secondary" type="submit" value="Generate file">Luo tiedosto</button>
+			</span>
+		</div>
+		</div>
 		</form>
-		<div id="menuAddress">
-			<input id="address" name="address" placeholder="Pelin nimi"></input>
+		<div class="row">
+		<div class="input-group" id="menuAddress">
+			<input class="col-xs-4 form-control" id="address" name="address" placeholder="Pelin nimi"></input>
 		</div>
-		<div id="menuTargets">
-			<input id="targetPointer" name="targetPointer" placeholder="target"></input>
-			<button id="buttTarget">Add targets</button>
-			<button id="removeLastTAR">Remove last Target</button>
-			<select class='dexTarget'></select>
 		</div>
-		<div id="menuDataPoints">
-			<button id="addDataInput">Add datapoint</button>
-			<button id="removeLastDP">Remove last datapoint</button>
-			<button id="addToList">Add to list</button>
-			<button id="XMLchanges">Upload</button>
+		<div class="row">
+		<div class="input-group" id="menuTargets">
+			<input class="col-xs-4 form-control" id="targetPointer" name="targetPointer" placeholder="Lisättävä maali"></input>
+			<span class="input-group-btn">
+			<button class="btn btn-secondary" id="buttTarget">Lisää maali</button>
+			</span>
 		</div>
+		</div>
+		<div class="navbar navbar-default">
+			<select class='col-xs-2 dexTarget'></select>
 		
-		<div id="listArrayBase">
+			<button id="removeLastTAR" class="btn btn-default navbar-btn">Poista viimeinen maali</button>
+		</div>
+		<div class="navbar navbar-default" id="menuDataPoints navbar-btn">
+			<button id="addDataInput" class="btn btn-default navbar-btn">Lisää liikkuva osa</button>
+			<button id="removeLastDP" class="btn btn-default navbar-btn">Poista viimeisin liikkuva osa</button>
+			<button id="addToList" class="btn btn-default navbar-btn">Finalisoi</button>
+			<button id="XMLchanges" class="btn btn-default navbar-btn">Upload / vie</button>
+		</div>
+		<div class="form-group" id="listArrayBase">
 		
 		</div>
-		<div id="output">
+		<div class="form-group" id="output">
 		<ul id="outputUL">
 		
 		

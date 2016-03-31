@@ -28,6 +28,8 @@ $addressing = $_GET['thing'];
 				echo "
 					<button id=\"initPreview\">Open your preview</button>
 					<input id=\"previewedFileName\" value=". $addressing ."></input>
+					<button id=\"exportNewgame\">Vie peli etusivulle</button>
+					
 					
 					<div id=\"content\">
 
@@ -38,7 +40,9 @@ $addressing = $_GET['thing'];
 					</div>
 					
 					</div>
-					<button onclick='validation()'>Validate</button>
+					<button onclick='validation()'>Tarkistus</button>
+					<button class=\"ToFrontPage\" onclick=\"location.href='index.php'\">Etusivulle</button>
+					<button class=\"ToEditor\" onclick=\"location.href='admin.php'\">Takaisin Editoriin</button>
 					";
 				?>
 			</div>

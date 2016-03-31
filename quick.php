@@ -1,4 +1,5 @@
 <?php
+
 //Quick php
 echo	"<div id=\"content\">
 
@@ -41,7 +42,8 @@ echo	"<div id=\"content\">
 					<option value=whatTime>Aikayksikkö muutoksia</option>
 					
 				</select>
-				<button class=\"testing2\">Click me test</button>
+				<input id=\"addIt\"></input><button id=\"theAdder\">Lisää listaan</button>
+				<button class=\"testing2\" onclick=\"location.href='admin.php'\">Editori</button>
 		</footer>
 		
 		";

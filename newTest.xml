@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<items>
+  <item>
+    <dataPoint target="1">5</dataPoint>
+    <dataPoint target="2">4</dataPoint>
+    <dataPoint target="3">3</dataPoint>
+    <dataPoint target="4">2</dataPoint>
+    <dataPoint target="5">1</dataPoint>
+    <dataPoint target="0">0</dataPoint>
+  </item>
+  <Dropper>
+    <target id="1">1</target>
+    <target id="2">2</target>
+    <target id="3">3</target>
+    <target id="4">4</target>
+    <target id="5">5</target>
+  </Dropper>
+</items>

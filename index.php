@@ -1,3 +1,10 @@
+<?php
+if (!empty($_GET['incoming'])) {
+$theGameToBeAdded = $_GET['incoming'];
+} else {
+	$theGameToBeAdded = "";
+}
+?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -22,7 +29,51 @@
 		<div class="container">
 			<div class="borderPatrol">
 				<?php
-					include "quick.php";
+					echo	"<div id=\"content\">
+
+				<div id=\"makeMeDraggable\" class=\"block dragging\">
+				</div>
+				
+				<div class=\"drop droppable\" id=\"makeMeDroppable\">
+				</div>
+			
+		</div>
+			
+		<div id=\"saving\">
+			
+				<div id=\"actualForm\">
+					<h2 id='finale' class='finalScore'>0</h2>
+					<form  method=\"get\" action=\"quickSavePlayerScore.php\">
+						<fieldset class=\"form-group row col-xs-5 text-center\">
+							<input id=\"nameA\" class=\"form-control col-sm-2\" name=\"nimi\" placeholder=\"Nimesi?\" />
+							<input id=\"eMail\" class=\"form-control col-sm-2\" name=\"mail\" placeholder=\"Sähköpostisi?\" />
+							<input class=\"form-control col-sm-2\" id=\"hidScore\" name=\"sentScore\" readonly>
+							<button class=\"form-control col-sm-2 btn-success\" type=\"submit\" value=\"Save the score\" />Save The Score</button>
+						</fieldset>
+					</form>
+				</div>
+		</div>
+		<footer id=\"footing\">
+				<div id='score'>0</div>			
+				<button onclick='validation()'>Validate</button>
+				<button onclick=\"change()\">Vaihda peliä</button>
+				<select type=\"text\" id=\"XmlName\">
+					<option value=generate.xml>Alkuperäinen</option>
+					<option value=mathProto.xml>Math Prototype</option>
+					<option value=mathProto2.xml>Math Prototype 2</option>
+					<option value=clocks3.xml>Kellotaulutehtävä 1</option>
+					<option value=elementConversion.xml>Mittayksikkö muutoksia</option>
+					<option value=whatTime.xml>Aikayksikkö muutoksia</option>
+					<option value=division.xml>Jakolaskuja</option>
+					<option value=subtraction.xml>Vähennyslaskuja</option>
+					<option value=addition.xml>Plus laskuja</option>
+					
+				</select>
+				<input id=\"addIt\" placeholder=\"Pelin nimi\" value=". $theGameToBeAdded ." ></input>
+				<button class=\"testing2\" onclick=\"location.href='admin.php'\">Editori</button>
+		</footer>
+		
+		";
 				?>
 			</div>
 		</div>

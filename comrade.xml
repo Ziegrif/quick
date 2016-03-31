@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<items>
+  <item>
+    <dataPoint target="1">russia</dataPoint>
+    <dataPoint target="1">america</dataPoint>
+    <dataPoint target="0">Finland</dataPoint>
+  </item>
+  <Dropper>
+    <target id="1">ussr</target>
+    <target id="2">usa</target>
+  </Dropper>
+</items>

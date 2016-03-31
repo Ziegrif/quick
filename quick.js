@@ -1,5 +1,6 @@
 //Quick javascript
 var correct = 0;
+var enableDragging = 1;
 $(document).bind('touchmove', false);
 $( init );
 $(document).ready(
@@ -75,6 +76,8 @@ function init() {
 }
 
 function change() {
+	var enableDragging = 1;
+	console.log(enableDragging);
 	correct = 0;
 	$('.block').html( '' );
 	$('.drop').html( '' );
@@ -82,7 +85,12 @@ function change() {
 	//this generates the draggables from the generate.xml file form the datapoint element
 	var tmpArc=[];
 	var tmpDrop=[];
-	var xmlFileName = $("#XmlName").val() + '.xml';
+	var xmlFileName;
+	if(!$("#addIt").val()){
+		xmlFileName = $("#XmlName").val();
+	} else {
+		xmlFileName = $("#addIt").val();
+	}
 
 	$.ajax({
 			url: xmlFileName,
@@ -133,21 +141,22 @@ function change() {
 					accept: '.block div',
 					hoverClass: 'hovered',
 					drop: handleCardDrop,
-					activate: handleDragEvent
+					activate: handleDragEvent,
+					
 				});
 				//console.log(i +  ': data-number ' + $('#item_'+tmpDrop[i]).data('number'));
 			}
 			//console.log(tmpArc);
 			//This here randomizes the draggables and then makes them into different divs with the numbero class.
 			
-	
+			tmpArc.sort( function() { return Math.random() - .5 } );
 			for (var j=0; j<tmpArc.length; j++) {
 	
 				$("<div class="+ $draggEr +" onclick=\"\" >" + tmpArc[j][0] + '</div>').data('number', tmpArc[j][1]).appendTo('.block').draggable( {
 					containment: '.borderPatrol',
 					stack: '.block div',
 					cursor: 'move',
-					
+					disable: false
 					//revert: true
 				});
 				$("div .clockDrag").each(function(i){
@@ -214,12 +223,20 @@ function validation(){
 	}else if($("div").hasClass("imageOikein")){
 	$(".imageOikein").toggleClass("imageFinish");
 	$('.imageOikein img').toggleClass('imageResize');
-	}; 
-		
-	
+	};
+	if(enableDragging == 1){
+		$('.numbero').draggable('disable');
+		$('.clockDrag').draggable('disable');
+		enableDragging = 0;
+	} else if (enableDragging == 0){
+		$('.numbero').draggable('enable');
+		$('.clockDrag').draggable('enable');
+		enableDragging = 1;
+	}
+	console.log("Jee jee" + enableDragging);
 }
 //Audio worker. It looks bad. Fix it later you dolt.
-$(document).ready(function() {
+/* $(document).ready(function() {
       var obj = document.createElement("audio");
       obj.src="audio/5vaille7.ogg";
         obj.volume=1.0;
@@ -317,12 +334,12 @@ $(document).ready(function() {
 			sound12.play();
 			});
 		
-        });
+        }); */
 //lists the datapoints and targets for review
 var targetDatapointArray = [];
 var selectTargets = [];
 var chunk = [];
-
+//Adds options to selects
 $(document).ready(function(){
 	$("#buttTarget").click(function(){
 		//$("#listArrayBase").empty();
@@ -343,22 +360,26 @@ $(document).ready(function(){
 			});
 	
 	});
-	
+	//Adds input and selecst to the Admin PHP page
 	$("#addDataInput").click(function(){
-		$('<input class=\'dataGlue\'></input>').appendTo("#listArrayBase");
+		$('<div class=\"input-group delClass\"><input class=\'dataGlue form-control\'></input><span class=\"input-group-addon dexPlace\"></span></div>').appendTo("#listArrayBase");
 		
-		$('.dexTarget:first').clone().appendTo("#listArrayBase");
+		$('.dexTarget:first').clone().appendTo(".dexPlace:last");
 		
 	});
+	// Removes the last input and select from the admin page
 	$("#removeLastDP").click(function(){
-		$(".dataGlue").last().remove();
-		$(".dexTarget").last().remove();
+		/* $(".dataGlue").last().remove();
+		$(".dexPlace").last().remove();
+		$(".dexTarget").last().remove(); */
+		$(".delClass:last").remove();
 	});
-	
+	//Removes the last target from the select list
 	$("#removeLastTAR").click(function(){
 		selectTargets.pop();
 		$(".targetOption").last().remove();
 	});
+	//adds targets to a list
 $("#addToList").click(function(){
 		
 	var listing = $("#outputUL");
@@ -398,11 +419,12 @@ $("#addToList").click(function(){
 //this one is for generating and editing a newly created XML file.
  //var generatedFile = $('#address').val() + '.xml';	
  $(document).ready(function(){
-		
 		$('#XMLchanges').click(function(){
-		var generatedFile = $('#address').val() + '.xml';	
+		var generatedFile = $('#address').val() + '.xml';
+		//var exportPreview = $("#previewedFileName").val();
 		console.log(generatedFile);
 		var redirectWindow = window.open('preview.php?thing='+generatedFile, '_blank');
+		//var redirectWindowOther = window.open('index.php?incoming='+exportPreview, '_blank');
 		var generatedFile = $('#address').val() + '.xml';
 		var dataPointToAdd = $('#dataPointer').val();
 		var targetToAdd = $('#targetPointer').val();
@@ -463,7 +485,13 @@ $("#addToList").click(function(){
 			
 		});
 		
-	});	 
+	});	
+	$("#exportNewgame").click(function(){
+		var exportPreview = $("#previewedFileName").val();
+		var redirectWindowOther = window.open('index.php?incoming='+exportPreview, '_blank');
+		redirectWindowOther();
+	});
+	
 });
  
  $(document).ready(function(){
