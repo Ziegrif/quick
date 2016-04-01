@@ -19,55 +19,22 @@ $(document).ready(function() {
 
 //The initialization function
 function init() {
-	correct = 0;
-	$('.block').html( '' );
-	$('.drop').html( '' );
-	$("#finale").hide();
-	//this generates the draggables from the generate.xml file form the datapoint element
-	var tmpArc=[];
-	var tmpDrop=[];
-
+console.log("It works dumdum");
 	$.ajax({
 			url: 'quick.xml',
 			type: 'GET',
 			datatype: 'xml',
 			cache: false,
 			success: function(returnedXMLResponse){
-				
+				console.log (returnedXMLResponse);
 				$('dataPoint',returnedXMLResponse).each(function(){
-					var row = [ $(this).text() , $(this).attr('target'), $(this).attr('src')];
-					tmpArc.push(row);
-	
-			})
-			
-			$('target',returnedXMLResponse).each(function(){
-	
-					var targetting = [$(this).text() , $(this).attr('id')]
-					tmpDrop.push(targetting);
-			})
-			
-			for (var i=0; i<tmpDrop.length; i++) {
-				$("<div class='dropTarget'>" + tmpDrop[i][0] + '</div>').data('number', tmpDrop[i][1]).appendTo('.drop').droppable( {
-					accept: '.block div',
-					hoverClass: 'hovered',
-					drop: handleCardDrop,
-					activate: handleDragEvent
+					var contentsData = $(this).text();
+					$("<li></li>")
+					.text(contentsData)
+					.appendTo("#listingGames");
+					
 				});
-				//console.log(i +  ': data-number ' + $('#item_'+tmpDrop[i]).data('number'));
-			}
-			//console.log(tmpArc);
-			//This here randomizes the draggables and then makes them into different divs with the numbero class.
-			tmpArc.sort( function() { return Math.random() - .5 } );
-	
-			for (var j=0; j<tmpArc.length; j++) {
-	
-				$("<div class='numbero playSound'>" + tmpArc[j][0] + '</div>').data('number', tmpArc[j][1]).appendTo('.block').draggable( {
-					containment: '.borderPatrol',
-					stack: '.block div',
-					cursor: 'move',
-					//revert: true
-				});
-			}
+				
 			}
 			
 		
@@ -486,14 +453,26 @@ $("#addToList").click(function(){
 		});
 		
 	});	
+
+	
 	$("#exportNewgame").click(function(){
 		var exportPreview = $("#previewedFileName").val();
 		var redirectWindowOther = window.open('index.php?incoming='+exportPreview, '_blank');
-		redirectWindowOther();
-	});
+		
+		$.ajax({
+			url: "listMaker.php",
+			type: 'POST',
+			datatype: 'text',
+			data: {previewedFileName: exportPreview},
+			cache: false,
+			success: function(){
+				redirectWindowOther;
+				
+			}
+		});
 	
+	});
 });
- 
  $(document).ready(function(){
 $('#initPreview').click(function(){
 	correct = 0;
@@ -515,7 +494,7 @@ $('#initPreview').click(function(){
 				$('dataPoint',returnedXMLResponse).each(function(){
 					var $content;
 					var $src = $(this).attr('src');
-					var $clocks = $(this).attr('clocks')
+					var $clocks = $(this).attr('clocks');
 					
 						if ($src == null) {
 							$content = $(this).text();
@@ -582,6 +561,8 @@ $('#initPreview').click(function(){
 	
 	});
 });
+
+
 
  
 

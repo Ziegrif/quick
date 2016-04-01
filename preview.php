@@ -27,7 +27,7 @@ $addressing = $_GET['thing'];
 				<?php
 				echo "
 					<button id=\"initPreview\">Open your preview</button>
-					<input id=\"previewedFileName\" value=". $addressing ."></input>
+					<input id=\"previewedFileName\" name=\"previewedFileName\" value=". $addressing ."></input>
 					<button id=\"exportNewgame\">Vie peli etusivulle</button>
 					
 					

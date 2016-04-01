@@ -27,6 +27,9 @@ $theGameToBeAdded = $_GET['incoming'];
 
 	<body>
 		<div class="container">
+		<ul id="listingGames">
+		
+		</ul>
 			<div class="borderPatrol">
 				<?php
 					echo	"<div id=\"content\">

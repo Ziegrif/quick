@@ -1,4 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<score>
-  
-</score>
+<items>
+  <dataPoint>generate.xml</dataPoint>
+  <dataPoint>mathProto.xml</dataPoint>
+  <dataPoint>mathProto2.xml</dataPoint>
+  <dataPoint>clocks3.xml</dataPoint>
+  <dataPoint>elementConversion.xml</dataPoint>
+  <dataPoint>whatTime.xml</dataPoint>
+  <dataPoint>division.xml</dataPoint>
+  <dataPoint>subtraction.xml</dataPoint>
+  <dataPoint>addition.xml</dataPoint>
+</items>
