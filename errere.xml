@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<items>
+  <item>
+    <dataPoint target="0">dsf</dataPoint>
+    <dataPoint target="0">gdv</dataPoint>
+    <dataPoint target="3">bvc</dataPoint>
+    <dataPoint target="2">th</dataPoint>
+  </item>
+  <Dropper>
+    <target id="1">32243</target>
+    <target id="2">32243</target>
+    <target id="3">32243</target>
+  </Dropper>
+</items>

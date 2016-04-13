@@ -26,10 +26,18 @@ $addressing = $_GET['thing'];
 			<div class="borderPatrol">
 				<?php
 				echo "
-					<button id=\"initPreview\">Open your preview</button>
-					<input id=\"previewedFileName\" name=\"previewedFileName\" value=". $addressing ."></input>
-					<button id=\"exportNewgame\">Vie peli etusivulle</button>
-					
+				<div class=\row\>
+					<div class=\"input-group\">
+						<input class=\"form-control\" id=\"previewedFileName\" name=\"previewedFileName\" value=". $addressing ."></input>
+						<span class=\"input-group-btn\">
+						<button  id=\"initPreview\" class=\"btn btn-secondary\">Open your preview</button>
+						</span>
+						<input class=\"form-control\" id=\"exportName\" name=\"exportingThatName\" placeholder=\"Anna kuvaava nimi pelillesi\"></input>
+						<span class=\"input-group-btn\">
+						<button id=\"exportNewgame\" class=\"btn btn-secondary\">Vie peli etusivulle</button>
+						</span>
+				</div>
+					</div>
 					
 					<div id=\"content\">
 

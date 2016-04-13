@@ -40,6 +40,7 @@ $addressVal = $_GET['newishFile'];
 		<div class="row">
 			<div class="input-group" id="menuAddress">
 				<input class="col-xs-4 form-control" id="address" name="address" <?php echo "value='". $addressVal ."'" ?> placeholder="Pelin nimi"></input>
+				
 			</div>
 		</div>
 		<div class="row">
@@ -58,7 +59,7 @@ $addressVal = $_GET['newishFile'];
 		<div class="navbar navbar-default" id="menuDataPoints">
 			<button id="addDataInput" class="btn btn-default navbar-btn">Lisää liikkuva osa</button>
 			<button id="removeLastDP" class="btn btn-default navbar-btn">Poista viimeisin liikkuva osa</button>
-			<button id="addToList" class="btn btn-default navbar-btn">Finalisoi</button>
+			<button id="addToList" class="btn btn-default navbar-btn">Viimeistele</button>
 			<button id="XMLchanges" class="btn btn-default navbar-btn">Upload / vie</button>
 		</div>
 		<div class="form-group" id="listArrayBase">

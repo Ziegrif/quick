@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<items>
+	<item>
+		<dataPoint clocks="true" target="1" src="images/comParts/hiiri.png">S1</dataPoint>
+		<dataPoint clocks="true" target="2" src="images/comParts/hdmi.png">S2</dataPoint>
+		<dataPoint clocks="true" target="3" src="images/comParts/naytto.png">S3</dataPoint>
+		<dataPoint clocks="true" target="4" src="images/comParts/psu.png">S4</dataPoint>
+		<dataPoint clocks="true" target="5" src="images/comParts/kovalevy.png">S5</dataPoint>
+		<dataPoint clocks="true" target="6" src="images/comParts/sata.png">S6</dataPoint>
+		<dataPoint clocks="true" target="7" src="images/comParts/videocard.jpg">S7</dataPoint>
+		<dataPoint clocks="true" target="8" src="images/comParts/emolevy.jpg">S8</dataPoint>
+		<dataPoint clocks="true" target="9" src="images/comParts/ram.png">S9</dataPoint>
+		<dataPoint clocks="true" target="10" src="images/comParts/ether.png">S10</dataPoint>
+		
+		
+		
+		
+	</item>
+	<dropper>
+		<target id="1">Hiiri</target>
+		<target id="2">HDMI-liitin</target>
+		<target id="3">Näyttö</target>
+		<target id="4">PSU</target>
+		<target id="5">Kovalevy</target>
+		<target id="6">Sata datakaapeli</target>
+		<target id="7">Videokortti</target>
+		<target id="8">Emolevy</target>
+		<target id="9">RAM muisti</target>
+		<target id="10">Ethernet-kaapeli</target>
+		
+		
+		
+	</dropper>
+</items>

@@ -58,18 +58,10 @@ $theGameToBeAdded = $_GET['incoming'];
 		</div>
 		<footer id=\"footing\">
 				<div id='score'>0</div>			
-				<button onclick='validation()'>Validate</button>
+				<button onclick='validation()'>Tarkista</button>
 				<button onclick=\"change()\">Vaihda peliä</button>
 				<select type=\"text\" id=\"XmlName\">
-					<option value=generate.xml>Alkuperäinen</option>
-					<option value=mathProto.xml>Math Prototype</option>
-					<option value=mathProto2.xml>Math Prototype 2</option>
-					<option value=clocks3.xml>Kellotaulutehtävä 1</option>
-					<option value=elementConversion.xml>Mittayksikkö muutoksia</option>
-					<option value=whatTime.xml>Aikayksikkö muutoksia</option>
-					<option value=division.xml>Jakolaskuja</option>
-					<option value=subtraction.xml>Vähennyslaskuja</option>
-					<option value=addition.xml>Plus laskuja</option>
+					
 					
 				</select>
 				<input id=\"addIt\" placeholder=\"Pelin nimi\" value=". $theGameToBeAdded ." ></input>

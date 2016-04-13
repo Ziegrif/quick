@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <items>
-  <dataPoint>generate.xml</dataPoint>
-  <dataPoint>mathProto.xml</dataPoint>
-  <dataPoint>mathProto2.xml</dataPoint>
-  <dataPoint>clocks3.xml</dataPoint>
-  <dataPoint>elementConversion.xml</dataPoint>
-  <dataPoint>whatTime.xml</dataPoint>
-  <dataPoint>division.xml</dataPoint>
-  <dataPoint>subtraction.xml</dataPoint>
-  <dataPoint>addition.xml</dataPoint>
+  <dataPoint src="generate.xml">generate.xml</dataPoint>
+  <dataPoint src="mathProto.xml">mathProto.xml</dataPoint>
+  <dataPoint src="mathProto2.xml">mathProto2.xml</dataPoint>
+  <dataPoint src="clocks3.xml">clocks3.xml</dataPoint>
+  <dataPoint src="elementConversion.xml">elementConversion.xml</dataPoint>
+  <dataPoint src="whatTime.xml">whatTime.xml</dataPoint>
+  <dataPoint src="division.xml">division.xml</dataPoint>
+  <dataPoint src="subtraction.xml">subtraction.xml</dataPoint>
+  <dataPoint src="addition.xml">addition.xml</dataPoint>
+  <dataPoint src="newTestGame.xml">vvvvvvvvvvvvv</dataPoint>
+  <dataPoint src="elDjango.xml">DjangoTest</dataPoint>
+  <dataPoint src="1232.xml">Testi123</dataPoint>
 </items>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<items>
+  <item>
+    <dataPoint target="1">Django</dataPoint>
+    <dataPoint target="3">Not Django</dataPoint>
+    <dataPoint target="2">Not jango</dataPoint>
+  </item>
+  <Dropper>
+    <target id="1">Django</target>
+    <target id="2">Jango</target>
+    <target id="3">Lando</target>
+  </Dropper>
+</items>

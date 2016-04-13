@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<items>
+  <item>
+    <dataPoint target="3">asd</dataPoint>
+    <dataPoint target="0">sdf</dataPoint>
+    <dataPoint target="3">etf</dataPoint>
+    <dataPoint target="0">dgdgf</dataPoint>
+    <dataPoint target="0">gjhf</dataPoint>
+  </item>
+  <Dropper>
+    <target id="1">123132</target>
+    <target id="2">123132</target>
+    <target id="3">123132</target>
+    <target id="4">123132</target>
+  </Dropper>
+</items>

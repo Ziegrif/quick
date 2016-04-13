@@ -23,9 +23,9 @@
   </item>
   <Dropper>
     <target id="1">t</target>
-    <target id="2">t</target>
-    <target id="3">t</target>
-    <target id="4">t</target>
+    <target id="2">g</target>
+    <target id="3">y</target>
+    <target id="4">p</target>
     <target id="1">tar1</target>
     <target id="2">tar2</target>
     <target id="3">tar3</target>
@@ -34,7 +34,7 @@
     <target id="2">koira</target>
     <target id="3">kala</target>
     <target id="1">test</target>
-    <target id="1"/>
-    <target id="1"/>
+    <target id="1">wadddddddddddddddddddddddddddddd</target>
+    <target id="4"/>
   </Dropper>
 </items>

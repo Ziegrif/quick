@@ -29,9 +29,11 @@ console.log("It works dumdum");
 				console.log (returnedXMLResponse);
 				$('dataPoint',returnedXMLResponse).each(function(){
 					var contentsData = $(this).text();
-					$("<li></li>")
+					var contentsVal = $(this).attr('src');
+					$("<option></option>")
 					.text(contentsData)
-					.appendTo("#listingGames");
+					.val(contentsVal)
+					.appendTo("#XmlName");
 					
 				});
 				
@@ -457,21 +459,137 @@ $("#addToList").click(function(){
 	
 	$("#exportNewgame").click(function(){
 		var exportPreview = $("#previewedFileName").val();
+		var exportingName = $("#exportName").val();
+		console.log(exportingName);
 		var redirectWindowOther = window.open('index.php?incoming='+exportPreview, '_blank');
 		
 		$.ajax({
 			url: "listMaker.php",
 			type: 'POST',
 			datatype: 'text',
-			data: {previewedFileName: exportPreview},
+			data: {previewedFileName: exportPreview, exportingName: exportingName},
 			cache: false,
 			success: function(){
+				//console.log(returnedXMLResponse);
 				redirectWindowOther;
 				
 			}
 		});
 	
 	});
+	//This loads the editable file
+	$("#editEngage").click(function(){
+		var importEdit = $("#editable").val();
+		
+		$.ajax({
+			url: importEdit,
+			type: 'GET',
+			datatype: 'xml',
+			cache: false,
+			success: function(returnedXMLResponse){
+				$('target', returnedXMLResponse).each(function(){
+					var editableTargets = $(this).text();
+					var targetID = $(this).attr('id');
+					console.log(editableTargets);
+					
+					$('<option class="targetOption"></option>')
+						.attr("value", targetID)
+						.text(editableTargets)
+						.appendTo(".dexTarget:first");
+				});	
+				
+				
+				$('dataPoint',returnedXMLResponse).each(function(){
+					
+					var contentsEditable = $(this).text();
+					var targetPair = $(this).attr('target');
+					//console.log(targetPair);
+					$('<div class="input-group delClass"><input class="dataGlue form-control" data-target=' + targetPair + ' value="'+ contentsEditable +' "></input><span class="input-group-addon dexPlace"></span></div>').appendTo("#spawnEditables");
+					$('.dexTarget:first').clone().val(targetPair).appendTo(".dexPlace:last");
+					
+					console.log(targetPair);
+					
+					 
+					//$('select option[value="' + targetPair + '"]').attr("selected", true);
+					
+					//$('.delClass:first').clone().appendTo("#spawnEditables");
+					
+					//slashContents.push(contentsEditable);
+					//console.log(slashContents)
+					//console.log(contentsEditable);
+					/* $('<div class=\"input-group delClass\"></div>')
+					.appendTo('#spawnEditables');
+					$('<input class=\'dataGlue form-control\'></input>')
+					.text(contentsEditable)
+					.appendTo('.delClass');
+					$('<span class=\"input-group-addon dexPlace\"></span>')
+					.appendTo('.delClass');
+					
+					
+					$('.dexTarget:first').clone().appendTo(".dexPlace:last");*/
+					
+					/* if($('input').data('target') == $('select').val()){
+						
+						$('option').attr('selected','selected');
+						} else {
+							console.log($('select').val());
+						
+						} */
+					 
+					
+				}); 
+				
+				
+				
+				
+				
+			}
+		});
+	
+	});
+	//This makes all current option elements of teh first select into an array ready for export into xml.
+	editArrayTargets = [];
+	$("#finalizeEdit").click(function(){
+		/* editArrayTargets.push($("select:first option").text(), $("select:first option").val()); */
+		var tisNotaTest = [];
+		tisNotaTest = $("select:first .targetOption").map(function() { return [$(this).text(), $(this).val()]; }).get();
+		
+		while(tisNotaTest.length > 0){
+				editArrayTargets.push(tisNotaTest.splice(0 , 2));
+			}
+		console.log(editArrayTargets);
+		var preppingPush = ($('#spawnEditables').find(".dataGlue, .dexTarget")).map(function(){return $(this).val();}).get();
+		//console.log(preppingPush);
+		while(preppingPush.length > 0){
+				chunk.push(preppingPush.splice(0 , 2));
+			}
+		console.log(chunk);
+		});
+		
+	$("#addNotherTargetToFirstSelect").click(function(){
+		$("<option class='targetOption'></option>").text($("#addOptionTargetToList").val()).val(+$("option:last").val()+1).appendTo("select");
+	});
+	$("#UploadEditAndContinue").click(function(){
+		var exportPreviewEdit = $("#menuAddress").val();
+		
+		//var redirectWindowOther = window.open('index.php?incoming='+exportPreviewEdit, '_blank');
+		
+		$.ajax({
+			url: "finalEdit.php",
+			type: 'POST',
+			datatype: 'text',
+			data: {address: exportPreviewEdit, chunk: chunk, selectTargets: editArrayTargets},
+			cache: false,
+			success: function(returnedXMLResponse){
+				console.log(returnedXMLResponse);
+				//redirectWindowOther;
+				
+			}
+		});
+	
+	});
+		
+	
 });
  $(document).ready(function(){
 $('#initPreview').click(function(){
@@ -560,6 +678,7 @@ $('#initPreview').click(function(){
 	});
 	
 	});
+	
 });
 
 
