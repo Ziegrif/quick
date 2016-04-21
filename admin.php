@@ -26,7 +26,7 @@ $addressVal = $_GET['newishFile'];
 	
 	<body>
 	<div class="container">
-	<button class="ToFrontPage" onclick="location.href='index.php'">Etusivulle</button>
+	<button class="ToFrontPage" onclick="location.href='index.php'">Etusivulle</button><button class="ToFrontPage" onclick="location.href='editing.php'">Editoi vanhaa peliä</button>
 		<form id="submitGenValue" class="form-horizontal" id="adminForm" action="genFile.php" method="get">
 		<div class="row">
 			<div class="input-group">
@@ -43,6 +43,7 @@ $addressVal = $_GET['newishFile'];
 				
 			</div>
 		</div>
+		
 		<div class="row">
 			<div class="input-group" id="menuTargets">
 				<input class="col-xs-4 form-control" id="targetPointer" name="targetPointer" placeholder="Lisättävä maali"></input>
@@ -52,9 +53,15 @@ $addressVal = $_GET['newishFile'];
 			</div>
 		</div>
 		<div class="navbar navbar-default">
-			<select class='col-xs-2 dexTarget'></select>
+			<select class='dexTarget'></select>
 		
 			<button id="removeLastTAR" class="btn btn-default navbar-btn">Poista viimeinen maali</button>
+			
+		</div>
+		<div class="navbar navbar-default">
+			<button class="btn btn-secondary" onclick="location.href='uploadPics.php'">Kuvien lisäys</button>
+			<select id="listOfFolders43" name="folderList"><?php include 'readImgFolder.php' ?> </select>
+			<button id="lisaaKuvia" class="btn btn-default navbar-btn">Lisää kansion kuvat</button>
 		</div>
 		<div class="navbar navbar-default" id="menuDataPoints">
 			<button id="addDataInput" class="btn btn-default navbar-btn">Lisää liikkuva osa</button>

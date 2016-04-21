@@ -1,7 +1,8 @@
 <!DOCTYPE html>
+
 <html>
 	<head>
-		<title>Editing</title>
+		<title>Picture upload</title>
 		<link href="BStrapCss/bootstrap.min.css" rel="stylesheet">
 		<link rel="stylesheet" type="text/css" href="quick.css">
 		<meta name="apple-mobile-web-app-capable" content="yes">
@@ -16,29 +17,24 @@
 		<script src="jquery.mobile.custom.min.js"></script>
 		<script type="text/javascript" src="quick.js"></script>
 	</head>
+	
+	
 	<body>
 	<div class="container">
 	<button class="ToFrontPage" onclick="location.href='index.php'">Etusivulle</button><button class="ToFrontPage" onclick="location.href='admin.php'">Takaisin Editoriin</button>
-		<div class="input-group" id="menuAddress">
-				<input class="col-xs-4 form-control" id="editable" name="editable" placeholder="Editoitava peli"></input>
-				<span class="input-group-btn">
-				<button class="btn btn-secondary" id="editEngage" value="">Avaa editoitava tiedosto</button>
-				</span>
-		</div>
-		
-				<button id="finalizeEdit">Viimeistele</button><button id="UploadEditAndContinue">Tallenna editoimasi tiedosto</button>
-		<div class="input-group" id="menuAddress1">
-		<select id="listOfFolders" name="folderList"><?php include 'readImgFolder.php' ?> </select>
-				<input class="col-xs-4 form-control" id="addOptionTargetToList" name="addOptionTargetToList" placeholder="Lisää maali vaihtoehto"></input>
-				<span class="input-group-btn">
-				<button class="btn btn-secondary" id="addNotherTargetToFirstSelect" value="">Lisää maali</button>
-				</span>
-				
-		</div>
-			<select class="dexTarget"><option value="0">Ei paria</option></select>
-		<div id="spawnEditables">
+		<form action="upload.php" method="post" enctype="multipart/form-data">
 			
-		</div>
+			Valitse kuva:
+			<input type="file" name="fileToUpload[]" id="fileToUpload" multiple>
+			<div class="row"><label>Nimeä uusi kansio tai valitse olemassa olevan peliin liittyvän kansion nimi</label></div>
+			<select id="listOfFolders" name="folderList"><?php include 'readImgFolder.php' ?> </select>
+			<input name="folderName" placeholder="Nimeä kuvien kansio tai valitse pudotusvalikosta olemassa oleva kansio"></input>
+			<input type="submit" value="Lataa kuvat" name="submit">
+			
+		</form>
+		
+	</div>
+	
 	</body>
 	
 </html>

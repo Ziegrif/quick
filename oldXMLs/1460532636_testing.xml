@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<items>
+  <item>
+    <dataPoint target="1">a</dataPoint>
+    <dataPoint target="3">b</dataPoint>
+    <dataPoint target="2">c</dataPoint>
+    <dataPoint target="1">d</dataPoint>
+    <dataPoint target="4">e</dataPoint>
+    <dataPoint target="1">a</dataPoint>
+    <dataPoint target="3">b</dataPoint>
+    <dataPoint target="2">c</dataPoint>
+    <dataPoint target="1">d</dataPoint>
+    <dataPoint target="4">e</dataPoint>
+    <dataPoint target="0">yy</dataPoint>
+    <dataPoint target="1">dfg</dataPoint>
+    <dataPoint target="2">awd</dataPoint>
+    <dataPoint target="3">dfs</dataPoint>
+    <dataPoint target="2">hgf</dataPoint>
+    <dataPoint target="0">12</dataPoint>
+    <dataPoint target="0">32</dataPoint>
+    <dataPoint target="0">12</dataPoint>
+    <dataPoint target="1">32</dataPoint>
+  </item>
+  <Dropper>
+    <target id="1">t</target>
+    <target id="2">g</target>
+    <target id="3">y</target>
+    <target id="4">p</target>
+    <target id="1">tar1</target>
+    <target id="2">tar2</target>
+    <target id="3">tar3</target>
+    <target id="4">tar4</target>
+    <target id="1">kissa</target>
+    <target id="2">koira</target>
+    <target id="3">kala</target>
+    <target id="1">test</target>
+    <target id="1">wadddddddddddddddddddddddddddddd</target>
+    <target id="4"/>
+  </Dropper>
+</items>

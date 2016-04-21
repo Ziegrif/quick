@@ -112,6 +112,14 @@ img {
 	width: 125px;
 	margin-top: 5%;
 	}
+	
+.delPic {
+	float: left;
+}
+
+.hideInput {
+	visibility: hidden;
+}
 
 .drop {
 	margin-left: auto;

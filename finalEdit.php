@@ -5,7 +5,7 @@ if (!empty($_POST["address"])) {
 		
 		$whatWereEditing = $_POST["address"];
 		
-		copy($whatWereEditing , 'oldXMLs/'.time()._.$whatWereEditing);
+		copy($whatWereEditing , 'oldXMLs/'.time()."_".$whatWereEditing);
 		
 		unlink($whatWereEditing);
 		

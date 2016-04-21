@@ -1,21 +1,27 @@
 //Quick javascript
 var correct = 0;
 var enableDragging = 1;
-$(document).bind('touchmove', false);
+//$(document).bind('touchmove', false);
 $( init );
 $(document).ready(
 	function(){
 		$("#saving").hide();
 		$('div#score').hide();
-		$('html, body').css({
-			'overflow': 'hidden',
-			'height': '100%'
-		});
+		
 	});
 $(document).ready(function() {
   $.ajaxSetup({ cache: false });
 });
-
+$(document).ready(function(){
+	if (window.location.pathname == '/quick/index.php'){
+		$(document).bind('touchmove', false);
+		//console.log("AWWWW YEEEEEE!")
+		$('html, body').css({
+			'overflow': 'hidden',
+			'height': '100%'
+		});
+		};
+	});
 
 //The initialization function
 function init() {
@@ -354,7 +360,12 @@ $("#addToList").click(function(){
 	var listing = $("#outputUL");
 		
 			var rawdata = [];
+			if($('img').hasClass('delPic')){
+				console.log("Arr me mateys")
+				var preppingPush = ($('#listArrayBase').find(".hideInput, .dexTarget")).map(function(){return $(this).val();}).get();
+			} else {
 			var preppingPush = ($('#listArrayBase').find(".dataGlue, .dexTarget")).map(function(){return $(this).val();}).get();
+			}
 			console.log(preppingPush);
 			/* var m,n,tempSlicedtoTwoArray,chunk = preppingPush.length;
 			for (m=0,n=preppingPush.length; m<n; m+=chunk){
@@ -400,13 +411,19 @@ $("#addToList").click(function(){
 		var output = $('#output').val();
 		var arrayOfXMLdataPoints = [];
 		var arrayOfXMLtargets = [];
-		
+		var isImage;
+		if($('img').hasClass('delPic')){
+			isImage = "true";
+		} else {
+			isImage = "false";
+		}
+		console.log(isImage);
 		$.ajax({
 			url: 'changeTheXMLfile.php',
 			type: 'POST',
 			dataType: 'text',
 			cache: false,
-			data: {address: generatedFile, chunk: chunk, selectTargets: selectTargets},
+			data: {address: generatedFile, chunk: chunk, selectTargets: selectTargets, isImage: isImage},
 			//data: { address: generatedFile, dataPointer: dataPointToAdd, targetPointer: targetToAdd },
 			error: function( data ){
 				console.log("It didn't work you dolt" + data)
@@ -500,14 +517,19 @@ $("#addToList").click(function(){
 				
 				
 				$('dataPoint',returnedXMLResponse).each(function(){
-					
+					var clocks = $(this).attr('clocks');
+					var isAnImage = $(this).attr('src');
 					var contentsEditable = $(this).text();
 					var targetPair = $(this).attr('target');
 					//console.log(targetPair);
-					$('<div class="input-group delClass"><input class="dataGlue form-control" data-target=' + targetPair + ' value="'+ contentsEditable +' "></input><span class="input-group-addon dexPlace"></span></div>').appendTo("#spawnEditables");
-					$('.dexTarget:first').clone().val(targetPair).appendTo(".dexPlace:last");
+					if(clocks){
+						$('<div class="wrapUp"><input class="hideInput" value="' + isAnImage + '"></input><div class="row delClass"><img class="imgReg delPic" src="' + isAnImage + '" /></div><button class="removebtn">Poista kuva</button></div>').appendTo("#spawnEditables");
+						$('.dexTarget:first').clone().val(targetPair).appendTo(".delClass:last");
+					} else {
+						$('<div class="input-group delClass"><input class="dataGlue form-control" data-target=' + targetPair + ' value="'+ contentsEditable +' "></input><span class="input-group-addon dexPlace"></span></div>').appendTo("#spawnEditables");
+						$('.dexTarget:first').clone().val(targetPair).appendTo(".dexPlace:last");
+					}
 					
-					console.log(targetPair);
 					
 					 
 					//$('select option[value="' + targetPair + '"]').attr("selected", true);
@@ -570,7 +592,7 @@ $("#addToList").click(function(){
 		$("<option class='targetOption'></option>").text($("#addOptionTargetToList").val()).val(+$("option:last").val()+1).appendTo("select");
 	});
 	$("#UploadEditAndContinue").click(function(){
-		var exportPreviewEdit = $("#menuAddress").val();
+		var exportPreviewEdit = $("#editable").val();
 		
 		//var redirectWindowOther = window.open('index.php?incoming='+exportPreviewEdit, '_blank');
 		
@@ -588,7 +610,31 @@ $("#addToList").click(function(){
 		});
 	
 	});
+	$(document).on('click', '.removebtn', function () {
+        $(this).parent().remove();   
+    });
+	//This handles the Pictures for new xml files
+	var folderOfPics = $("#listOfFolders43").val();
+	// PROBLEM ONLY TAKING ONE FOLDER SOLVE ASAP
+	$("#lisaaKuvia").click(function(){
+		console.log(folderOfPics);
+		$.ajax({
+			url: "searchFolderForImg.php",
+			type: "POST",
+			datatype: "text",
+			data: {folder: folderOfPics},
+			cache: false,
+			success(data){
+				console.log(data);
+				$("#listArrayBase").html(data);
+				
+				$(".dexTarget:first").clone().appendTo(".delClass");
+				
+			}
+			
+		});
 		
+	});
 	
 });
  $(document).ready(function(){
