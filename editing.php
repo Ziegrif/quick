@@ -28,14 +28,22 @@
 		
 				<button id="finalizeEdit">Viimeistele</button><button id="UploadEditAndContinue">Tallenna editoimasi tiedosto</button>
 		<div class="input-group" id="menuAddress1">
-		<select id="listOfFolders" name="folderList"><?php include 'readImgFolder.php' ?> </select>
+		
 				<input class="col-xs-4 form-control" id="addOptionTargetToList" name="addOptionTargetToList" placeholder="Lisää maali vaihtoehto"></input>
 				<span class="input-group-btn">
 				<button class="btn btn-secondary" id="addNotherTargetToFirstSelect" value="">Lisää maali</button>
 				</span>
 				
 		</div>
-			<select class="dexTarget"><option value="0">Ei paria</option></select>
+		<select class="dexTarget"><option value="0">Ei paria</option></select>
+		<div class="navbar navbar-default">
+			<button class="btn btn-secondary" onclick="location.href='uploadPics.php'">Kuvien lisäys</button>
+			<select id="listOfFolders43" name="folderList"><?php include 'readImgFolder.php' ?> </select>
+			<button id="openPicAdder" class="btn btn-default navbar-btn">Lisää kuva kansiosta</button>
+			
+		</div>
+			<div class="imagePreviewer row">
+			</div>
 		<div id="spawnEditables">
 			
 		</div>

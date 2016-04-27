@@ -1,5 +1,6 @@
 <?php
 //save score to xml
+include 'config.php';
 
 if (!empty($_GET[""]) && !empty($_GET["nimi"])){
 		$mail = $_GET["mail"];

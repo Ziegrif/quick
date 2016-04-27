@@ -1,4 +1,6 @@
 <?php
+include 'config.php';
+
 if (!empty($_POST["previewedFileName"]) && !empty($_POST["exportingName"])){
 	$theActualName = $_POST["exportingName"];
 	$addingNewGameToList = $_POST["previewedFileName"];
@@ -7,14 +9,14 @@ if (!empty($_POST["previewedFileName"]) && !empty($_POST["exportingName"])){
 	die();
 	//header("location: preview.php");
 }
-	$addIt = simplexml_load_file('quick.xml');
+	$addIt = simplexml_load_file($newXMLfiles . 'quick.xml');
 	$addition = $addIt->addChild('dataPoint', $theActualName)->addAttribute("src", $addingNewGameToList );
 	
 $dom = new DOMDocument("1.0");
 	$dom->preserveWhiteSpace = false;
 	$dom->formatOutput = true;
 	$dom->loadXML($addIt->asXML());
-	$dom->save("quick.xml");
+	$dom->save($newXMLfiles . "quick.xml");
 	
 	
 

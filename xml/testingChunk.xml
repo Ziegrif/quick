@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<items>
+  <item>
+    <dataPoint target="0">123</dataPoint>
+    <dataPoint target="0">4rdwd</dataPoint>
+    <dataPoint target="0">gfdg</dataPoint>
+    <dataPoint target="0">jhgjh</dataPoint>
+    <dataPoint target="0">hggfh</dataPoint>
+    <dataPoint target="0">jhjhkj</dataPoint>
+    <dataPoint target="0">klkjlkjl</dataPoint>
+    <dataPoint target="0">ölkkkkkk</dataPoint>
+    <dataPoint target="0">dsf</dataPoint>
+    <dataPoint target="5">fdg</dataPoint>
+    <dataPoint target="2">hgf</dataPoint>
+    <dataPoint target="0">jhg</dataPoint>
+  </item>
+  <Dropper>
+    <target id="1">xzzxczxczxczxc</target>
+    <target id="2">xzzxczxczxczxc</target>
+    <target id="3">xzzxczxczxczxc</target>
+    <target id="4">xzzxczxczxczxc</target>
+    <target id="5">xzzxczxczxczxc</target>
+  </Dropper>
+</items>

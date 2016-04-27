@@ -1,5 +1,5 @@
 <?php
-
+include 'config.php';
 // Count # of uploaded files in array
 $total = count($_FILES["fileToUpload"]["name"]);
 $allowed_extension = array('jpg', 'jpeg', 'png', 'bmp', 'tiff', 'gif');
@@ -7,7 +7,7 @@ $errors = array();
 $folderName = $_POST["folderName"];
 $folderList = $_POST["folderList"];
 if(!is_dir($folderName)){
-mkdir("uploads/" . $folderName, 0755);
+mkdir($saveImages . $folderName, 0755);
 }
 print_r($folderName);
 // Loop through each file
@@ -39,8 +39,8 @@ for($i=0; $i<$total; $i++) {
 	if ($tmpFilePath != ""){
 	
     //Setup our new file path
-    $newFilePath = "uploads/" . $folderName . "/" . $_FILES["fileToUpload"]["name"][$i];
-	$ifFolderNameisEmpty = "uploads/" . $folderList . "/" . $_FILES["fileToUpload"]["name"][$i];
+    $newFilePath = $saveImages . $folderName . "/" . $_FILES["fileToUpload"]["name"][$i];
+	$ifFolderNameisEmpty = $saveImages . $folderList . "/" . $_FILES["fileToUpload"]["name"][$i];
 	print_r($newFilePath);
 	print_r($ifFolderNameisEmpty);
 	}

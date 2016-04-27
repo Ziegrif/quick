@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<items>
+  <item>
+    <dataPoint target="3" clocks="true" src="uploads/avalance/213.jpg">S1</dataPoint>
+    <dataPoint target="0" clocks="true" src="uploads/avalance/DrWeirdPersonalDefense.jpg">S2</dataPoint>
+    <dataPoint target="0" clocks="true" src="uploads/avalance/avvie.png">S3</dataPoint>
+    <dataPoint target="4" clocks="true" src="uploads/avalance/cBujR5Y.jpg">S4</dataPoint>
+    <dataPoint target="0" clocks="true" src="uploads/avalance/tlqMetW.png">S5</dataPoint>
+    <dataPoint target="0" clocks="true" src="uploads/avalance/tumblr_nx0tykwqdG1te5jruo2_1280.png">S6</dataPoint>
+  </item>
+  <Dropper>
+    <target id="1">12313231212</target>
+    <target id="2">12313231212</target>
+    <target id="3">12313231212</target>
+    <target id="4">12313231212</target>
+  </Dropper>
+</items>

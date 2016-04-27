@@ -27,12 +27,14 @@
 			Valitse kuva:
 			<input type="file" name="fileToUpload[]" id="fileToUpload" multiple>
 			<div class="row"><label>Nimeä uusi kansio tai valitse olemassa olevan peliin liittyvän kansion nimi</label></div>
-			<select id="listOfFolders" name="folderList"><?php include 'readImgFolder.php' ?> </select>
+			<select id="listOfFolders43" name="folderList"><?php include 'readImgFolder.php' ?> </select>
 			<input name="folderName" placeholder="Nimeä kuvien kansio tai valitse pudotusvalikosta olemassa oleva kansio"></input>
 			<input type="submit" value="Lataa kuvat" name="submit">
 			
 		</form>
-		
+		<button id="openPicAdder" class="btn btn-default navbar-btn">Avaa kuvien selaus</button>
+		<div class="imagePreviewer row">
+			</div>
 	</div>
 	
 	</body>

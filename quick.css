@@ -113,6 +113,11 @@ img {
 	margin-top: 5%;
 	}
 	
+.imagePreviewer {
+	background-color: #D3D3D3;
+	
+}
+	
 .delPic {
 	float: left;
 }

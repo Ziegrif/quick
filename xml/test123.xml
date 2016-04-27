@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<items>
+  <item>
+    <dataPoint target="0">wad </dataPoint>
+    <dataPoint target="3">dsac </dataPoint>
+    <dataPoint target="11">vds </dataPoint>
+    <dataPoint target="5">ggcxg </dataPoint>
+    <dataPoint target="0">dhfd </dataPoint>
+    <dataPoint target="8">hh </dataPoint>
+    <dataPoint target="2">jjj </dataPoint>
+  </item>
+  <Dropper>
+    <target id="1">sdasdasdasdas</target>
+    <target id="2">sdasdasdasdas</target>
+    <target id="3">sdasdasdasdas</target>
+    <target id="4">sdasdasdasdas</target>
+    <target id="5">sdasdasdasdas</target>
+    <target id="6">123432453675</target>
+    <target id="7">123432453675</target>
+    <target id="8">123432453675</target>
+    <target id="9">123432453675</target>
+    <target id="10">123432453675</target>
+    <target id="11">123432453675</target>
+    <target id="12">123432453675</target>
+  </Dropper>
+</items>

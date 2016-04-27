@@ -1,4 +1,6 @@
 <?php
+include 'config.php';
+
 if (!empty($_POST["address"])) {
 		$ifImage = $_POST["isImage"];
 		$array = $_POST['chunk'];
@@ -7,22 +9,22 @@ if (!empty($_POST["address"])) {
 		$whatWereEditing = $_POST["address"];
 		$s = 1;
 		$t = 1;
-		$theXMLtoEdit = simplexml_load_file($whatWereEditing);
+		$theXMLtoEdit = simplexml_load_file($newXMLfiles . $whatWereEditing);
 		
 		if($ifImage == "true"){
 			foreach($array as $key => $subArray) {
 		
-			$dataPointer = $subArray[0];
-			$dataIndex = $subArray[1];
-			$newData = $theXMLtoEdit->item->addChild('dataPoint', "S". $t++);
-			$newData->addAttribute("target","". $dataIndex . "");
-			$newData->addAttribute("clocks", "true");
-			$newData->addAttribute("src","" . $dataPointer . "");
-		}
-		foreach($targetArray as $key => $tarArr){
-			$targetPointer = $tarArr;
-			$newDropper = $theXMLtoEdit->Dropper->addChild('target', $targetPointer)->addAttribute("id","". $s++ . "");
-		}
+				$dataPointer = $subArray[0];
+				$dataIndex = $subArray[1];
+				$newData = $theXMLtoEdit->item->addChild('dataPoint', "S". $t++);
+				$newData->addAttribute("target","". $dataIndex . "");
+				$newData->addAttribute("clocks", "true");
+				$newData->addAttribute("src","" . $dataPointer . "");
+			}
+			foreach($targetArray as $key => $tarArr){
+				$targetPointer = $tarArr;
+				$newDropper = $theXMLtoEdit->Dropper->addChild('target', $targetPointer)->addAttribute("id","". $s++ . "");
+			}
 		} else {
 		
 		foreach($array as $key => $subArray) {
@@ -50,7 +52,7 @@ $dom = new DOMDocument("1.0");
 	$dom->preserveWhiteSpace = false;
 	$dom->formatOutput = true;
 	$dom->loadXML($theXMLtoEdit->asXML());
-	$dom->save($whatWereEditing);
+	$dom->save($newXMLfiles . $whatWereEditing);
 	
 
 

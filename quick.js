@@ -21,13 +21,14 @@ $(document).ready(function(){
 			'height': '100%'
 		});
 		};
-	});
+	
+});
 
 //The initialization function
 function init() {
 console.log("It works dumdum");
 	$.ajax({
-			url: 'quick.xml',
+			url: 'xml/quick.xml',
 			type: 'GET',
 			datatype: 'xml',
 			cache: false,
@@ -62,9 +63,9 @@ function change() {
 	var tmpDrop=[];
 	var xmlFileName;
 	if(!$("#addIt").val()){
-		xmlFileName = $("#XmlName").val();
+		xmlFileName = 'xml/' + $("#XmlName").val();
 	} else {
-		xmlFileName = $("#addIt").val();
+		xmlFileName = 'xml/' + $("#addIt").val();
 	}
 
 	$.ajax({
@@ -358,9 +359,10 @@ $(document).ready(function(){
 $("#addToList").click(function(){
 		
 	var listing = $("#outputUL");
-		
+			
+			chunk = [];
 			var rawdata = [];
-			if($('img').hasClass('delPic')){
+			if($('#listArrayBase img').hasClass('delPic')){
 				console.log("Arr me mateys")
 				var preppingPush = ($('#listArrayBase').find(".hideInput, .dexTarget")).map(function(){return $(this).val();}).get();
 			} else {
@@ -486,8 +488,8 @@ $("#addToList").click(function(){
 			datatype: 'text',
 			data: {previewedFileName: exportPreview, exportingName: exportingName},
 			cache: false,
-			success: function(){
-				//console.log(returnedXMLResponse);
+			success: function(returnedXMLResponse){
+				console.log(returnedXMLResponse);
 				redirectWindowOther;
 				
 			}
@@ -496,7 +498,7 @@ $("#addToList").click(function(){
 	});
 	//This loads the editable file
 	$("#editEngage").click(function(){
-		var importEdit = $("#editable").val();
+		var importEdit = 'xml/'+$("#editable").val();
 		
 		$.ajax({
 			url: importEdit,
@@ -570,17 +572,24 @@ $("#addToList").click(function(){
 	
 	});
 	//This makes all current option elements of teh first select into an array ready for export into xml.
-	editArrayTargets = [];
+	var editArrayTargets = [];
 	$("#finalizeEdit").click(function(){
+		editArrayTargets = [];
+		chunk = [];
 		/* editArrayTargets.push($("select:first option").text(), $("select:first option").val()); */
 		var tisNotaTest = [];
-		tisNotaTest = $("select:first .targetOption").map(function() { return [$(this).text(), $(this).val()]; }).get();
+		tisNotaTest = $(".dexTarget:first .targetOption").map(function() { return [$(this).text(), $(this).val()]; }).get();
 		
 		while(tisNotaTest.length > 0){
 				editArrayTargets.push(tisNotaTest.splice(0 , 2));
 			}
 		console.log(editArrayTargets);
+		if($('#spawnEditables img').hasClass('delPic')){
+				console.log("Arr me mateys")
+				var preppingPush = ($('#spawnEditables').find(".hideInput, .dexTarget")).map(function(){return $(this).val();}).get();
+			} else {
 		var preppingPush = ($('#spawnEditables').find(".dataGlue, .dexTarget")).map(function(){return $(this).val();}).get();
+			}
 		//console.log(preppingPush);
 		while(preppingPush.length > 0){
 				chunk.push(preppingPush.splice(0 , 2));
@@ -589,18 +598,22 @@ $("#addToList").click(function(){
 		});
 		
 	$("#addNotherTargetToFirstSelect").click(function(){
-		$("<option class='targetOption'></option>").text($("#addOptionTargetToList").val()).val(+$("option:last").val()+1).appendTo("select");
+		$("<option class='targetOption'></option>").text($("#addOptionTargetToList").val()).val(+$("option:last").val()+1).appendTo(".dexTarget");
 	});
 	$("#UploadEditAndContinue").click(function(){
 		var exportPreviewEdit = $("#editable").val();
-		
+		if($('img').hasClass('delPic')){
+			isImage = "true";
+		} else {
+			isImage = "false";
+		}
 		//var redirectWindowOther = window.open('index.php?incoming='+exportPreviewEdit, '_blank');
 		
 		$.ajax({
 			url: "finalEdit.php",
 			type: 'POST',
 			datatype: 'text',
-			data: {address: exportPreviewEdit, chunk: chunk, selectTargets: editArrayTargets},
+			data: {address: exportPreviewEdit, chunk: chunk, selectTargets: editArrayTargets, isImage: isImage},
 			cache: false,
 			success: function(returnedXMLResponse){
 				console.log(returnedXMLResponse);
@@ -613,10 +626,12 @@ $("#addToList").click(function(){
 	$(document).on('click', '.removebtn', function () {
         $(this).parent().remove();   
     });
+	
+	
 	//This handles the Pictures for new xml files
-	var folderOfPics = $("#listOfFolders43").val();
-	// PROBLEM ONLY TAKING ONE FOLDER SOLVE ASAP
+	
 	$("#lisaaKuvia").click(function(){
+		var folderOfPics = $("#listOfFolders43").val();
 		console.log(folderOfPics);
 		$.ajax({
 			url: "searchFolderForImg.php",
@@ -635,7 +650,58 @@ $("#addToList").click(function(){
 		});
 		
 	});
-	
+var tunk = 1;
+	//imagePreviewer functions
+	if (tunk = 1){
+		$(".imagePreviewer").hide();
+		$(document).ready(function(){
+		var folderOfPics = $("#listOfFolders43").val();
+		console.log(folderOfPics);
+		$.ajax({
+			url: "imagePreviewer.php",
+			type: "POST",
+			datatype: "text",
+			data: {folder: folderOfPics},
+			cache: false,
+			success(data){
+				console.log(data);
+				$(".imagePreviewer").html(data);
+				
+			}
+		});
+		
+	});
+		$("#listOfFolders43").change(function(){
+		var folderOfPics = $("#listOfFolders43").val();
+		console.log(folderOfPics);
+		$.ajax({
+			url: "imagePreviewer.php",
+			type: "POST",
+			datatype: "text",
+			data: {folder: folderOfPics},
+			cache: false,
+			success(data){
+				console.log(data);
+				$(".imagePreviewer").html(data);
+				
+			}
+		});
+		
+	});
+	$("#openPicAdder").click(function(){
+		$(".imagePreviewer").toggle();
+	});
+	};
+	$(document).on('click','.imagePreviewer img', function(){
+			var funky = $(this).attr('src')
+			console.log(funky);
+			if ($("#spawnEditables").length === 0){
+				$('<div class="wrapUp"><input class="hideInput" value="' + funky + '"></input><div class="row delClass"><img class="imgReg delPic" src="' + funky + '" /></div><button class="removebtn">Poista kuva</button></div>').appendTo('#listArrayBase');
+			} else {
+			$('<div class="wrapUp"><input class="hideInput" value="' + funky + '"></input><div class="row delClass"><img class="imgReg delPic" src="' + funky + '" /></div><button class="removebtn">Poista kuva</button></div>').appendTo('#spawnEditables');
+			}
+			$(".dexTarget:first").clone().appendTo(".delClass:last");
+		});
 });
  $(document).ready(function(){
 $('#initPreview').click(function(){
@@ -646,7 +712,7 @@ $('#initPreview').click(function(){
 	//this generates the draggables from the generate.xml file form the datapoint element
 	var tmpArc=[];
 	var tmpDrop=[];
-	var xmlFileName = $("#previewedFileName").val();
+	var xmlFileName = 'xml/' + $("#previewedFileName").val();
 
 	$.ajax({
 			url: xmlFileName,

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<items>
+  <item>
+    <dataPoint target="1" clocks="true" src="a     ">S1</dataPoint>
+    <dataPoint target="7" clocks="true" src="b     ">S2</dataPoint>
+    <dataPoint target="2" clocks="true" src="c     ">S3</dataPoint>
+    <dataPoint target="1" clocks="true" src="d     ">S4</dataPoint>
+    <dataPoint target="8" clocks="true" src="e     ">S5</dataPoint>
+    <dataPoint target="1" clocks="true" src="a     ">S6</dataPoint>
+    <dataPoint target="3" clocks="true" src="b     ">S7</dataPoint>
+    <dataPoint target="5" clocks="true" src="c     ">S8</dataPoint>
+    <dataPoint target="1" clocks="true" src="d     ">S9</dataPoint>
+    <dataPoint target="4" clocks="true" src="e     ">S10</dataPoint>
+    <dataPoint target="0" clocks="true" src="yy     ">S11</dataPoint>
+    <dataPoint target="1" clocks="true" src="dfg     ">S12</dataPoint>
+    <dataPoint target="2" clocks="true" src="awd     ">S13</dataPoint>
+    <dataPoint target="3" clocks="true" src="dfs     ">S14</dataPoint>
+    <dataPoint target="2" clocks="true" src="hgf     ">S15</dataPoint>
+    <dataPoint target="0" clocks="true" src="12     ">S16</dataPoint>
+    <dataPoint target="9" clocks="true" src="32     ">S17</dataPoint>
+    <dataPoint target="0" clocks="true" src="12     ">S18</dataPoint>
+    <dataPoint target="1" clocks="true" src="32     ">S19</dataPoint>
+  </item>
+  <Dropper/>
+</items>

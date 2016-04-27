@@ -1,5 +1,6 @@
 <?php
-$dir = "uploads";
+include 'config.php';
+$dir = $saveImages;
 $exclude = array( ".","..","error_log","_notes" );
 if (is_dir($dir)) {
     $files = scandir($dir);

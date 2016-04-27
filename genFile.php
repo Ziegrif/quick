@@ -1,5 +1,6 @@
 <?php
 //save score to xml
+include 'config.php';
 
 if (!empty($_GET["fileName"])){
 		$onlyFileName = $_GET["fileName"];
@@ -19,7 +20,7 @@ if (!empty($_GET["fileName"])){
 	$dropper = $domtree->createElement("Dropper");
 	$dropper = $xmlRoot->appendChild($dropper);
 	
-	$domtree->save($newFileName);
+	$domtree->save($newXMLfiles . $newFileName);
 
 	header("location: admin.php?newishFile=". $onlyFileName);
 

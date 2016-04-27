@@ -61,14 +61,18 @@ $addressVal = $_GET['newishFile'];
 		<div class="navbar navbar-default">
 			<button class="btn btn-secondary" onclick="location.href='uploadPics.php'">Kuvien lisäys</button>
 			<select id="listOfFolders43" name="folderList"><?php include 'readImgFolder.php' ?> </select>
-			<button id="lisaaKuvia" class="btn btn-default navbar-btn">Lisää kansion kuvat</button>
+			<button id="lisaaKuvia" class="btn btn-default navbar-btn">Lisää kaikki kansion kuvat</button>
+			<button id="openPicAdder" class="btn btn-default navbar-btn">Avaa kuvan lisäys</button>
 		</div>
+		<div class="imagePreviewer row">
+			</div>
 		<div class="navbar navbar-default" id="menuDataPoints">
 			<button id="addDataInput" class="btn btn-default navbar-btn">Lisää liikkuva osa</button>
 			<button id="removeLastDP" class="btn btn-default navbar-btn">Poista viimeisin liikkuva osa</button>
 			<button id="addToList" class="btn btn-default navbar-btn">Viimeistele</button>
 			<button id="XMLchanges" class="btn btn-default navbar-btn">Upload / vie</button>
 		</div>
+		
 		<div class="form-group" id="listArrayBase">
 		
 		</div>
