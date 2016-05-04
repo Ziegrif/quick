@@ -22,7 +22,7 @@ $theGameToBeAdded = $_GET['incoming'];
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
 		<script src="jquery.ui.touch.js"></script>
 		<script src="jquery.mobile.custom.min.js"></script>
-		<script type="text/javascript" src="quick.js"></script>
+		<script type="text/javascript" src="quickJSmin.js"></script>
 	</head>
 
 	<body>
@@ -42,30 +42,18 @@ $theGameToBeAdded = $_GET['incoming'];
 			
 		</div>
 			
-		<div id=\"saving\">
-			
-				<div id=\"actualForm\">
-					<h2 id='finale' class='finalScore'>0</h2>
-					<form  method=\"get\" action=\"quickSavePlayerScore.php\">
-						<fieldset class=\"form-group row col-xs-5 text-center\">
-							<input id=\"nameA\" class=\"form-control col-sm-2\" name=\"nimi\" placeholder=\"Nimesi?\" />
-							<input id=\"eMail\" class=\"form-control col-sm-2\" name=\"mail\" placeholder=\"Sähköpostisi?\" />
-							<input class=\"form-control col-sm-2\" id=\"hidScore\" name=\"sentScore\" readonly>
-							<button class=\"form-control col-sm-2 btn-success\" type=\"submit\" value=\"Save the score\" />Save The Score</button>
-						</fieldset>
-					</form>
-				</div>
-		</div>
+		
 		<footer id=\"footing\">
-				<div id='score'>0</div>			
-				<button onclick='validation()'>Tarkista</button>
-				<button onclick=\"change()\">Vaihda peliä</button>
+							
+				<button id='validationButton' class='btn btn-info' onclick='validation()'>Tarkista</button>
+				<button id='gameChangeButton' class='btn btn-warning' onclick=\"change()\">Vaihda peliä</button>
 				<select type=\"text\" id=\"XmlName\">
 					
 					
 				</select>
 				<input id=\"addIt\" placeholder=\"Pelin nimi\" value=". $theGameToBeAdded ." ></input>
-				<button class=\"testing2\" onclick=\"location.href='admin.php'\">Editori</button>
+				<button id='editorButton' class=\"testing2 btn btn-danger\" onclick=\"location.href='admin.php'\">Editori</button>
+				<button class='btn btn-default' onclick=\"location.href='ohjeet.php'\" id='ohjeetButton'>Ohjeet</button>
 		</footer>
 		
 		";

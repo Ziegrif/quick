@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <items>
   <item>
-    <dataPoint target="1">russia</dataPoint>
-    <dataPoint target="1">america</dataPoint>
-    <dataPoint target="0">Finland</dataPoint>
+    <dataPoint target="1" clocks="true" src="russia ">S1</dataPoint>
+    <dataPoint target="3" clocks="true" src="america ">S2</dataPoint>
+    <dataPoint target="0" clocks="true" src="Finland ">S3</dataPoint>
   </item>
   <Dropper>
     <target id="1">ussr</target>
     <target id="2">usa</target>
+    <target id="3">ameeeeeerica</target>
+    <target id="4">ameeeeeerica</target>
   </Dropper>
 </items>

@@ -21,18 +21,18 @@ $addressVal = $_GET['newishFile'];
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
 		<script src="jquery.ui.touch.js"></script>
 		<script src="jquery.mobile.custom.min.js"></script>
-		<script type="text/javascript" src="quick.js"></script>
+		<script type="text/javascript" src="quickJSmin.js"></script>
 	</head>
 	
 	<body>
 	<div class="container">
-	<button class="ToFrontPage" onclick="location.href='index.php'">Etusivulle</button><button class="ToFrontPage" onclick="location.href='editing.php'">Editoi vanhaa peliä</button>
+	<button class="ToFrontPage btn btn-primary" onclick="location.href='index.php'">Etusivulle</button><button class="ToFrontPage btn btn-info" onclick="location.href='editing.php'">Editoi vanhaa peliä</button>
 		<form id="submitGenValue" class="form-horizontal" id="adminForm" action="genFile.php" method="get">
 		<div class="row">
 			<div class="input-group">
 				<input id="genFileName" class="col-xs-4 form-control" name="fileName" placeholder="Uuden pelin nimi"></input>
 				<span class="input-group-btn">
-				<button class="btn btn-secondary" type="submit" value="Generate file">Luo tiedosto</button>
+				<button class="btn btn-warning" type="submit" value="Generate file">Luo tiedosto</button>
 				</span>
 			</div>
 		</div>
@@ -48,29 +48,29 @@ $addressVal = $_GET['newishFile'];
 			<div class="input-group" id="menuTargets">
 				<input class="col-xs-4 form-control" id="targetPointer" name="targetPointer" placeholder="Lisättävä maali"></input>
 				<span class="input-group-btn">
-				<button class="btn btn-secondary" id="buttTarget">Lisää maali</button>
+				<button class="btn btn-warning" id="buttTarget">Lisää maali</button>
 				</span>
 			</div>
 		</div>
 		<div class="navbar navbar-default">
 			<select class='dexTarget'></select>
 		
-			<button id="removeLastTAR" class="btn btn-default navbar-btn">Poista viimeinen maali</button>
+			<button id="removeLastTAR" class="btn btn-default navbar-btn btn-danger">Poista viimeinen maali</button>
 			
 		</div>
 		<div class="navbar navbar-default">
-			<button class="btn btn-secondary" onclick="location.href='uploadPics.php'">Kuvien lisäys</button>
+			<button class="btn btn-primary" onclick="location.href='uploadPics.php'">Kuvien lataus serverille</button>
 			<select id="listOfFolders43" name="folderList"><?php include 'readImgFolder.php' ?> </select>
-			<button id="lisaaKuvia" class="btn btn-default navbar-btn">Lisää kaikki kansion kuvat</button>
+			<button id="lisaaKuvia" class="btn btn-warning navbar-btn">Lisää kaikki kansion kuvat</button>
 			<button id="openPicAdder" class="btn btn-default navbar-btn">Avaa kuvan lisäys</button>
 		</div>
 		<div class="imagePreviewer row">
 			</div>
 		<div class="navbar navbar-default" id="menuDataPoints">
-			<button id="addDataInput" class="btn btn-default navbar-btn">Lisää liikkuva osa</button>
-			<button id="removeLastDP" class="btn btn-default navbar-btn">Poista viimeisin liikkuva osa</button>
-			<button id="addToList" class="btn btn-default navbar-btn">Viimeistele</button>
-			<button id="XMLchanges" class="btn btn-default navbar-btn">Upload / vie</button>
+			<button id="addDataInput" class="btn btn-warning navbar-btn">Lisää liikkuva osa</button>
+			<button id="removeLastDP" class="btn btn-danger navbar-btn">Poista viimeisin liikkuva osa</button>
+			
+			<button id="XMLchanges" class="btn btn-success navbar-btn">Upload / vie</button>
 		</div>
 		
 		<div class="form-group" id="listArrayBase">

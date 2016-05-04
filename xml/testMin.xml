@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<items>
+  <item>
+    <dataPoint target="9">213 </dataPoint>
+    <dataPoint target="9">432 </dataPoint>
+    <dataPoint target="9">543 </dataPoint>
+    <dataPoint target="9">456 </dataPoint>
+    <dataPoint target="9">675 </dataPoint>
+    <dataPoint target="9">687 </dataPoint>
+    <dataPoint target="9">897 </dataPoint>
+    <dataPoint target="9">890 </dataPoint>
+    <dataPoint target="6">645 </dataPoint>
+  </item>
+  <Dropper>
+    <target id="1">123</target>
+    <target id="2">1233</target>
+    <target id="3">12334</target>
+    <target id="4">123345</target>
+    <target id="5">1233456</target>
+    <target id="6">12334567</target>
+    <target id="7">123345678</target>
+    <target id="8">bbbbbbbbbbb</target>
+    <target id="9">aaaaaaaaaa</target>
+  </Dropper>
+</items>

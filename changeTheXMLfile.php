@@ -1,4 +1,6 @@
 <?php
+
+//This file is used to edit and create new XML files for the games. Mostly used by the admin.php page
 include 'config.php';
 
 if (!empty($_POST["address"])) {

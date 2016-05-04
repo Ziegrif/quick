@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<items>
+  <item>
+    <dataPoint target="1">uploads/avalance/213.jpg </dataPoint>
+    <dataPoint target="2">uploads/avalance/DrWeirdPersonalDefense.jpg </dataPoint>
+    <dataPoint target="0">uploads/avalance/IMG_20151201_090222.jpg </dataPoint>
+    <dataPoint target="0">uploads/avalance/avvie.png </dataPoint>
+    <dataPoint target="0">uploads/avalance/cBujR5Y.jpg </dataPoint>
+    <dataPoint target="0">uploads/avalance/tlqMetW.png </dataPoint>
+    <dataPoint target="5">uploads/avalance/tumblr_nx0tykwqdG1te5jruo2_1280.png </dataPoint>
+  </item>
+  <Dropper>
+    <target id="1">SCIENCE!</target>
+    <target id="2">SCIENCE?</target>
+    <target id="3">SCIENCE?!</target>
+    <target id="4">SCIENCE?!</target>
+    <target id="5">SCIENCE?!</target>
+  </Dropper>
+</items>

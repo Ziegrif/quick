@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <items>
   <item>
-    <dataPoint target="0" clocks="true" src="uploads/avalance/213.jpg">S1</dataPoint>
-    <dataPoint target="0" clocks="true" src="uploads/avalance/DrWeirdPersonalDefense.jpg">S2</dataPoint>
+    <dataPoint target="9" clocks="true" src="uploads/avalance/213.jpg">S1</dataPoint>
+    <dataPoint target="5" clocks="true" src="uploads/avalance/DrWeirdPersonalDefense.jpg">S2</dataPoint>
     <dataPoint target="0" clocks="true" src="uploads/avalance/IMG_20151201_090222.jpg">S3</dataPoint>
-    <dataPoint target="0" clocks="true" src="uploads/avalance/avvie.png">S4</dataPoint>
-    <dataPoint target="0" clocks="true" src="uploads/avalance/cBujR5Y.jpg">S5</dataPoint>
+    <dataPoint target="14" clocks="true" src="uploads/avalance/avvie.png">S4</dataPoint>
+    <dataPoint target="10" clocks="true" src="uploads/avalance/cBujR5Y.jpg">S5</dataPoint>
     <dataPoint target="0" clocks="true" src="uploads/avalance/tumblr_nx0tykwqdG1te5jruo2_1280.png">S6</dataPoint>
-    <dataPoint target="0" clocks="true" src="uploads/thing2/hhghg.png">S7</dataPoint>
-    <dataPoint target="0" clocks="true" src="uploads/thing32/avvie.png">S8</dataPoint>
+    <dataPoint target="9" clocks="true" src="uploads/thing2/hhghg.png">S7</dataPoint>
+    <dataPoint target="5" clocks="true" src="uploads/thing32/avvie.png">S8</dataPoint>
   </item>
   <Dropper>
-    <target id="0">Ei paria</target>
     <target id="1">test1</target>
     <target id="2">test12</target>
     <target id="3">test123</target>
@@ -24,5 +23,7 @@
     <target id="10">dddasdsadasasdas</target>
     <target id="11">1232323</target>
     <target id="12">1232323</target>
+    <target id="13">1232323</target>
+    <target id="14">dsdsfdsf</target>
   </Dropper>
 </items>

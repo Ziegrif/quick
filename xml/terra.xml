@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<items>
+  <item>
+    <dataPoint target="5" clocks="true" src="uploads/avalance/213.jpg">S1</dataPoint>
+    <dataPoint target="0" clocks="true" src="uploads/avalance/5Psfqtb.jpg">S2</dataPoint>
+    <dataPoint target="0" clocks="true" src="uploads/avalance/DrWeirdPersonalDefense.jpg">S3</dataPoint>
+    <dataPoint target="0" clocks="true" src="uploads/avalance/GPQ8kMa.png">S4</dataPoint>
+    <dataPoint target="0" clocks="true" src="uploads/avalance/IMG_20151201_090222.jpg">S5</dataPoint>
+    <dataPoint target="0" clocks="true" src="uploads/avalance/QoT15.PNG">S6</dataPoint>
+    <dataPoint target="0" clocks="true" src="uploads/avalance/avvie.png">S7</dataPoint>
+    <dataPoint target="0" clocks="true" src="uploads/avalance/cBujR5Y.jpg">S8</dataPoint>
+    <dataPoint target="0" clocks="true" src="uploads/avalance/penny.PNG">S9</dataPoint>
+    <dataPoint target="0" clocks="true" src="uploads/avalance/tlqMetW.png">S10</dataPoint>
+    <dataPoint target="0" clocks="true" src="uploads/avalance/tumblr_nx0tykwqdG1te5jruo2_1280.png">S11</dataPoint>
+    <dataPoint target="0" clocks="true" src="uploads/avalance/tumblr_o2ddr6ZZFs1tsf170o1_1280.png">S12</dataPoint>
+  </item>
+  <Dropper>
+    <target id="1">wadawdwwdwd</target>
+    <target id="2">wadawdwwdwd</target>
+    <target id="3">wadawdwwdwd</target>
+    <target id="4">wadawdwwdwd</target>
+    <target id="5">wadawdwwdwd</target>
+    <target id="6">wadawdwwdwd</target>
+    <target id="7">wadawdwwdwd</target>
+    <target id="8">wadawdwwdwd</target>
+  </Dropper>
+</items>

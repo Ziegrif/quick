@@ -15,21 +15,21 @@
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
 		<script src="jquery.ui.touch.js"></script>
 		<script src="jquery.mobile.custom.min.js"></script>
-		<script type="text/javascript" src="quick.js"></script>
+		<script type="text/javascript" src="quickJSmin.js"></script>
 	</head>
 	
 	
 	<body>
 	<div class="container">
-	<button class="ToFrontPage" onclick="location.href='index.php'">Etusivulle</button><button class="ToFrontPage" onclick="location.href='admin.php'">Takaisin Editoriin</button>
+	<button class="ToFrontPage btn btn-primary" onclick="location.href='index.php'">Etusivulle</button><button class="ToFrontPage btn btn-info" onclick="location.href='admin.php'">Takaisin Editoriin</button>
 		<form action="upload.php" method="post" enctype="multipart/form-data">
 			
 			Valitse kuva:
 			<input type="file" name="fileToUpload[]" id="fileToUpload" multiple>
 			<div class="row"><label>Nimeä uusi kansio tai valitse olemassa olevan peliin liittyvän kansion nimi</label></div>
 			<select id="listOfFolders43" name="folderList"><?php include 'readImgFolder.php' ?> </select>
-			<input name="folderName" placeholder="Nimeä kuvien kansio tai valitse pudotusvalikosta olemassa oleva kansio"></input>
-			<input type="submit" value="Lataa kuvat" name="submit">
+			<input name="folderName" placeholder="Nimeä kuvien kansio"></input>
+			<button type="submit" class="btn btn-success" value="Lataa kuvat" name="submit"> Lataa Kuvat </button>
 			
 		</form>
 		<button id="openPicAdder" class="btn btn-default navbar-btn">Avaa kuvien selaus</button>

@@ -1,5 +1,5 @@
 /*Quick.css*/
-
+/*This turns the cursor into a pointer so .on events will fire*/
 div .clockDrag {
 	cursor: pointer;
 	word-wrap: break-word
@@ -10,6 +10,7 @@ img {
 	display: block;
 	margin: 0 auto;
 }
+/*Image drag element*/
 .clockDrag {
 	position: relative;
 	display: block;
@@ -21,7 +22,7 @@ img {
 	
 	
 }
-
+/*Image drop element*/
 .clockDrop {
 	position: relative;
 	float: left;
@@ -33,17 +34,16 @@ img {
 	margin: 0 auto;
 	
 }
-
+/*The border containing draggable elements*/
 .borderPatrol {
 	
 	width: 800px;
 	height: 850px;
 	
 }
-
+/*The host div of draggables*/
 .block {
-	/*display: inline-table;*/
-	/* white-space: nowrap; */
+
 	height: 400px;
 	width: 800px;
 	float: left;
@@ -51,7 +51,7 @@ img {
 	
 	
 }
-
+/*The base class of text based draggables*/
 .numbero {
 	position: relative;
 	float: left;
@@ -71,7 +71,7 @@ img {
 	background-color: #ffe0cc;
 	padding: 5px;
 }
-
+/*Base class of text based droppables*/
 .dropTarget {
 	position: relative;
 	float: left;
@@ -81,7 +81,7 @@ img {
 	background-color: #99ddff;
 	padding: 10px;
 }
-
+/*Drop target of image based droppables*/
 .dropTargetImage {
 	position: relative;
 	float: left;
@@ -94,51 +94,53 @@ img {
 	
 	
 }
-
+/*The right answer indicator for images*/
 .imageFinish {
 	/*position: absolute;*/
 	border: 2px solid #248f24;
 	background-color: #80ff80;
 	
 }
+
+/*Image base size class*/
 .imgReg{
 	height: 135px;
 	width: 135px;
 	
 }
-
+/*Image right answer indicator class*/
 .imageResize{
 	height: 125px;
 	width: 125px;
 	margin-top: 5%;
 	}
-	
+
 .imagePreviewer {
 	background-color: #D3D3D3;
 	
 }
-	
+/*A picture class used in making a new image based XML*/
 .delPic {
 	float: left;
 }
-
+/*Hides specific inputs on admin.php and editing.php*/
 .hideInput {
 	visibility: hidden;
 }
-
+/*Host of drop divs*/
 .drop {
 	margin-left: auto;
     margin-right: auto;
 	position: relative;
 	float: left;
-	/* white-space: nowrap; */
+
 	width: 800px;
 	min-height: 400px;
 	background-color: white;
 	padding: 10px;
 	
 }
-
+/*Text based */
 .finish {
 	height: 50px;
 	width: 240px;
@@ -154,23 +156,12 @@ img {
 	
 	
 }
-
+/*Used to negate some unwanted elementes of Bootstraps navbar*/
 .navbar {
     display: block;
     float: none; 
 	text-align: center;
 }
-/* .dataglue {
-	width: 66%;
-}
-.dexTarget {
-	Width: 33%;
-	
-}
-
-.dexPlace {
-	width: 33%;
-} */
 
 #content{
 	height: 700px;
@@ -195,7 +186,7 @@ img {
 	position: absolute;
 	
 }
-
+/*Sticky footer with the basic game buttons*/
 #footing {
 	position: absolute;
     left: 20px;
@@ -211,29 +202,7 @@ img {
 #eMail{
 	font-family: Arial;
 }
-/* #menuAddress{
-	height: 50px;
-	
-}
-#adminForm{
-	height: 50px;
-	
-}
-
-#menuTargets {
-	height: 50px;
-}
-
-#menuDataPoints{
-	height: 50px;
-}
-
-#listArrayBase {
-	background-color: black;
-	
-} 
-*/
-
+/*Used to recognize smaller screens like iPads*/
 @media only screen 
   and (min-device-width: 768px) 
   and (max-device-width: 1024px) 
@@ -252,7 +221,7 @@ img {
     margin-right: auto;
 	position: relative;
 	float: left;
-	/* white-space: nowrap; */
+
 	width: 990px;
 	min-height: 300px;
 	background-color: white;
@@ -271,8 +240,6 @@ img {
 	}
 
 	.block {
-	/*display: inline-table;*/
-	/* white-space: nowrap; */
 	height: 300px;
 	width: 990px;
 	float: left;

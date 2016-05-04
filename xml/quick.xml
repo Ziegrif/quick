@@ -17,4 +17,9 @@
   <dataPoint src="testingPics.xml">dfdsfdsf</dataPoint>
   <dataPoint src="testing.xml">testingLine</dataPoint>
   <dataPoint src="testingAgain.xml">ranTest</dataPoint>
+  <dataPoint src="music.xml">testingOnceAgainHuzzah</dataPoint>
+  <dataPoint src="testMin.xml">min</dataPoint>
+  <dataPoint src="minNew.xml">minMax</dataPoint>
+  <dataPoint src="terra.xml">terra</dataPoint>
+  <dataPoint src="testingOnceMoreYay.xml">testingagainyeay</dataPoint>
 </items>

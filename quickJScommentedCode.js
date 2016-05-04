@@ -1,21 +1,21 @@
 //Quick javascript
 var correct = 0;
+// THis locks down movement when validation is active
 var enableDragging = 1;
-//$(document).bind('touchmove', false);
+
+//this initializes and currently only affects the driopdown menu
 $( init );
-$(document).ready(
-	function(){
-		$("#saving").hide();
-		$('div#score').hide();
-		
-	});
+
+//This sets it so no ajax query will stay in teh cache screwing everything up
 $(document).ready(function() {
   $.ajaxSetup({ cache: false });
 });
+
+//This disables overflow and scrolling on the index page
 $(document).ready(function(){
 	if (window.location.pathname == '/quick/index.php'){
 		$(document).bind('touchmove', false);
-		//console.log("AWWWW YEEEEEE!")
+		//console.log("Index path acknowledged")
 		$('html, body').css({
 			'overflow': 'hidden',
 			'height': '100%'
@@ -24,16 +24,20 @@ $(document).ready(function(){
 	
 });
 
-//The initialization function
+///////////////////////////////////////////////// v BELOW FUNCTIONS HANDLE SWITCHING GAMES, VALIDATING ANSWERS, CREATING DRAGGABLES AND DROPPABLES AND MAKING THE DROPDOWN LIST ON INDEX.PHP v ///////////////////////////////////////////////////////////////////////////
+
+//The initialization function. Affects the index.php page
 function init() {
-console.log("It works dumdum");
+//This simply updates the dropdown menu, you update it on the preview page
+
+//console.log("init function active");
 	$.ajax({
 			url: 'xml/quick.xml',
 			type: 'GET',
 			datatype: 'xml',
 			cache: false,
 			success: function(returnedXMLResponse){
-				console.log (returnedXMLResponse);
+				//console.log (returnedXMLResponse);
 				$('dataPoint',returnedXMLResponse).each(function(){
 					var contentsData = $(this).text();
 					var contentsVal = $(this).attr('src');
@@ -50,14 +54,15 @@ console.log("It works dumdum");
 	});
 	
 }
-
+//This function activates when you change the XML file.
 function change() {
 	var enableDragging = 1;
-	console.log(enableDragging);
+	//console.log(enableDragging);
 	correct = 0;
 	$('.block').html( '' );
 	$('.drop').html( '' );
 	$("#finale").hide();
+	
 	//this generates the draggables from the generate.xml file form the datapoint element
 	var tmpArc=[];
 	var tmpDrop=[];
@@ -67,33 +72,33 @@ function change() {
 	} else {
 		xmlFileName = 'xml/' + $("#addIt").val();
 	}
-
+	//In this ajax function the code reads an input fields value and opens the corresponding XML file from xml/ folder
 	$.ajax({
 			url: xmlFileName,
 			type: 'GET',
 			datatype: 'xml',
 			cache: false,
 			success: function(returnedXMLResponse){
-				console.log (returnedXMLResponse);
+				//here the function picks up the datapoints from the xml file and reads their src, if they're images (at this points conveyed by the clocks variable),
+				//then depending on what it finds gives the correct values to the specific variables.
+				
+				//console.log (returnedXMLResponse);
 				$('dataPoint',returnedXMLResponse).each(function(){
 					var $content;
 					var $src = $(this).attr('src');
 					var $clocks = $(this).attr('clocks')
-					
+					//THis one createst text based xmls
 						if ($src == null) {
 							$content = $(this).text();
 							$DropClass = 'dropTarget';
 							$draggEr = 'numbero audioClass';
+							//this next one loads in image based xmls
 						} else if ($clocks == "true") {
 							$content = '<img src="' +  $(this).attr('src') + '" class="imgReg"/>';
 							$DropClass = 'clockDrop';
 							$draggEr = 'clockDrag';
 						
-						} else {
-							$content = '<img src="' +  $(this).attr('src') + ' height=\'150\' width=\'150\' />';
-							$DropClass = 'dropTargetImage' + $(this).text();
-							$draggEr = 'imageDragger';
-						}
+						} 
 					
 					
 					
@@ -104,13 +109,15 @@ function change() {
 					
 	
 			})
-			
+			//this function looks up the target nodes from the xml and creates the droppables where you drop the draggables.
 			$('target',returnedXMLResponse).each(function(){
-	
+				//it picks up the id attribute that it then uses as part of the identification process for dropping element on top of each other
 					var targetting = [$(this).text() , $(this).attr('id')]
 					tmpDrop.push(targetting);
 			})
-			
+			//This is the variable that via for loop goes through all the targets that are in the tmpDrop array, gives them the droppable property and
+			//gives them the data attribute for number that corresponds with the same one its pair draggable will get creating a pair.
+			//the accept makes it so only elementes of a certain div will be accepted as a drop.
 			for (var i=0; i<tmpDrop.length; i++) {
 				$("<div class=" + $DropClass + ">" + tmpDrop[i][0] + '</div>').data('number', tmpDrop[i][1]).appendTo('.drop').droppable( {
 					
@@ -120,21 +127,25 @@ function change() {
 					activate: handleDragEvent,
 					
 				});
-				//console.log(i +  ': data-number ' + $('#item_'+tmpDrop[i]).data('number'));
+				
 			}
-			//console.log(tmpArc);
-			//This here randomizes the draggables and then makes them into different divs with the numbero class.
+			
+			//This randomizes the array coming to the function and this is done to randomize every instance of a game and avoid memorization of placements
 			
 			tmpArc.sort( function() { return Math.random() - .5 } );
+			
+			//This for loop is basically identical to the drop one but it simply handles the draggables. The difference is that the draggables are contained to the
+			//.borderpatrol div so they can't force weird overflow/ scrolling issues on a tablet or end up becoming unreachable or flicked off the game area.
 			for (var j=0; j<tmpArc.length; j++) {
 	
-				$("<div class="+ $draggEr +" onclick=\"\" >" + tmpArc[j][0] + '</div>').data('number', tmpArc[j][1]).appendTo('.block').draggable( {
+				$("<div class="+ $draggEr +"  >" + tmpArc[j][0] + '</div>').data('number', tmpArc[j][1]).appendTo('.block').draggable( {
 					containment: '.borderPatrol',
 					stack: '.block div',
 					cursor: 'move',
 					disable: false
-					//revert: true
+					
 				});
+				//Not exactly sure what it does but removing broke things. Investigate some other time.
 				$("div .clockDrag").each(function(i){
 					$(this).addClass("S"+(i+1))
 				});
@@ -149,36 +160,31 @@ function change() {
 
 
 //This function handles what happens when a draggable is put into a droppable
+//Specifically it checks for the "number" data attribute and if it finds a match it adds a correct class and add the valid data attribute.
 function handleCardDrop(event, ui) {
 	var slotNumber = $(this).data('number');
 	var cardNumber = ui.draggable.data('number');
 	var isImage = $(this).hasClass('dropTargetImage');
-	//var isAclock = $(draggEr).hasClass('clockDrag');
-	
-	//console.log("card " + cardNumber);
-	//console.log("slot " + slotNumber);
+	//the if is checking for images
 	if (slotNumber == cardNumber &&  $draggEr == 'clockDrag') {
 		ui.draggable.addClass('imageOikein');
 		ui.draggable.data("valid", true);
 		ui.draggable.position( { of: $(this), my:'left top', at: 'left top'});
 		correct++
 	}
-	
+	//This is for a normal text based one
 	else if (slotNumber == cardNumber && $draggEr == 'numbero audioClass') {
 		ui.draggable.addClass('oikein');
 		ui.draggable.data("valid", true);
-		//ui.draggable.draggable('disable');
-		//$(this).droppable('disable');
 		ui.draggable.position( { of: $(this), my:'left top', at: 'left top'});
-		//ui.draggable.draggable('option', 'revert', false);
 		correct++;
 		
-		
+	//and this one will refuse to add valid or correct classes in case of a mis match in numbers.
 	} else if (slotNumber !== cardNumber) {
 		ui.draggable.data("valid",false);
 		ui.draggable.position( { of: $(this), my:'left top', at: 'left top'});
 	}
-	$('div#score').html(correct);
+	
 }
 // This one handles the dragging event for example when you drag it off a correct square it substracts from the correct pool preventing infinite points
 function handleDragEvent(event, ui){
@@ -190,16 +196,21 @@ function handleDragEvent(event, ui){
 		}
 		$('div#score').html(correct);
 		
-	}
-//This function checks for right answers
+	}	
+//This function checks for right answers and whenever it's pressed it'll lock all draggables down by disabling them. The correct way to reenable them back up is to press the "tarkista" button again. Otherwise it bugs out.
 function validation(){
+	$('#gameChangeButton').prop('disabled', function(i, v){ return !v; }).toggleClass('btn-warning');
+	$('#editorButton').prop('disabled', function(k, y){ return !y; }).toggleClass('btn-danger');
+	$('#validationButton').toggleClass('btn-info btn-danger').text(function(){if($('#validationButton').text() === 'Tarkista'){$('#validationButton').text('Jatka peliä')}else($('#validationButton').text('Tarkista'))});
+	
 	if($("div").hasClass("oikein")){
 		$(".oikein").toggleClass("finish");
-		
+		//Checks if the draggable is an image
 	}else if($("div").hasClass("imageOikein")){
 	$(".imageOikein").toggleClass("imageFinish");
 	$('.imageOikein img').toggleClass('imageResize');
 	};
+	//this if structure checks if dragging should be disabled or not
 	if(enableDragging == 1){
 		$('.numbero').draggable('disable');
 		$('.clockDrag').draggable('disable');
@@ -209,119 +220,27 @@ function validation(){
 		$('.clockDrag').draggable('enable');
 		enableDragging = 1;
 	}
-	console.log("Jee jee" + enableDragging);
+	//console.log("enableDragging status =" + enableDragging);
 }
-//Audio worker. It looks bad. Fix it later you dolt.
-/* $(document).ready(function() {
-      var obj = document.createElement("audio");
-      obj.src="audio/5vaille7.ogg";
-        obj.volume=1.0;
-        obj.autoPlay=false;
-        obj.preLoad=true;       
-			$("body").bind('touchstart', '.S1', function(){ 
-			obj.play();
-			});
-		var sound2 = document.createElement("audio");
-		sound2.src="audio/tasanKLO10.ogg";
-        sound2.volume=1.0;
-        sound2.autoPlay=false;
-        sound2.preLoad=true;       
-			$("body").on('mousedown', '.S2', function(){
-			sound2.play();
-			});
-		var sound3 = document.createElement("audio");
-		sound3.src="audio/15vaille5.ogg";
-        sound3.volume=1.0;
-        sound3.autoPlay=false;
-        sound3.preLoad=true;       
-			$("body").on('mousedown', '.S3', function(){
-			sound3.play();
-			});
-		var sound4 = document.createElement("audio");
-		sound4.src="audio/15yli5.ogg";
-        sound4.volume=1.0;
-        sound4.autoPlay=false;
-        sound4.preLoad=true;       
-			$("body").on('mousedown', '.S4', function(){
-			sound4.play();
-			});
-		var sound5 = document.createElement("audio");
-		sound5.src="audio/20vaille8.ogg";
-        sound5.volume=1.0;
-        sound5.autoPlay=false;
-        sound5.preLoad=true;       
-			$("body").on('mousedown', '.S5', function(){
-			sound5.play();
-			});
-		var sound6 = document.createElement("audio");
-		sound6.src="audio/25yli12.ogg";
-        sound6.volume=1.0;
-        sound6.autoPlay=false;
-        sound6.preLoad=true;       
-			$("body").on('mousedown', '.S6', function(){
-			sound6.play();
-			});
-		var sound7 = document.createElement("audio");
-		sound7.src="audio/20yli8.ogg";
-        sound7.volume=1.0;
-        sound7.autoPlay=false;
-        sound7.preLoad=true;       
-			$("body").on('mousedown', '.S7', function(){
-			sound7.play();
-			});
-		var sound8 = document.createElement("audio");
-		sound8.src="audio/tasan2.ogg";
-        sound8.volume=1.0;
-        sound8.autoPlay=false;
-        sound8.preLoad=true;       
-			$("body").on('mousedown', '.S8', function(){
-			sound8.play();
-			});
-		var sound9 = document.createElement("audio");
-		sound9.src="audio/tasan9.ogg";
-        sound9.volume=1.0;
-        sound9.autoPlay=false;
-        sound9.preLoad=true;       
-			$("body").on('mousedown', '.S9', function(){
-			sound9.play();
-			});
-		var sound10 = document.createElement("audio");
-		sound10.src="audio/puoli4.ogg";
-        sound10.volume=1.0;
-        sound10.autoPlay=false;
-        sound10.preLoad=true;       
-			$("body").on('mousedown', '.S10', function(){
-			sound10.play();
-			});
-		var sound11 = document.createElement("audio");
-		sound11.src="audio/puoli3.ogg";
-        sound11.volume=1.0;
-        sound11.autoPlay=false;
-        sound11.preLoad=true;       
-			$("body").on('mousedown', '.S11', function(){
-			sound11.play();
-			});
-		var sound12 = document.createElement("audio");
-		sound12.src="audio/tasan12.ogg";
-        sound12.volume=1.0;
-        sound12.autoPlay=false;
-        sound12.preLoad=true;       
-			$("body").on('mousedown', '.S12', function(){
-			sound12.play();
-			});
-		
-        }); */
+
+///////////////////////////////////////////////// ^ ABOVE FUNCTIONS HANDLE SWITCHING GAMES, VALIDATING ANSWERS, CREATING DRAGGABLES AND DROPPABLES AND MAKING THE DROPDOWN LIST ON INDEX.PHP ^ ///////////////////////////////////////////////////////////////////////////
+
+///////////////////////////////////////////////// v BELOW FUNCTIONS HANDLE THE MAKING OF A NEW GAME v ///////////////////////////////////////////////////////////////////////////
+
 //lists the datapoints and targets for review
+//Select targets is used to store the new targets that are written during editing.
+//Chunk stores the datapoint and the target pairs number so they can be saved into the xml file
 var targetDatapointArray = [];
 var selectTargets = [];
 var chunk = [];
 //Adds options to selects
+//By pressing the #buttTarget button each individual target is first pushed to selectTargets and then put into an option as its text. The numerical value is so it can be recognized by its pair Datapoint.
 $(document).ready(function(){
 	$("#buttTarget").click(function(){
-		//$("#listArrayBase").empty();
+		
 		$('.dexTarget').empty();
 		selectTargets.push($("#targetPointer").val());
-		console.log(selectTargets);
+		//console.log(selectTargets);
 		var t = 1;
 		var opt = $('<option class=\'targetOption\'></option>')
 				.attr("value", 0)
@@ -332,7 +251,7 @@ $(document).ready(function(){
 				.attr("value", t++)
 				.text(selectTargets[i])
 				.appendTo(".dexTarget");
-				//$(".targetOption:first").attr("value",0).text("Ei paria");
+				
 			});
 	
 	});
@@ -345,141 +264,120 @@ $(document).ready(function(){
 	});
 	// Removes the last input and select from the admin page
 	$("#removeLastDP").click(function(){
-		/* $(".dataGlue").last().remove();
-		$(".dexPlace").last().remove();
-		$(".dexTarget").last().remove(); */
 		$(".delClass:last").remove();
 	});
 	//Removes the last target from the select list
 	$("#removeLastTAR").click(function(){
 		selectTargets.pop();
-		$(".targetOption").last().remove();
-	});
-	//adds targets to a list
-$("#addToList").click(function(){
+		$('.dexTarget').empty();
+		var t = 1;
+		var opt = $('<option class=\'targetOption\'></option>')
+				.attr("value", 0)
+				.text("ei paria")
+				.appendTo(".dexTarget");
+			$.each(selectTargets, function(i){
+				opt = $('<option class=\'targetOption\'></option>')
+				.attr("value", t++)
+				.text(selectTargets[i])
+				.appendTo(".dexTarget");
+				
+			});
 		
-	var listing = $("#outputUL");
+	});
+
+		
+	
+
+	
+});		
+			
+	
+//this one is for generating and editing a newly created XML file.
+	//First it adds pair consisting of datapoints and targets to the chunk array
+		//during this it checks if the datapoint is a picture and finds and maps the relevant values.
+			//Note it's not actually taking the img values but gets the value from a hidden input that is above the picture.
+ $(document).ready(function(){
+		$('#XMLchanges').click(function(){
+			var listing = $("#outputUL");
 			
 			chunk = [];
 			var rawdata = [];
 			if($('#listArrayBase img').hasClass('delPic')){
-				console.log("Arr me mateys")
+				//console.log("image detected");
 				var preppingPush = ($('#listArrayBase').find(".hideInput, .dexTarget")).map(function(){return $(this).val();}).get();
 			} else {
 			var preppingPush = ($('#listArrayBase').find(".dataGlue, .dexTarget")).map(function(){return $(this).val();}).get();
 			}
-			console.log(preppingPush);
-			/* var m,n,tempSlicedtoTwoArray,chunk = preppingPush.length;
-			for (m=0,n=preppingPush.length; m<n; m+=chunk){
-				tempSlicedtoTwoArray = preppingPush.slice(m,m+chunk);
-			} */
+			//console.log(preppingPush);
+			
+			
 			
 			while(preppingPush.length > 0){
 				chunk.push(preppingPush.splice(0 , 2));
 			}
-			console.log(chunk);
-			//console.log(tempSlicedtoTwoArray);
-			//targetDatapointArray.push(chunk, selectTargets);
-			//console.log(targetDatapointArray);
-			//$(".dataGlue .dexTarget").each(function(i, e){
-				//rawdata.push(testingDT);
-				//targetDatapointArray.push(rawdata);
+			//console.log(chunk);
+	
 				$("#outputUL").html("");	
 			$.each(chunk, function(i){
 				var li = $('<li>')
 				.appendTo(listing)
 				.text(chunk[i]);
 			
-			//console.log(targetDatapointArray);
+			
 				
 	});
-});
-	
-});		
-			
-	
-//this one is for generating and editing a newly created XML file.
- //var generatedFile = $('#address').val() + '.xml';	
- $(document).ready(function(){
-		$('#XMLchanges').click(function(){
+	//after the the values are stored in the chunk array, relevant data is gathered.
+		//generatedFile is the xml files name and address
+		//redirect window opens another window to preview.php and sends the name of the new xml file forward so the user doesn't have to write it again
+		//dataPointToAdd are the values of added movable objects aka datapoints
+		//targetToAdd is basically the same thing but for the specific target in the select right next to the datapoint
+		//output is a P tag in admin.php that lists the pairs.
+		//isImage is a variable that is sent to the PHP file to specifically tell it to generate an image based game xml file.
 		var generatedFile = $('#address').val() + '.xml';
-		//var exportPreview = $("#previewedFileName").val();
-		console.log(generatedFile);
+		//console.log(generatedFile);
+		
 		var redirectWindow = window.open('preview.php?thing='+generatedFile, '_blank');
-		//var redirectWindowOther = window.open('index.php?incoming='+exportPreview, '_blank');
-		var generatedFile = $('#address').val() + '.xml';
+		
 		var dataPointToAdd = $('#dataPointer').val();
 		var targetToAdd = $('#targetPointer').val();
 		var output = $('#output').val();
-		var arrayOfXMLdataPoints = [];
-		var arrayOfXMLtargets = [];
+		
 		var isImage;
-		if($('img').hasClass('delPic')){
+		if($('#listArrayBase img').hasClass('delPic')){
 			isImage = "true";
 		} else {
 			isImage = "false";
 		}
-		console.log(isImage);
+		//console.log("Image status" + isImage);
+		
+		//This ajax sends the data gathered by the above variables and after it gets its answer it redirects to the preview.php page
 		$.ajax({
 			url: 'changeTheXMLfile.php',
 			type: 'POST',
 			dataType: 'text',
 			cache: false,
 			data: {address: generatedFile, chunk: chunk, selectTargets: selectTargets, isImage: isImage},
-			//data: { address: generatedFile, dataPointer: dataPointToAdd, targetPointer: targetToAdd },
+			
 			error: function( data ){
-				console.log("It didn't work you dolt" + data)
+				console.log("An error has happened" + data)
 			},
 			success: function( data ){
-				console.log(data);
-				//console.log(JSON.stringify(targetDatapointArray));
-				//console.log("success");
-				//console.log(data.dataPointer );
+				//console.log(data);
+				
 				redirectWindow;
 				
 			}
-			/* success: function( data ){
-				console.log('success' + data);
-				//Below code: Remove the ajax and make it a Json return dealio.
-				success: function(returnedXMLResponse) {
-					$('dataPoint',returnedXMLResponse).each(function(){
-						var $allTheNewData = $(this).text();
-						var dataPointarray = [$allTheNewData];
-						arrayOfXMLdataPoints.push(dataPointarray);
-					});
-					console.log(arrayOfXMLdataPoints);
-					$('target',returnedXMLResponse).each(function(){
-						var $nearlyDoneTar = $(this).text();
-						var targetArray1 = [$nearlyDoneTar];
-						arrayOfXMLtargets.push(targetArray1);
-					});
-					for (var o=0; 0<arrayOfXMLdataPoints.length; o++){
-						$("<input></input><select id=\'allTargets\'></select>")
-							.appendTo("#output");
-					};
-					console.log(targetArray1);
-					for (var p=0; 0<targetArray1.length; p++){
-						$('#allTargets')
-							.append($("<option></option>")
-							.attr("value", targetArray1[i])
-							.text(value));
-					}
-					
-					
-				}
-			}) */
-				
-			//}
+			
 			
 		});
 		
 	});	
 
-	
+	//After the XML has been made and the user is redirected to the preview page they can name the file whatever they wish and export it into the list on the index file for other users to play.
 	$("#exportNewgame").click(function(){
 		var exportPreview = $("#previewedFileName").val();
 		var exportingName = $("#exportName").val();
-		console.log(exportingName);
+		
 		var redirectWindowOther = window.open('index.php?incoming='+exportPreview, '_blank');
 		
 		$.ajax({
@@ -489,17 +387,23 @@ $("#addToList").click(function(){
 			data: {previewedFileName: exportPreview, exportingName: exportingName},
 			cache: false,
 			success: function(returnedXMLResponse){
-				console.log(returnedXMLResponse);
+				//console.log(returnedXMLResponse);
 				redirectWindowOther;
 				
 			}
 		});
 	
 	});
+	
+///////////////////////////////////////////////// ^ ABOVE FUNCTIONS HANDLE MAKING A NEW GAME ^ ///////////////////////////////////////////////////////////////////////////
+
+///////////////////////////////////////////////// v BELOW FUNCTIONS HANDLE EDITING OF OLD FILES v ///////////////////////////////////////////////
+	
 	//This loads the editable file
+	//Do note that if you change the folder name and location of the xml files importEdit MUST BE CHANGED accordingly.
 	$("#editEngage").click(function(){
 		var importEdit = 'xml/'+$("#editable").val();
-		
+		//what happens in this ajax function is that the xml file gets read and datapoints and targets are implemented as elements and the xmls ID, SRC, Clock attributes and text are used as building blocks
 		$.ajax({
 			url: importEdit,
 			type: 'GET',
@@ -509,7 +413,7 @@ $("#addToList").click(function(){
 				$('target', returnedXMLResponse).each(function(){
 					var editableTargets = $(this).text();
 					var targetID = $(this).attr('id');
-					console.log(editableTargets);
+					
 					
 					$('<option class="targetOption"></option>')
 						.attr("value", targetID)
@@ -523,42 +427,18 @@ $("#addToList").click(function(){
 					var isAnImage = $(this).attr('src');
 					var contentsEditable = $(this).text();
 					var targetPair = $(this).attr('target');
-					//console.log(targetPair);
+					
 					if(clocks){
 						$('<div class="wrapUp"><input class="hideInput" value="' + isAnImage + '"></input><div class="row delClass"><img class="imgReg delPic" src="' + isAnImage + '" /></div><button class="removebtn">Poista kuva</button></div>').appendTo("#spawnEditables");
 						$('.dexTarget:first').clone().val(targetPair).appendTo(".delClass:last");
 					} else {
-						$('<div class="input-group delClass"><input class="dataGlue form-control" data-target=' + targetPair + ' value="'+ contentsEditable +' "></input><span class="input-group-addon dexPlace"></span></div>').appendTo("#spawnEditables");
+						$('<div class="wrapUp"><div class="input-group delClass"><input class="dataGlue form-control" data-target=' + targetPair + ' value="'+ contentsEditable +' "></input><span class="input-group-addon dexPlace"></span></div><button class="removebtn">Poista osio</button></div>').appendTo("#spawnEditables");
 						$('.dexTarget:first').clone().val(targetPair).appendTo(".dexPlace:last");
 					}
 					
 					
 					 
-					//$('select option[value="' + targetPair + '"]').attr("selected", true);
 					
-					//$('.delClass:first').clone().appendTo("#spawnEditables");
-					
-					//slashContents.push(contentsEditable);
-					//console.log(slashContents)
-					//console.log(contentsEditable);
-					/* $('<div class=\"input-group delClass\"></div>')
-					.appendTo('#spawnEditables');
-					$('<input class=\'dataGlue form-control\'></input>')
-					.text(contentsEditable)
-					.appendTo('.delClass');
-					$('<span class=\"input-group-addon dexPlace\"></span>')
-					.appendTo('.delClass');
-					
-					
-					$('.dexTarget:first').clone().appendTo(".dexPlace:last");*/
-					
-					/* if($('input').data('target') == $('select').val()){
-						
-						$('option').attr('selected','selected');
-						} else {
-							console.log($('select').val());
-						
-						} */
 					 
 					
 				}); 
@@ -571,12 +451,55 @@ $("#addToList").click(function(){
 		});
 	
 	});
-	//This makes all current option elements of teh first select into an array ready for export into xml.
+	
 	var editArrayTargets = [];
-	$("#finalizeEdit").click(function(){
+	
+	//This adds another target into the selects
+	$("#addNotherTargetToFirstSelect").click(function(){
+		$("<option class='targetOption'></option>").text($("#addOptionTargetToList").val()).val(+$("option:last").val()+1).appendTo(".dexTarget");
+	});
+	//Removes the last target from the edit page
+	$("#removeLastTARedit").click(function(){
+		var slamTar = [];
+		
+		slamTar = $(".dexTarget:first .targetOption").map(function() { return [$(this).text()]; }).get();
+		
+		slamTar.pop();
+		
+		$('.dexTarget').empty();
+		var t = 1;
+				var opt = $('<option></option>')
+				.attr("value", 0)
+				.text("Ei paria")
+				.appendTo(".dexTarget");
+			$.each(slamTar, function(i){
+				opt = $('<option class=\'targetOption\'></option>')
+				.attr("value", t++)
+				.text(slamTar[i])
+				.appendTo(".dexTarget");
+				
+			});
+		
+	});
+	
+	//add an input to edit page
+	$('#comeOn').click(function(){
+		$('<div class="wrapUp"><div class=\"input-group delClass\"><input class=\'dataGlue form-control\'></input><span class=\"input-group-addon dexPlace\"></span></div><button class="removebtn">Poista osio</button></div>').appendTo("#spawnEditables");
+		
+		$('.dexTarget:first').clone().appendTo(".dexPlace:last");
+		
+	
+			
+	});
+	console.log('we did it reddit!');
+	//After the XML file has been loaded by #editEngage and the changes have been made you use the below function to upload said edits back into the file
+		//How this works in practice is that the old file is copied, moved and then deleted/ unlinked to the oldXMLs folder.
+			//Otherwise the process is exactly the same as when making a new xml file.
+	$("#UploadEditAndContinue").click(function(){
+		
 		editArrayTargets = [];
 		chunk = [];
-		/* editArrayTargets.push($("select:first option").text(), $("select:first option").val()); */
+		
 		var tisNotaTest = [];
 		tisNotaTest = $(".dexTarget:first .targetOption").map(function() { return [$(this).text(), $(this).val()]; }).get();
 		
@@ -585,29 +508,24 @@ $("#addToList").click(function(){
 			}
 		console.log(editArrayTargets);
 		if($('#spawnEditables img').hasClass('delPic')){
-				console.log("Arr me mateys")
+				
 				var preppingPush = ($('#spawnEditables').find(".hideInput, .dexTarget")).map(function(){return $(this).val();}).get();
 			} else {
 		var preppingPush = ($('#spawnEditables').find(".dataGlue, .dexTarget")).map(function(){return $(this).val();}).get();
 			}
-		//console.log(preppingPush);
+		
 		while(preppingPush.length > 0){
 				chunk.push(preppingPush.splice(0 , 2));
 			}
-		console.log(chunk);
-		});
 		
-	$("#addNotherTargetToFirstSelect").click(function(){
-		$("<option class='targetOption'></option>").text($("#addOptionTargetToList").val()).val(+$("option:last").val()+1).appendTo(".dexTarget");
-	});
-	$("#UploadEditAndContinue").click(function(){
+		
 		var exportPreviewEdit = $("#editable").val();
-		if($('img').hasClass('delPic')){
+		if($('#spawnEditables img').hasClass('delPic')){
 			isImage = "true";
 		} else {
 			isImage = "false";
 		}
-		//var redirectWindowOther = window.open('index.php?incoming='+exportPreviewEdit, '_blank');
+		var redirectWindowOther = window.open('index.php?incoming='+exportPreviewEdit, '_blank');
 		
 		$.ajax({
 			url: "finalEdit.php",
@@ -616,20 +534,22 @@ $("#addToList").click(function(){
 			data: {address: exportPreviewEdit, chunk: chunk, selectTargets: editArrayTargets, isImage: isImage},
 			cache: false,
 			success: function(returnedXMLResponse){
-				console.log(returnedXMLResponse);
-				//redirectWindowOther;
+				//console.log(returnedXMLResponse);
+				redirectWindowOther;
 				
 			}
 		});
 	
 	});
+	//This is simply a remove button for an added image.
 	$(document).on('click', '.removebtn', function () {
         $(this).parent().remove();   
     });
 	
 	
 	//This handles the Pictures for new xml files
-	
+		// Essentially how it works is that the php code searches through given folder name from teh drop down list
+			//after that it simply goes through the folder and adds them all into the "#listArrayBase" div on the admin.php page.
 	$("#lisaaKuvia").click(function(){
 		var folderOfPics = $("#listOfFolders43").val();
 		console.log(folderOfPics);
@@ -639,8 +559,8 @@ $("#addToList").click(function(){
 			datatype: "text",
 			data: {folder: folderOfPics},
 			cache: false,
-			success(data){
-				console.log(data);
+			success: function(data){
+				//console.log(data);
 				$("#listArrayBase").html(data);
 				
 				$(".dexTarget:first").clone().appendTo(".delClass");
@@ -652,6 +572,10 @@ $("#addToList").click(function(){
 	});
 var tunk = 1;
 	//imagePreviewer functions
+		//This does almost exactly what the above image function does but instead of dumping all the images into the listArrayBase
+			//it adds them to a preview div for easy perusal of available images.
+			
+				//This first one simply triggers the base folder at document.ready.
 	if (tunk = 1){
 		$(".imagePreviewer").hide();
 		$(document).ready(function(){
@@ -663,7 +587,7 @@ var tunk = 1;
 			datatype: "text",
 			data: {folder: folderOfPics},
 			cache: false,
-			success(data){
+			success: function(data){
 				console.log(data);
 				$(".imagePreviewer").html(data);
 				
@@ -671,6 +595,7 @@ var tunk = 1;
 		});
 		
 	});
+		//This one changes the folder whenever the folder dropdown value changes
 		$("#listOfFolders43").change(function(){
 		var folderOfPics = $("#listOfFolders43").val();
 		console.log(folderOfPics);
@@ -680,7 +605,7 @@ var tunk = 1;
 			datatype: "text",
 			data: {folder: folderOfPics},
 			cache: false,
-			success(data){
+			success: function(data){
 				console.log(data);
 				$(".imagePreviewer").html(data);
 				
@@ -688,13 +613,19 @@ var tunk = 1;
 		});
 		
 	});
+	
+	//The pic previewer is always hidden and this simply shows it to the user.
 	$("#openPicAdder").click(function(){
 		$(".imagePreviewer").toggle();
 	});
 	};
+	
+	//What this does is add a single picture the same way you would do to with the function that adds all teh folders pictures.
+		//works by just clicking the picture in the image previewer
+			//$(this).attr(src) refers to the source of the picture otherwise the code is the same as other that adds different elements.
 	$(document).on('click','.imagePreviewer img', function(){
 			var funky = $(this).attr('src')
-			console.log(funky);
+			//console.log(funky);
 			if ($("#spawnEditables").length === 0){
 				$('<div class="wrapUp"><input class="hideInput" value="' + funky + '"></input><div class="row delClass"><img class="imgReg delPic" src="' + funky + '" /></div><button class="removebtn">Poista kuva</button></div>').appendTo('#listArrayBase');
 			} else {
@@ -703,7 +634,12 @@ var tunk = 1;
 			$(".dexTarget:first").clone().appendTo(".delClass:last");
 		});
 });
- $(document).ready(function(){
+
+//////////////////////////////////////// ^ ABOVE FUNCTIONS HANDLE EDITING OF OLD FILES ^ //////////////////////////////////////////////////////////
+ 
+ //This functions handles the previewing of an XML file.
+	//in practice it's completely the same with the change function that switches game xmls. Only difference is that it affects the preview.php page.
+$(document).ready(function(){
 $('#initPreview').click(function(){
 	correct = 0;
 	$('.block').html( '' );
@@ -730,16 +666,13 @@ $('#initPreview').click(function(){
 							$content = $(this).text();
 							$DropClass = 'dropTarget';
 							$draggEr = 'numbero audioClass';
+							//this next one loads in image based xmls
 						} else if ($clocks == "true") {
-							$content = '<img src="' +  $(this).attr('src') + '" height=\'95\' width=\'100\' />';
+							$content = '<img src="' +  $(this).attr('src') + '" class="imgReg"/>';
 							$DropClass = 'clockDrop';
 							$draggEr = 'clockDrag';
 						
-						} else {
-							$content = '<img src="' +  $(this).attr('src') + ' height=\'90\' width=\'90\' />';
-							$DropClass = 'dropTargetImage' + $(this).text();
-							$draggEr = 'imageDragger';
-						}
+						} 
 					
 					
 					

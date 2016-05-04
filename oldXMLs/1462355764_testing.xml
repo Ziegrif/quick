@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<items>
+  <item>
+    <dataPoint target="3">guard</dataPoint>
+    <dataPoint target="2">cleaner</dataPoint>
+    <dataPoint target="1">tester</dataPoint>
+    <dataPoint target="4">dancer</dataPoint>
+  </item>
+  <Dropper>
+    <target id="1">testing!</target>
+    <target id="2">cleaning!</target>
+    <target id="3">guarding!</target>
+    <target id="4">dancing!</target>
+  </Dropper>
+</items>

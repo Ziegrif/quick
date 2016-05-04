@@ -17,7 +17,7 @@ $addressing = $_GET['thing'];
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
 		<script src="jquery.ui.touch.js"></script>
 		<script src="jquery.mobile.custom.min.js"></script>
-		<script type="text/javascript" src="quick.js"></script>
+		<script type="text/javascript" src="quickJSmin.js"></script>
 	</head>
 	
 	
@@ -30,11 +30,11 @@ $addressing = $_GET['thing'];
 					<div class=\"input-group\">
 						<input class=\"form-control\" id=\"previewedFileName\" name=\"previewedFileName\" value=". $addressing ."></input>
 						<span class=\"input-group-btn\">
-						<button  id=\"initPreview\" class=\"btn btn-secondary\">Open your preview</button>
+						<button  id=\"initPreview\" class=\"btn btn-warning\">Avaa peli</button>
 						</span>
 						<input class=\"form-control\" id=\"exportName\" name=\"exportingThatName\" placeholder=\"Anna kuvaava nimi pelillesi\"></input>
 						<span class=\"input-group-btn\">
-						<button id=\"exportNewgame\" class=\"btn btn-secondary\">Vie peli etusivulle</button>
+						<button id=\"exportNewgame\" class=\"btn btn-success\">Vie peli etusivulle</button>
 						</span>
 				</div>
 					</div>
@@ -48,9 +48,9 @@ $addressing = $_GET['thing'];
 					</div>
 					
 					</div>
-					<button onclick='validation()'>Tarkistus</button>
-					<button class=\"ToFrontPage\" onclick=\"location.href='index.php'\">Etusivulle</button>
-					<button class=\"ToEditor\" onclick=\"location.href='admin.php'\">Takaisin Editoriin</button>
+					<button id='validationButton' class='btn btn-info' onclick='validation()'>Tarkista</button>
+					<button id='gameChangeButton' class=\"ToFrontPage btn btn-primary\" onclick=\"location.href='index.php'\">Etusivulle</button>
+					<button id='editorButton' class=\"ToEditor btn btn-danger\" onclick=\"location.href='admin.php'\">Takaisin Editoriin</button>
 					";
 				?>
 			</div>
